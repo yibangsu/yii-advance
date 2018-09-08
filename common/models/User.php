@@ -151,10 +151,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function validatePassword($password, $random = '2018')
     {
         //return Yii::$app->security->validatePassword($password, $this->password_hash);
-        Yii::warning("password='$password', random='$random'");
-        $temp = hash_hmac('sha256', trim($this->password_hash), $random, false);
-        Yii::warning("hash='$temp'");
         return $password === hash_hmac('sha256', trim($this->password_hash), $random, false);
+        //return true;
     }
 
     /**

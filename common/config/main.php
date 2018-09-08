@@ -1,4 +1,5 @@
 <?php
+Yii::$classMap['common\assets\CryptoAsset'] = '@common/assets/CryptoAsset.php';
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

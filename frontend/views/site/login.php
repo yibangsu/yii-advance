@@ -7,13 +7,14 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-use frontend\assets\CryptoAsset;
-
-CryptoAsset::register($this);
-
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<?php 
+require __DIR__ . '/../../../common/views/Login-script.php';
+?>
+
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -41,20 +42,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-
-<?php
-$js = <<<JS
-    $('#login-form').on('beforeSubmit', function(e) {
-        
-        var \$form = $(this);
-        var \$str = \$.trim(document.getElementById("loginform-password").value);
-        var \$random = \$.trim('$model->random');
-
-        \$str = \$.trim(CryptoJS.MD5(\$str));
-        \$str = CryptoJS.HmacSHA256(\$str, \$random);
-        
-        document.getElementById("loginform-password").value = \$str;
-    });
-JS;
-    $this->registerJs($js);
-?>
