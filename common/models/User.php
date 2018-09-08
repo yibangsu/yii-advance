@@ -148,9 +148,13 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $password password to validate
      * @return bool if password provided is valid for current user
      */
-    public function validatePassword($password)
+    public function validatePassword($password, $random = '2018')
     {
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
+        //return Yii::$app->security->validatePassword($password, $this->password_hash);
+        Yii::warning("password='$password', random='$random'");
+        $temp = hash_hmac('sha256', trim($this->password_hash), $random, false);
+        Yii::warning("hash='$temp'");
+        return $password === hash_hmac('sha256', trim($this->password_hash), $random, false);
     }
 
     /**
@@ -160,7 +164,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function setPassword($password)
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        $this->password_hash = md5($password);
     }
 
     /**

@@ -10,7 +10,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>This is the About page. You may modify the following file to customize its content:</p>
+    <!--p>
+        This is the About page. You may modify the following file to customize its content:
+    </p-->
+    <div class="col-lg-offset-1" >
+        Fota Manager<br>
+        Version: 1.0.0
+    </div>
 
-    <code><?= __FILE__ ?></code>
+    <!--code><?= __FILE__ ?></code-->
 </div>
