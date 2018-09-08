@@ -1,0 +1,55 @@
+Message-ID: <02b19b46c05dcc66094cdbe5782142f7@frontend.test>
+Date: Sat, 08 Sep 2018 09:04:23 +0000
+Subject: Password reset for Fota Manager
+From: Fota Manager robot <support@example.com>
+To: suyibang@hipad.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_1536397463_8185ba162bbcb91be27716feb0b459d4_=_"
+
+
+--_=_swift_v4_1536397463_8185ba162bbcb91be27716feb0b459d4_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Hello test,
+
+Follow the link below to reset your password:
+
+http=
+://frontend.test/index.php?r=3Dsite%2Freset-password&token=3D3gZ3z1Tys6ZN0K=
+gnD0nr1pWRVwo3JQ1H_1536397462
+
+--_=_swift_v4_1536397463_8185ba162bbcb91be27716feb0b459d4_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/=
+xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/ht=
+ml; charset=3DUTF-8" />
+    <title></title>
+    </head>
+<body>
+    =
+    <div class=3D"password-reset">
+    <p>Hello test,</p>
+
+    <p>Fol=
+low the link below to reset your password:</p>
+
+    <p><a href=3D"http:=
+//frontend.test/index.php?r=3Dsite%2Freset-password&amp;token=3D3gZ3z1Tys6Z=
+N0KgnD0nr1pWRVwo3JQ1H_1536397462">http://frontend.test/index.php?r=3Dsite%2=
+Freset-password&amp;token=3D3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462</a>=
+</p>
+</div>
+    </body>
+</html>
+
+
+--_=_swift_v4_1536397463_8185ba162bbcb91be27716feb0b459d4_=_--
