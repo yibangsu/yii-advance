@@ -3,6 +3,7 @@
 namespace frontend\models\project;
 
 use Yii;
+use frontend\models\company\Company;
 
 /**
  * This is the model class for table "Project".

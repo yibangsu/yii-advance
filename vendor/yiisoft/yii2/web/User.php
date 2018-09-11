@@ -12,6 +12,8 @@ use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidValueException;
 use yii\rbac\CheckAccessInterface;
+use frontend\models\userInfo\UserInfo;
+use frontend\models\project\Project;
 
 /**
  * User is the class for the `user` application component that manages the user authentication status.
@@ -151,6 +153,21 @@ class User extends Component
 
     private $_access = [];
 
+
+    /**
+     * @var to hold the company info
+     */
+    protected $userCompanyParam = '__userCompany';
+
+    /**
+     * @var to hold the project info
+     */
+    protected $userProjectParam = '__userProject';
+
+    /**
+     * @var to hold the category info
+     */
+    protected $userCategoryParam = '__userCategory';
 
     /**
      * Initializes the application component.
@@ -345,6 +362,11 @@ class User extends Component
                 Yii::$app->getSession()->destroy();
             }
             $this->afterLogout($identity);
+        }
+        // add to reset the user info
+        $cache = Yii::$app->cache;
+        if ($cache) {
+            $cache->flush();
         }
 
         return $this->getIsGuest();
@@ -790,5 +812,74 @@ class User extends Component
     protected function getAccessChecker()
     {
         return $this->accessChecker !== null ? $this->accessChecker : $this->getAuthManager();
+    }
+
+    /**
+     * Returns the company info of a user.
+     * @return UserInfo
+     * @since suyibang
+     */
+    public function getUserCompanyId()
+    {
+        if ($this->getIsGuest()) {
+            // return immediately if guest
+            return null;
+        } else {
+            // find the cache
+            $cache = Yii::$app->cache;
+            if ($cache) {
+                $companyId = $cache->get($this->userCompanyParam);
+                if ($companyId) {
+                    return $companyId;
+                } else {
+                    // find the database
+                    $userInfo = UserInfo::find()->where(['id' => $this->id, 'enable' => 'Y'])->one();
+                    if ($userInfo) {
+                        $companyId = $cache->set($this->userCompanyParam, $userInfo->company_id);
+                        return $userInfo->company_id;
+                     }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Set the resently project infos of a user.
+     * @param string `projectId`
+     * @since suyibang
+     */
+    public function setCurrentProject($projectId = null)
+    {
+        if ($this->getIsGuest()) {
+            // return immediately if guest
+            return;
+        } 
+
+        $cache = Yii::$app->cache;
+        if ($cache) {
+            $cache->set($this->userProjectParam, $projectId);
+        }
+    }
+
+    /**
+     * Returns the resently project infos of a user.
+     * @return UserInfo
+     * @since suyibang
+     */
+    public function getCurrentProject()
+    {
+        if ($this->getIsGuest()) {
+            // return immediately if guest
+            return null;
+        } 
+
+        $cache = Yii::$app->cache;
+        if ($cache) {
+            return $cache->get($this->userProjectParam);
+        }
+
+        return null;
     }
 }

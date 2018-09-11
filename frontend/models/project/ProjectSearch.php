@@ -1,16 +1,16 @@
 <?php
 
-namespace frontend\models\company;
+namespace frontend\models\project;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\company\Company;
+use frontend\models\project\Project;
 
 /**
- * CompanySearch represents the model behind the search form of `frontend\models\company\Company`.
+ * ProjectSearch represents the model behind the search form of `frontend\models\project\Project`.
  */
-class CompanySearch extends Company
+class ProjectSearch extends Project
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class CompanySearch extends Company
     public function rules()
     {
         return [
-            [['c_id'], 'integer'],
-            [['c_name', 'c_site', 'c_desc'], 'safe'],
+            [['pj_id', 'pj_c_id'], 'integer'],
+            [['pj_name', 'pj_desc'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class CompanySearch extends Company
      */
     public function search($params)
     {
-        $query = Company::find();
+        $query = Project::find();
 
         // add conditions that should always apply here
         $userCompanyId = Yii::$app->user->getUserCompanyId();
@@ -58,17 +58,16 @@ class CompanySearch extends Company
             return $dataProvider;
         }
 
-        // select the company with user info
-        $query->where(['c_id' => $userCompanyId]);
+        $query->where(['pj_c_id' => $userCompanyId]);
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'c_id' => $this->c_id,
+            'pj_id' => $this->pj_id,
+            'pj_c_id' => $this->pj_c_id,
         ]);
 
-        $query->andFilterWhere(['like', 'c_name', $this->c_name])
-            ->andFilterWhere(['like', 'c_site', $this->c_site])
-            ->andFilterWhere(['like', 'c_desc', $this->c_desc]);
+        $query->andFilterWhere(['like', 'pj_name', $this->pj_name])
+            ->andFilterWhere(['like', 'pj_desc', $this->pj_desc]);
 
         return $dataProvider;
     }

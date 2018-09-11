@@ -3,16 +3,18 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\company\Company;
-use frontend\models\company\CompanySearch;
+use frontend\models\project\Project;
+use frontend\models\project\ProjectSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\helpers\Url;
+
 /**
- * CompanyController implements the CRUD actions for Company model.
+ * ProjectController implements the CRUD actions for Project model.
  */
-class CompanyController extends Controller
+class ProjectController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -29,13 +31,27 @@ class CompanyController extends Controller
         ];
     }
 
+    public function beforeAction($action)
+    {
+        // your custom code here, if you want the code to run before action filters,
+        // which are triggered on the [[EVENT_BEFORE_ACTION]] event, e.g. PageCache or AccessControl
+
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+        // other custom code here
+
+        return true; // or false to not run the action
+    }
+
     /**
-     * Lists all Company models.
+     * Lists all Project models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CompanySearch();
+        $searchModel = new ProjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -44,19 +60,19 @@ class CompanyController extends Controller
         ]);
     }
 
-    /**
-     * Go to next web page.
+    /* Go to next web page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionNext($id)
     {
-        return $this->redirect(['project/index']);
+        Yii::$app->user->setCurrentProject($id);
+        return $this->redirect(['category/index']);
     }
 
     /**
-     * Displays a single Company model.
+     * Displays a single Project model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -69,16 +85,16 @@ class CompanyController extends Controller
     }
 
     /**
-     * Creates a new Company model.
+     * Creates a new Project model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Company();
+        $model = new Project();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->c_id]);
+            return $this->redirect(['view', 'id' => $model->pj_id]);
         }
 
         return $this->render('create', [
@@ -87,7 +103,7 @@ class CompanyController extends Controller
     }
 
     /**
-     * Updates an existing Company model.
+     * Updates an existing Project model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +114,7 @@ class CompanyController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->c_id]);
+            return $this->redirect(['view', 'id' => $model->pj_id]);
         }
 
         return $this->render('update', [
@@ -107,7 +123,7 @@ class CompanyController extends Controller
     }
 
     /**
-     * Deletes an existing Company model.
+     * Deletes an existing Project model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,15 +137,15 @@ class CompanyController extends Controller
     }
 
     /**
-     * Finds the Company model based on its primary key value.
+     * Finds the Project model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Company the loaded model
+     * @return Project the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Company::findOne($id)) !== null) {
+        if (($model = Project::findOne($id)) !== null) {
             return $model;
         }
 
