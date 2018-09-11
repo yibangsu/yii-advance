@@ -52,7 +52,12 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
-        return $user->save() ? $user : null;
+        if (YII_ENV === 'dev') {
+            return $user->save() ? $user : null;
+        } else {
+            // todo
+            // signup action in prod 
+            return null;
+        }
     }
 }

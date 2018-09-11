@@ -142,6 +142,7 @@ class ActionColumn extends Column
      */
     protected function initDefaultButtons()
     {
+        $this->initDefaultButton('next', 'fullscreen');
         $this->initDefaultButton('view', 'eye-open');
         $this->initDefaultButton('update', 'pencil');
         $this->initDefaultButton('delete', 'trash', [
