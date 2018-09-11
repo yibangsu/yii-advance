@@ -2071,3 +2071,402 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1536404958.712
     'REQUEST_TIME' => 1536404958
 ]
+2018-09-10 01:40:17 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 01:40:17 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq\";}'
+    'advanced-frontend' => 'ot5og3tbo189k5drkkhcs0ehk6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=company%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq%22%3B%7D; advanced-frontend=ot5og3tbo189k5drkkhcs0ehk6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '34578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536543617.469
+    'REQUEST_TIME' => 1536543617
+]
+2018-09-10 01:40:18 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 01:40:18 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq\";}'
+    'advanced-frontend' => 'ot5og3tbo189k5drkkhcs0ehk6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=company%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq%22%3B%7D; advanced-frontend=ot5og3tbo189k5drkkhcs0ehk6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '34580'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536543618.431
+    'REQUEST_TIME' => 1536543618
+]
+2018-09-10 01:40:19 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 01:40:19 [127.0.0.1][1][ot5og3tbo189k5drkkhcs0ehk6][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq\";}'
+    'advanced-frontend' => 'ot5og3tbo189k5drkkhcs0ehk6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=company%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=3240fd5b1b381f298ab5d973988abfc94a90faee44c3d3d486840175dfee7f54a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22KNEwE8FRlR78ggKhYOO53n0BWBqi5YNq%22%3B%7D; advanced-frontend=ot5og3tbo189k5drkkhcs0ehk6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '34580'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536543619.22
+    'REQUEST_TIME' => 1536543619
+]
+2018-09-10 03:02:38 [127.0.0.1][2][0uuq5epho1ofrcedlev22c52b7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 03:02:38 [127.0.0.1][2][0uuq5epho1ofrcedlev22c52b7][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '0uuq5epho1ofrcedlev22c52b7'
+    '_csrf-frontend' => 'cd2ea954bc06e51c6ea8d091860812a2a45a79ef85942b003b542cc980f63ceda:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"NsnhZsUH5zeQJO9jV3xTAo95fZQ57Ell\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=0uuq5epho1ofrcedlev22c52b7; _csrf-frontend=cd2ea954bc06e51c6ea8d091860812a2a45a79ef85942b003b542cc980f63ceda%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22NsnhZsUH5zeQJO9jV3xTAo95fZQ57Ell%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38508'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536548558.344
+    'REQUEST_TIME' => 1536548558
+]
+2018-09-10 03:03:26 [127.0.0.1][2][mrhgvjfst5cubmglc8bqgo2ao1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 03:03:26 [127.0.0.1][2][mrhgvjfst5cubmglc8bqgo2ao1][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'mrhgvjfst5cubmglc8bqgo2ao1'
+    '_csrf-frontend' => 'ea5439b7ecf506c7136cdb6fe17810c48220884d0e58a3977b9a4d45bcb1df37a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"0hAhzLvt6ViOB84txqOLenpbV6ztmaXo\";}'
+    '_identity-frontend' => '9c67aef2a70858382565bbe8b9d345f438192829c933113aecb303c0672d84d2a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'yHuNHwRStbR1-rLRbtb-nCJ1fGnSgn-2'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=mrhgvjfst5cubmglc8bqgo2ao1; _csrf-frontend=ea5439b7ecf506c7136cdb6fe17810c48220884d0e58a3977b9a4d45bcb1df37a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220hAhzLvt6ViOB84txqOLenpbV6ztmaXo%22%3B%7D; _identity-frontend=9c67aef2a70858382565bbe8b9d345f438192829c933113aecb303c0672d84d2a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38536'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536548606.217
+    'REQUEST_TIME' => 1536548606
+]
+2018-09-10 03:03:28 [127.0.0.1][2][mrhgvjfst5cubmglc8bqgo2ao1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "company/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('company/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-10 03:03:28 [127.0.0.1][2][mrhgvjfst5cubmglc8bqgo2ao1][info][application] $_GET = [
+    'r' => 'company/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'mrhgvjfst5cubmglc8bqgo2ao1'
+    '_csrf-frontend' => 'ea5439b7ecf506c7136cdb6fe17810c48220884d0e58a3977b9a4d45bcb1df37a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"0hAhzLvt6ViOB84txqOLenpbV6ztmaXo\";}'
+    '_identity-frontend' => '9c67aef2a70858382565bbe8b9d345f438192829c933113aecb303c0672d84d2a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'yHuNHwRStbR1-rLRbtb-nCJ1fGnSgn-2'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=company%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=mrhgvjfst5cubmglc8bqgo2ao1; _csrf-frontend=ea5439b7ecf506c7136cdb6fe17810c48220884d0e58a3977b9a4d45bcb1df37a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220hAhzLvt6ViOB84txqOLenpbV6ztmaXo%22%3B%7D; _identity-frontend=9c67aef2a70858382565bbe8b9d345f438192829c933113aecb303c0672d84d2a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38536'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Findex'
+    'REQUEST_URI' => '/index.php?r=company%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536548608.287
+    'REQUEST_TIME' => 1536548608
+]

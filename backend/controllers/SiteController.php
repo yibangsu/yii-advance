@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use yii\web\ForbiddenHttpException;
 
 /**
  * Site controller
@@ -32,6 +33,7 @@ class SiteController extends Controller
                     ],
                 ],
             ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -41,6 +43,19 @@ class SiteController extends Controller
         ];
     }
 
+/*
+    public function beforeAction($event)
+    {
+        Yii::warning(__FUNCTION__ . ": begin");
+        if (!Yii::$app->user->can('accessAdmin')) {
+            //throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+            Yii::warning(__FUNCTION__ . ": You are not allowed to perform this action.");
+            //return false;
+        }
+        return true;
+    }
+*/
+
     /**
      * {@inheritdoc}
      */
@@ -49,6 +64,7 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'layout' => 'main-login',
             ],
         ];
     }
@@ -60,6 +76,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if (Yii::$app->user->isGuest) {
+            return $this->actionLogin();
+        }
+
         return $this->render('index');
     }
 
@@ -78,8 +98,9 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
-            $model->password = '';
+            $model->reset();
 
+            $this->layout = 'main-login';
             return $this->render('login', [
                 'model' => $model,
             ]);
