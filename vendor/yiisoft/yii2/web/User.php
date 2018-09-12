@@ -366,7 +366,9 @@ class User extends Component
         // add to reset the user info
         $cache = Yii::$app->cache;
         if ($cache) {
-            $cache->flush();
+            $cache->delete($this->userCompanyParam . $this->id);
+            $cache->delete($this->userProjectParam . $this->id);
+            $cache->delete($this->userCategoryParam . $this->id);
         }
 
         return $this->getIsGuest();
@@ -828,14 +830,15 @@ class User extends Component
             // find the cache
             $cache = Yii::$app->cache;
             if ($cache) {
-                $companyId = $cache->get($this->userCompanyParam);
+                $curCompanyId = $this->userCompanyParam . $this->id;
+                $companyId = $cache->get($curCompanyId);
                 if ($companyId) {
                     return $companyId;
                 } else {
                     // find the database
                     $userInfo = UserInfo::find()->where(['id' => $this->id, 'enable' => 'Y'])->one();
                     if ($userInfo) {
-                        $companyId = $cache->set($this->userCompanyParam, $userInfo->company_id);
+                        $companyId = $cache->set($curCompanyId, $userInfo->company_id);
                         return $userInfo->company_id;
                      }
                 }
@@ -859,7 +862,7 @@ class User extends Component
 
         $cache = Yii::$app->cache;
         if ($cache) {
-            $cache->set($this->userProjectParam, $projectId);
+            $cache->set($this->userProjectParam . $this->id, $projectId);
         }
     }
 
@@ -877,7 +880,7 @@ class User extends Component
 
         $cache = Yii::$app->cache;
         if ($cache) {
-            return $cache->get($this->userProjectParam);
+            return $cache->get($this->userProjectParam. $this->id);
         }
 
         return null;
