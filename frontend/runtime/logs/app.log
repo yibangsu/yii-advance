@@ -14936,3 +14936,1739 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1536744249.981
     'REQUEST_TIME' => 1536744249
 ]
+2018-09-12 11:27:41 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'frontend\models\publish\Software' not found' in /data/suyibang/yii-application/frontend/models/publish/SoftwarePublish.php:38
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-09-12 11:27:41 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'tHXonS1xk8e4Hb0fRJlL79B9idRrdRicTFMAYWyC00yGE43vfijhnu1wyF139C-J5xDuph9NQukiHEsLP_KYKw=='
+    'Generator' => [
+        'modelClass' => 'frontend\\models\\publish\\SoftwarePublish'
+        'searchModelClass' => 'frontend\\models\\publish\\SoftwarePublishSearch'
+        'controllerClass' => 'frontend\\controllers\\PublishController'
+        'viewPath' => '@app/views/publish'
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '1'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'preview' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '640'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '42366'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536751661.478
+    'REQUEST_TIME' => 1536751661
+]
+2018-09-12 11:37:43 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'frontend\models\upload\Model' not found' in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:8
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-09-12 11:37:43 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '42638'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536752263.666
+    'REQUEST_TIME' => 1536752263
+]
+2018-09-12 11:38:31 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: /data/suyibang/yii-application/frontend/views/upload/upload.php' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/View.php:233
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/suyibang/...', Array, Object(frontend\controllers\UploadController))
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(384): yii\base\View->render('upload', Array, Object(frontend\controllers\UploadController))
+#2 /data/suyibang/yii-application/frontend/controllers/UploadController.php(24): yii\base\Controller->render('upload', Array)
+#3 [internal function]: frontend\controllers\UploadController->actionIndex()
+#4 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+2018-09-12 11:38:31 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '42654'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536752311.498
+    'REQUEST_TIME' => 1536752311
+]
+2018-09-12 11:40:24 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phpFSpRdU', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(25): yii\web\UploadedFile->saveAs('uploads/SystemU...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 11:40:24 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'u8P-MEOytgaRVe0V2eN2ngw12x66jtWdnmsjkfG3jzuJpZtCEOvEX8Q4mFfqjhL4O1i8bM62j-jwJGj7osfEXA=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpFSpRdU'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryYdMFRJAmlkIE8ocJ'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '42716'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536752424.276
+    'REQUEST_TIME' => 1536752424
+]
+2018-09-12 11:43:27 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'copy(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:166
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'copy(uploads/Sy...', '/data/suyibang/...', 166, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(166): copy('/tmp/phpP5jTpu', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(25): yii\web\UploadedFile->saveAs('uploads/SystemU...', false)
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 11:43:27 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'QEw2Uy5CHC519Dr9PhFxBHxXG4FwZU3_sfnbIy0PYvZyKlMhfRtudyCZT78NfBViSzp88wRdF4rftpBJfn8pkQ=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpP5jTpu'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryJ3G1tKx1oOp8pB2W'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '42856'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536752607.043
+    'REQUEST_TIME' => 1536752607
+]
+2018-09-12 11:54:33 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpnIuR5J'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:54:33 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'QEw2Uy5CHC519Dr9PhFxBHxXG4FwZU3_sfnbIy0PYvZyKlMhfRtudyCZT78NfBViSzp88wRdF4rftpBJfn8pkQ=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpnIuR5J'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryJ3G1tKx1oOp8pB2W'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43302'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753273.702
+    'REQUEST_TIME' => 1536753273
+]
+2018-09-12 11:54:50 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpPK3DTC'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:54:50 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'QEw2Uy5CHC519Dr9PhFxBHxXG4FwZU3_sfnbIy0PYvZyKlMhfRtudyCZT78NfBViSzp88wRdF4rftpBJfn8pkQ=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpPK3DTC'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryJ3G1tKx1oOp8pB2W'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43310'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753290.356
+    'REQUEST_TIME' => 1536753290
+]
+2018-09-12 11:54:52 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpnXR4ut'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:54:52 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'QEw2Uy5CHC519Dr9PhFxBHxXG4FwZU3_sfnbIy0PYvZyKlMhfRtudyCZT78NfBViSzp88wRdF4rftpBJfn8pkQ=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpnXR4ut'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryJ3G1tKx1oOp8pB2W'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43310'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753292.374
+    'REQUEST_TIME' => 1536753292
+]
+2018-09-12 11:55:01 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpxvzIhV'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:55:01 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'JGnoKi7WtvXNNAMIcbictQYlnCm0lyN5TTVsCNW_rzwWD41YfY_ErJhZdkpC1fjTMUj7W8CveQwjeidihs_kWw=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpxvzIhV'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryEnGKW1mdQr538ILO'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43310'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753301.836
+    'REQUEST_TIME' => 1536753301
+]
+2018-09-12 11:55:25 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpRZmLc1'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:55:25 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'N9tbyxFmaDddtYRyClYzCDTfePVzeGBEOKIRMDNIu6gFvT65Qj8abgjY8TA5O1duA7IfhwdAOjFW7VpaYDjwzw=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpRZmLc1'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryNxxvcZwRsildoEIz'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43330'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753325.39
+    'REQUEST_TIME' => 1536753325
+]
+2018-09-12 11:59:32 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpd97TvH'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 11:59:32 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phpd97TvH', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('uploads/SystemU...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 11:59:32 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'gl9LJrM5SzVoc9tH1XSalTbRgLBj0XcXfyR4tca_EqGwOS5U4GA5bD0ergXmGf7zAbznwhfpLWIRazPflc9Zxg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpd97TvH'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryrCdzLab858lpGIza'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43620'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753572.825
+    'REQUEST_TIME' => 1536753572
+]
+2018-09-12 12:01:54 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpbtFrWj'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:01:54 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phpbtFrWj', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('uploads/SystemU...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 12:01:54 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'gl9LJrM5SzVoc9tH1XSalTbRgLBj0XcXfyR4tca_EqGwOS5U4GA5bD0ergXmGf7zAbznwhfpLWIRazPflc9Zxg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpbtFrWj'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryrCdzLab858lpGIza'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43688'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753714.112
+    'REQUEST_TIME' => 1536753714
+]
+2018-09-12 12:03:41 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpHsi7jr'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:03:41 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phpHsi7jr', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('uploads/SystemU...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 12:03:41 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'gl9LJrM5SzVoc9tH1XSalTbRgLBj0XcXfyR4tca_EqGwOS5U4GA5bD0ergXmGf7zAbznwhfpLWIRazPflc9Zxg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpHsi7jr'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryrCdzLab858lpGIza'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43724'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753821.15
+    'REQUEST_TIME' => 1536753821
+]
+2018-09-12 12:03:52 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpYWzPca'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:03:52 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phpYWzPca', 'uploads/SystemU...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('uploads/SystemU...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 12:03:52 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'Kbf7iZtpxTbNEFtXT3pv1NGCh2679Ewc8ts7V7waU8kb0Z77yDC3b5h9LhV8Fwuy5u_gHM_MFmmclHA972oYrg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpYWzPca'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryl2zOqtMHAruZ17eN'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43728'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753832.572
+    'REQUEST_TIME' => 1536753832
+]
+2018-09-12 12:06:02 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phphgo8AN'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:06:02 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(/uploads/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/phphgo8AN', '/uploads/System...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('/uploads/System...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 12:06:02 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'jjo4dlalNhmhkz02yw3XPxGhPJJHjj_4wDn60PYpQUS8XF0EBfxEQPT-SHT4YLNZJsxb4DO2ZY2udrG6pVkKIw=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phphgo8AN'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryZE4Dv42ByYaMkBdk'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43818'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753962.316
+    'REQUEST_TIME' => 1536753962
+]
+2018-09-12 12:06:29 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpjohsrX'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:06:29 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => '_eBCsNSwjbCV2SWAgSxUJlV4zmVPOvPQoDwV6-ridxHPhifCh-n_6cC0UMKyQTBAYhWpFzsCqaXOc16BuZI8dg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpjohsrX'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryC5OTz9BTxhqiTZRd'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43832'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536753989.539
+    'REQUEST_TIME' => 1536753989
+]
+2018-09-12 12:08:48 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phppL4ikS'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:08:48 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => '_eBCsNSwjbCV2SWAgSxUJlV4zmVPOvPQoDwV6-ridxHPhifCh-n_6cC0UMKyQTBAYhWpFzsCqaXOc16BuZI8dg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phppL4ikS'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryC5OTz9BTxhqiTZRd'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43914'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536754128.731
+    'REQUEST_TIME' => 1536754128
+]
+2018-09-12 12:09:02 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/phpHQFH58'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:09:02 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'uqZ7L5NsVgnhqWDdgq2JBBkafsSmpGsjMcTHC572c3GIwB5dwDUkULTEFZ-xwO1iLncZttKcMVZfi4xhzYY4Fg=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/phpHQFH58'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryHAayyhppXjpCgMQc'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43924'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536754142.129
+    'REQUEST_TIME' => 1536754142
+]
+2018-09-12 12:09:25 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][warning][application] name='SystemUI.apk.zip', tempName='/tmp/php0Qa2Te'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:09:25 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(/data/suyibang/yii-application/frontend/runtime/upload/SystemUI.apk.zip): failed to open stream: No such file or directory' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php:164
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', '/data/suyibang/...', 164, Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/UploadedFile.php(164): move_uploaded_file('/tmp/php0Qa2Te', '/data/suyibang/...')
+#2 /data/suyibang/yii-application/frontend/models/upload/UploadForm.php(28): yii\web\UploadedFile->saveAs('/data/suyibang/...')
+#3 /data/suyibang/yii-application/frontend/controllers/UploadController.php(18): frontend\models\upload\UploadForm->upload()
+#4 [internal function]: frontend\controllers\UploadController->actionIndex()
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('upload', Array)
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2018-09-12 12:09:25 [127.0.0.1][1][g8d41nom40n9d9aqnb10dtbat0][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'q5tiQMUoBIGzqDlFR88VUrAV2-y8yj4EVlztGKzKKoaZ_QcylnF22ObFTAd0onE0h3i8nsjyZHE4E6Zy_7ph4Q=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/php0Qa2Te'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryXYx36s0HAVaQo5d1'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43936'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536754165.102
+    'REQUEST_TIME' => 1536754165
+]
+2018-09-12 12:09:44 [127.0.0.1][1][-][warning][application] name='SystemUI.apk.zip', tempName='/tmp/php1mmvIw'
+    in /data/suyibang/yii-application/frontend/models/upload/UploadForm.php:27
+    in /data/suyibang/yii-application/frontend/controllers/UploadController.php:18
+2018-09-12 12:09:44 [127.0.0.1][1][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'q5tiQMUoBIGzqDlFR88VUrAV2-y8yj4EVlztGKzKKoaZ_QcylnF22ObFTAd0onE0h3i8nsjyZHE4E6Zy_7ph4Q=='
+    'UploadForm' => [
+        'imageFile' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'imageFile' => 'SystemUI.apk.zip'
+        ]
+        'type' => [
+            'imageFile' => 'application/zip'
+        ]
+        'tmp_name' => [
+            'imageFile' => '/tmp/php1mmvIw'
+        ]
+        'error' => [
+            'imageFile' => 0
+        ]
+        'size' => [
+            'imageFile' => 1771439
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'g8d41nom40n9d9aqnb10dtbat0'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1771948'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryXYx36s0HAVaQo5d1'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=upload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=g8d41nom40n9d9aqnb10dtbat0; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '43940'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/index.php?r=upload'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536754184.053
+    'REQUEST_TIME' => 1536754184
+]
