@@ -5,12 +5,14 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\company\Company */
 
-$this->title = Yii::t('app', 'Update Company: ' . $model->c_id, [
-    'nameAttribute' => '' . $model->c_id,
+$this->title = Yii::t('app', 'Update Company: ' . $model->c_name, [
+    'nameAttribute' => '' . $model->c_name,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->c_id, 'url' => ['view', 'id' => $model->c_id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+//$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
+// custom breadcrumbs with level
+$breadcrumbsLevel = 1;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="company-update">
 

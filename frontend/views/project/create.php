@@ -2,13 +2,14 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model frontend\models\project\Project */
-
 $this->title = Yii::t('app', 'Create Project');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Projects'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
+// custom breadcrumbs with level
+$breadcrumbsLevel = 2;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="project-create">
 

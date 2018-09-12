@@ -14,6 +14,7 @@ use yii\base\InvalidValueException;
 use yii\rbac\CheckAccessInterface;
 use frontend\models\userInfo\UserInfo;
 use frontend\models\project\Project;
+use frontend\models\company\Company;
 
 /**
  * User is the class for the `user` application component that manages the user authentication status.
@@ -158,16 +159,19 @@ class User extends Component
      * @var to hold the company info
      */
     protected $userCompanyParam = '__userCompany';
+    protected $userCompanyName = '__userCompanyName';
 
     /**
      * @var to hold the project info
      */
     protected $userProjectParam = '__userProject';
+    protected $userProjectName = '__userProjectName';
 
     /**
      * @var to hold the category info
      */
     protected $userCategoryParam = '__userCategory';
+    protected $userCategoryName = '__userCategoryName';
 
     /**
      * Initializes the application component.
@@ -369,6 +373,10 @@ class User extends Component
             $cache->delete($this->userCompanyParam . $this->id);
             $cache->delete($this->userProjectParam . $this->id);
             $cache->delete($this->userCategoryParam . $this->id);
+
+            $cache->delete($this->userCompanyName . $this->id);
+            $cache->delete($this->userProjectName . $this->id);
+            $cache->delete($this->userCategoryName . $this->id);
         }
 
         return $this->getIsGuest();
@@ -817,7 +825,7 @@ class User extends Component
     }
 
     /**
-     * Returns the company info of a user.
+     * Returns the company id of a user.
      * @return UserInfo
      * @since suyibang
      */
@@ -849,11 +857,47 @@ class User extends Component
     }
 
     /**
-     * Set the resently project infos of a user.
-     * @param string `projectId`
+     * Returns the company name of a user.
+     * @return UserInfo
      * @since suyibang
      */
-    public function setCurrentProject($projectId = null)
+    public function getUserCompanyName()
+    {
+        if ($this->getIsGuest()) {
+            // return immediately if guest
+            return null;
+        } else {
+            // find the cache
+            $cache = Yii::$app->cache;
+            if ($cache) {
+                $curCompany = $this->userCompanyName . $this->id;
+                $company = $cache->get($curCompany);
+                if ($company) {
+                    return $company;
+                } else {
+                    // find the database
+                    $companyId = $this->getUserCompanyId();
+                    if ($companyId) {
+                        $data = Company::find()->where(['c_id' => $companyId])->one();
+                        if ($data) {
+                            $company =  $cache->set($curCompany, $data->c_name);
+                            return $data->c_name;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Set cache of a user.
+     * @param string `name`, cache index
+     * @param string `value`, cache value
+     * @since suyibang
+     */
+    public function setUserCache($name, $value)
     {
         if ($this->getIsGuest()) {
             // return immediately if guest
@@ -862,16 +906,16 @@ class User extends Component
 
         $cache = Yii::$app->cache;
         if ($cache) {
-            $cache->set($this->userProjectParam . $this->id, $projectId);
+            $cache->set($name . $this->id, $value);
         }
     }
 
     /**
-     * Returns the resently project infos of a user.
+     * Returns the resently project id of a user.
      * @return UserInfo
      * @since suyibang
      */
-    public function getCurrentProject()
+    public function getUserCache($name)
     {
         if ($this->getIsGuest()) {
             // return immediately if guest
@@ -880,7 +924,7 @@ class User extends Component
 
         $cache = Yii::$app->cache;
         if ($cache) {
-            return $cache->get($this->userProjectParam. $this->id);
+            return $cache->get($name . $this->id);
         }
 
         return null;

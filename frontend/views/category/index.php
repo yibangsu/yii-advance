@@ -8,10 +8,14 @@ use yii\helpers\Url;
 /* @var $searchModel frontend\models\category\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Categories');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => Url::toRoute('company/index')];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Projects'), 'url' => Url::toRoute('project/index')];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = Yii::t('app', 'Categories');
+$projectName = Yii::$app->user->getUserCache('projectName');
+$this->title = $projectName? $projectName: Yii::t('app', 'Categories');
+
+// custom breadcrumbs with level
+$breadcrumbsLevel = 2;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="category-index">
 
@@ -41,6 +45,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'update' => Yii::$app->user->canEdit("add company"),
                     //'delete' => Yii::$app->user->canEdit("add company"),
                 ],
+                'urlCreator' => function ($action, $model, $key, $index, $this) {
+                    $params = is_array($key) ? $key : ['id' => (string) $key];
+                    $params[0] = $this->context->id . '/' . $action; 
+                    $params['name'] = Html::encode($model->cp_name);
+
+                    return Url::toRoute($params);
+                },
             ],
         ],
     ]); ?>

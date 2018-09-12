@@ -6,9 +6,12 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\company\Company */
 
-$this->title = $model->c_id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = $model->c_name;
+//$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
+// custom breadcrumbs with level
+$breadcrumbsLevel = 1;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="company-view">
 

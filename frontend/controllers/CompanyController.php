@@ -50,7 +50,7 @@ class CompanyController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionNext($id)
+    public function actionNext($id, $name)
     {
         return $this->redirect(['project/index']);
     }

@@ -7,8 +7,11 @@ use yii\helpers\Html;
 /* @var $model frontend\models\category\Category */
 
 $this->title = Yii::t('app', 'Create Category');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
+// custom breadcrumbs with level
+$breadcrumbsLevel = 3;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="category-create">
 

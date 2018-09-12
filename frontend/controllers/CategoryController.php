@@ -49,9 +49,11 @@ class CategoryController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionNext($id)
+    public function actionNext($id, $name)
     {
-        return $this->redirect(['puid/index']);
+        Yii::$app->user->setUserCache('categoryId', $id);
+        Yii::$app->user->setUserCache('categoryName', $name);
+        return $this->redirect(['product-info/index']);
     }
 
     /**

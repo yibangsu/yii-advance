@@ -8,9 +8,14 @@ use yii\helpers\Url;
 /* @var $searchModel frontend\models\project\ProjectSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Projects');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => Url::toRoute('company/index')];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = Yii::t('app', 'Projects');
+$companyName = Yii::$app->user->getUserCompanyName();
+$this->title = $companyName? $companyName: Yii::t('app', 'Projects');
+
+// custom breadcrumbs with level
+$breadcrumbsLevel = 1;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="project-index">
 
@@ -41,6 +46,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'update' => Yii::$app->user->canEdit(ProjectSearch::tableName()),
                     //'delete' => Yii::$app->user->canEdit(ProjectSearch::tableName()),
                  ],
+                 'urlCreator' => function ($action, $model, $key, $index, $this) {
+                    $params = is_array($key) ? $key : ['id' => (string) $key];
+                    $params[0] = $this->context->id . '/' . $action; 
+                    $params['name'] = Html::encode($model->pj_name);
+
+                    return Url::toRoute($params);
+                },
             ],
         ],
     ]); ?>

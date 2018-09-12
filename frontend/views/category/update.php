@@ -5,12 +5,14 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\category\Category */
 
-$this->title = Yii::t('app', 'Update Category: ' . $model->cp_id, [
-    'nameAttribute' => '' . $model->cp_id,
+$this->title = Yii::t('app', 'Update Category: ' . $model->cp_name, [
+    'nameAttribute' => '' . $model->cp_name,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->cp_id, 'url' => ['view', 'id' => $model->cp_id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+
+// custom breadcrumbs with level
+$breadcrumbsLevel = 3;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="category-update">
 

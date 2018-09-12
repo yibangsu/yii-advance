@@ -44,7 +44,7 @@ class CategorySearch extends Category
         $query = Category::find();
 
         // add conditions that should always apply here
-        $projectId = Yii::$app->user->getCurrentProject();
+        $projectId = Yii::$app->user->getUserCache('projectId');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

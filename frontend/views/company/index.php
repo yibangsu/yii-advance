@@ -3,12 +3,17 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\company\CompanySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Companies');
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
+// custom breadcrumbs with level
+$breadcrumbsLevel = 0;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 ?>
 <div class="company-index">
 
@@ -40,6 +45,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'update' => Yii::$app->user->canEdit("add company"),
                     //'delete' => Yii::$app->user->canEdit("add company"),
                 ],
+                'urlCreator' => function ($action, $model, $key, $index, $this) {
+                    $params = is_array($key) ? $key : ['id' => (string) $key];
+                    $params['name'] = Html::encode($model->c_name);
+                    $params[0] = $this->context->id . '/' . $action; 
+
+                    return Url::toRoute($params);
+                },
             ],
         ],
     ]); ?>
