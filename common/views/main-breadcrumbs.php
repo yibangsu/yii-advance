@@ -5,6 +5,7 @@ use yii\helpers\Url;
 $companyName = Yii::$app->user->getUserCompanyName();
 $projectName = Yii::$app->user->getUserCache('projectName');
 $categoryName = Yii::$app->user->getUserCache('categoryName');
+$puidName = Yii::$app->user->getUserCache('puidName');
 $fullBreadcrumbs[] = [
                          'label' => Yii::t('app', 'Companies'), 
                          'url' => Url::toRoute('company/index')
@@ -20,6 +21,10 @@ $fullBreadcrumbs[] = [
 $fullBreadcrumbs[] = [
                          'label' => $categoryName? $categoryName: Yii::t('app', 'PUID'), 
                          'url' => ['product-info/index']
+                     ];
+$fullBreadcrumbs[] = [
+                         'label' => $puidName? $puidName: Yii::t('app', 'PUID'), 
+                         'url' => ['software/index']
                      ];
 
 if ($breadcrumbsLevel) {

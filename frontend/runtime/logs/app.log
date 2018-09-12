@@ -14633,3 +14633,306 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1536735587.221
     'REQUEST_TIME' => 1536735587
 ]
+2018-09-12 08:59:27 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: parent' in /data/suyibang/yii-application/frontend/models/puid/ProductInfo.php:68
+Stack trace:
+#0 /data/suyibang/yii-application/frontend/models/puid/ProductInfo.php(68): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/data/suyibang/...', 68, Array)
+#1 /data/suyibang/yii-application/frontend/models/puid/ProductInfoSearch.php(53): frontend\models\puid\ProductInfo->load(Array)
+#2 /data/suyibang/yii-application/frontend/controllers/ProductInfoController.php(39): frontend\models\puid\ProductInfoSearch->search(Array)
+#3 [internal function]: frontend\controllers\ProductInfoController->actionIndex()
+#4 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('product-info/in...', Array)
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+2018-09-12 08:59:27 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][info][application] $_GET = [
+    'r' => 'product-info/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'bpiuj9aorjj0crmp7s37f4e5r6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=product-info%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=bpiuj9aorjj0crmp7s37f4e5r6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38564'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=product-info%2Findex'
+    'REQUEST_URI' => '/index.php?r=product-info%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536742767.371
+    'REQUEST_TIME' => 1536742767
+]
+2018-09-12 09:02:35 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in /data/suyibang/yii-application/frontend/models/puid/ProductInfo.php:68
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-09-12 09:02:35 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][info][application] $_GET = [
+    'r' => 'product-info/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'bpiuj9aorjj0crmp7s37f4e5r6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=product-info%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=bpiuj9aorjj0crmp7s37f4e5r6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38908'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=product-info%2Findex'
+    'REQUEST_URI' => '/index.php?r=product-info%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536742955.232
+    'REQUEST_TIME' => 1536742955
+]
+2018-09-12 09:03:38 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`test`.`Product_Info`, CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `User` (`u_id`))' in /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Schema.php(433): yii\db\Command->execute()
+#3 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/ActiveRecord.php(549): yii\db\Schema->insert('<span class="st...', '[<span class="s...')
+#4 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/ActiveRecord.php(515): yii\db\ActiveRecord->insertInternal('<span class="ke...')
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/BaseActiveRecord.php(670): yii\db\ActiveRecord->insert('<span class="ke...', '<span class="ke...')
+#6 /data/suyibang/yii-application/frontend/controllers/ProductInfoController.php(69): yii\db\BaseActiveRecord->save()
+#7 [internal function]: frontend\controllers\ProductInfoController->actionCreate()
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#10 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#11 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#12 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`test`.`Product_Info`, CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `User` (`u_id`))
+The SQL being executed was: INSERT INTO `Product_Info` (`pi_id`, `PUID`, `pi_cp_id`, `cp_used`, `pi_date`, `pi_u_id`) VALUES (3, 'QS5509-FOTATEST1', 1, 1, '0', 1)' in /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `Pr...')
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/Schema.php(433): yii\db\Command->execute()
+#3 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/ActiveRecord.php(549): yii\db\Schema->insert('<span class="st...', '[<span class="s...')
+#4 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/ActiveRecord.php(515): yii\db\ActiveRecord->insertInternal('<span class="ke...')
+#5 /data/suyibang/yii-application/vendor/yiisoft/yii2/db/BaseActiveRecord.php(670): yii\db\ActiveRecord->insert('<span class="ke...', '<span class="ke...')
+#6 /data/suyibang/yii-application/frontend/controllers/ProductInfoController.php(69): yii\db\BaseActiveRecord->save()
+#7 [internal function]: frontend\controllers\ProductInfoController->actionCreate()
+#8 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#9 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#10 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#11 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#12 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`test`.`Product_Info`, CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `User` (`u_id`))
+)
+
+2018-09-12 09:03:38 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][info][application] $_GET = [
+    'r' => 'product-info/create'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'DHWp_G7rL_6nVFXxMea_xCDWjmob3IZ5oJH8FZ1J03g-E8yOPbJdp_I5ILMCi9uiF7vpGG_k3AzO3rd_zjmYHw=='
+    'ProductInfo' => [
+        'pi_id' => '3'
+        'PUID' => 'QS5509-FOTATEST1'
+        'pi_cp_id' => '1'
+        'cp_used' => '1'
+        'pi_date' => '0'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'bpiuj9aorjj0crmp7s37f4e5r6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '253'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.test'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=product-info%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=bpiuj9aorjj0crmp7s37f4e5r6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '38950'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=product-info%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=product-info%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536743018.749
+    'REQUEST_TIME' => 1536743018
+]
+2018-09-12 09:24:09 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "software/index".' in /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('software/index', Array)
+#1 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/suyibang/yii-application/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/suyibang/yii-application/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/suyibang/yii-application/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-12 09:24:09 [127.0.0.1][1][bpiuj9aorjj0crmp7s37f4e5r6][info][application] $_GET = [
+    'r' => 'software/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"2ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg\";}'
+    'advanced-frontend' => 'bpiuj9aorjj0crmp7s37f4e5r6'
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/index.php?r=product-info%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-frontend=b6f562f6b2c2add9137fd20677d30723b8520cf50a51938715e62b3ccbc1baada%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%222ferSYrYUmuB3mdf7mgrt8ZunOKjSpKg%22%3B%7D; advanced-frontend=bpiuj9aorjj0crmp7s37f4e5r6; _identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/frontend/web/index.php'
+    'REMOTE_PORT' => '39526'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=software%2Findex'
+    'REQUEST_URI' => '/index.php?r=software%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536744249.981
+    'REQUEST_TIME' => 1536744249
+]

@@ -61,6 +61,20 @@ class ProductInfo extends \yii\db\ActiveRecord
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        if (!parent::load($data, $formName))
+            return false;
+
+        $this->pi_cp_id = Yii::$app->user->getUserCache('categoryId');
+        $this->pi_date = date("Y-m-d h:i:s",time());
+        $this->pi_u_id = Yii::$app->user->id;
+        return true;
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
 /*

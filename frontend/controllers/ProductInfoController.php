@@ -44,6 +44,18 @@ class ProductInfoController extends Controller
         ]);
     }
 
+    /* Go to next web page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionNext($id, $name)
+    {
+        Yii::$app->user->setUserCache('puidId', $id);
+        Yii::$app->user->setUserCache('puidName', $name);
+        return $this->redirect(['software/index']);
+    }
+
     /**
      * Displays a single ProductInfo model.
      * @param integer $id

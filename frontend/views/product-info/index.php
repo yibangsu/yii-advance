@@ -33,12 +33,28 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
             'pi_id',
             'PUID',
-            'pi_cp_id',
+            //'pi_cp_id',
             'cp_used',
-            'pi_date',
+            //'pi_date',
             //'pi_u_id',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{next} {view} {update} {delete}',
+                'visibleButtons' => [
+                    'next' => true,
+                    //'view' => Yii::$app->user->canEdit("add company"),
+                    //'update' => Yii::$app->user->canEdit("add company"),
+                    //'delete' => Yii::$app->user->canEdit("add company"),
+                ],
+                'urlCreator' => function ($action, $model, $key, $index, $this) {
+                    $params = is_array($key) ? $key : ['id' => (string) $key];
+                    $params[0] = $this->context->id . '/' . $action; 
+                    $params['name'] = Html::encode($model->PUID);
+
+                    return Url::toRoute($params);
+                },
+            ],
         ],
     ]); ?>
 </div>
