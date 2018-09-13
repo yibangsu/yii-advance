@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\software\SoftwareSearch */
@@ -22,6 +24,8 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
     <p>
         <?= Html::a(Yii::t('app', 'Create Software'), ['create'], ['class' => 'btn btn-success']) ?>
+
+        <?= Html::a(Yii::t('app', 'Upload Fota Package'), Url::toRoute('package/index'), ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

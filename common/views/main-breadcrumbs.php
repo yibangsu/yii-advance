@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-### must set $breadcrumbsLevel first
+### show breadcrumbs according to breadcrumbsLevel
 $companyName = Yii::$app->user->getUserCompanyName();
 $projectName = Yii::$app->user->getUserCache('projectName');
 $categoryName = Yii::$app->user->getUserCache('categoryName');
@@ -27,12 +27,14 @@ $fullBreadcrumbs[] = [
                          'url' => ['software/index']
                      ];
 
-if ($breadcrumbsLevel) {
+if (isset($breadcrumbsLevel)) {
     for ($i = 0; $i < $breadcrumbsLevel; $i++) {
         $this->params['breadcrumbs'][] = $fullBreadcrumbs[$i];
     }
 }
 
-$this->params['breadcrumbs'][] = $this->title;
+if (!isset($skipMainTitle) || !$skipMainTitle) {
+    $this->params['breadcrumbs'][] = $this->title;
+}
 
 ?>

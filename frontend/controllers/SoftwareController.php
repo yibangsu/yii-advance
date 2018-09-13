@@ -9,6 +9,10 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use frontend\models\upload\UploadForm;
+use yii\web\UploadedFile;
+
+
 /**
  * SoftwareController implements the CRUD actions for Software model.
  */
@@ -29,6 +33,38 @@ class SoftwareController extends Controller
         ];
     }
 
+    /**
+     * Displays the upload model.
+     * @return mixed
+     */
+/*
+    public function actionUpload()
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->imageFile) {
+                // 文件上传
+                $model->upload();
+            } else {
+
+            }
+        }
+
+        $searchModel = new SoftwareSearch();
+        $dataProvider = $searchModel->search(null);
+        if ($dataProvider->query->count() < 2) {
+            $this->goBack();
+        }
+        $versionList = $dataProvider->query->all();
+
+        return $this->render('upload', [
+            'model' => $model,
+            'versionList' => $versionList,
+        ]);
+    }
+*/
     /**
      * Lists all Software models.
      * @return mixed
