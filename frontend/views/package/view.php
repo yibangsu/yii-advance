@@ -6,14 +6,14 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\fotaSrc\FileExtend */
 
-$this->title = $model->fe_id;
+$this->title = $model->fb_name;
 
 // custom breadcrumbs with level
 $breadcrumbsLevel = 5;
 $skipMainTitle = true;
 require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'File Extends'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Fota Package'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="file-extend-view">
@@ -34,11 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'fe_id',
-            'fe_fb_id',
-            'fe_from_ver',
-            'fe_to_ver',
-            'fe_checksum',
+            'fb_name',
+            'sourceVersion',
+            'targetVersion',
         ],
     ]) ?>
 

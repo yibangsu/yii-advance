@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\fotaSrc\FileSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'File Extends');
+$this->title = Yii::t('app', 'Fota Package');
 // custom breadcrumbs with level
 $breadcrumbsLevel = 5;
 require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
@@ -19,7 +19,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create File Extend'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Fota Package'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

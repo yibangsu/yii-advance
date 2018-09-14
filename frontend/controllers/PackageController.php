@@ -10,6 +10,7 @@ use frontend\models\fotaSrc\FotaPackage;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PackageController implements the CRUD actions for FileExtend model.
@@ -68,8 +69,16 @@ class PackageController extends Controller
     {
         $model = new FileExtend();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->fe_id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->allSave(true)) {
+                return $this->redirect(['view', 'id' => $model->fe_id]);
+            }
+        }
+
+        if (!$model->getSoftwareList()) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
         return $this->render('create', [
@@ -88,8 +97,16 @@ class PackageController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->fe_id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->allSave()) {
+                return $this->redirect(['view', 'id' => $model->fe_id]);
+            }
+        }
+
+        if (!$model->getSoftwareList()) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
         return $this->render('update', [
@@ -120,10 +137,13 @@ class PackageController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = FileExtend::findOne($id)) !== null) {
-            return $model;
+        $searchModel = new FileSearch();
+        $model = $searchModel->findOneById($id);
+
+        if (!$model) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        return $model;
     }
 }

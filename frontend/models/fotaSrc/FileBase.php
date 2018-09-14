@@ -32,12 +32,11 @@ class FileBase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fb_id', 'fb_name', 'fb_path', 'fb_status', 'fb_date', 'fb_size'], 'required'],
-            [['fb_id', 'fb_status', 'fb_size'], 'integer'],
+            [['fb_name', 'fb_path', 'fb_status', 'fb_date', 'fb_size'], 'required'],
+            [['fb_status', 'fb_size'], 'integer'],
             [['fb_date'], 'safe'],
-            [['fb_name'], 'string', 'max' => 20],
+            [['fb_name'], 'string', 'max' => 64],
             [['fb_path'], 'string', 'max' => 256],
-            [['fb_id'], 'unique'],
         ];
     }
 

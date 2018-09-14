@@ -13,7 +13,7 @@ $breadcrumbsLevel = 5;
 $skipMainTitle = true;
 require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'File Extends'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Fota Package'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="file-extend-create">

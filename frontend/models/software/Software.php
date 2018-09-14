@@ -38,13 +38,12 @@ class Software extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sw_id', 'sw_ver', 'sw_creator', 'sw_expiration_date', 'sw_release_note', 'sw_date', 'sw_puid'], 'required'],
-            [['sw_id', 'sw_creator', 'sw_puid'], 'integer'],
+            [['sw_ver', 'sw_creator', 'sw_expiration_date', 'sw_release_note', 'sw_date', 'sw_puid'], 'required'],
+            [['sw_creator', 'sw_puid'], 'integer'],
             [['sw_expiration_date', 'sw_date'], 'safe'],
             [['sw_release_note'], 'string'],
             [['sw_ver'], 'string', 'max' => 10],
             [['sw_ver'], 'unique'],
-            [['sw_id'], 'unique'],
             [['sw_puid'], 'exist', 'skipOnError' => true, 'targetClass' => ProductInfo::className(), 'targetAttribute' => ['sw_puid' => 'pi_id']],
         ];
     }

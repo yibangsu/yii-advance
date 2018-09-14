@@ -99,6 +99,14 @@ class FileValidator extends Validator
      */
     public $uploadRequired;
     /**
+     * @var string the error message used when no file is uploaded.
+     * Note that this is the text of the validation error message. To make uploading files required,
+     * you have to set [[maxLength]].
+     * @see tooLong for the customized message when too few files are uploaded.
+     * @since suyibang
+     */
+    public $maxLength;
+    /**
      * @var string the error message used when the uploaded file is too large.
      * You may use the following tokens in the message:
      *
@@ -157,6 +165,15 @@ class FileValidator extends Validator
      * - {mimeTypes}: the value of [[mimeTypes]]
      */
     public $wrongMimeType;
+    /**
+     * @var string the error message used when the file has an mime type
+     * that is not allowed by [[maxLength]] property.
+     * You may use the following tokens in the message:
+     *
+     * - {attribute}: the attribute name
+     * - {limit}: the value of [[maxLength]]
+     */
+    public $tooLong;
 
 
     /**
@@ -198,6 +215,9 @@ class FileValidator extends Validator
             $this->mimeTypes = preg_split('/[\s,]+/', strtolower($this->mimeTypes), -1, PREG_SPLIT_NO_EMPTY);
         } else {
             $this->mimeTypes = array_map('strtolower', $this->mimeTypes);
+        }
+        if ($this->tooLong === null) {
+             $this->tooLong = Yii::t('yii', 'The file "{file}", name is too long. Its name length cannot exceed {maxLength}.');
         }
     }
 
@@ -297,6 +317,15 @@ class FileValidator extends Validator
                     return [$this->wrongExtension, ['file' => $value->name, 'extensions' => implode(', ', $this->extensions)]];
                 } elseif (!empty($this->mimeTypes) && !$this->validateMimeType($value)) {
                     return [$this->wrongMimeType, ['file' => $value->name, 'mimeTypes' => implode(', ', $this->mimeTypes)]];
+                } elseif ($this->maxLength !== null && strlen($value->name) > $this->maxLength) {
+                    return [
+                        $this->tooLong,
+                        [
+                            'file' => $value->name,
+                            'limit' => $this->maxLength,
+                            'formattedLimit' => Yii::$app->formatter->asShortSize($this->maxLength),
+                        ],
+                    ];
                 }
 
                 return null;
@@ -494,6 +523,22 @@ class FileValidator extends Validator
             $options['tooMany'] = $this->formatMessage($this->tooMany, [
                 'attribute' => $label,
                 'limit' => $this->maxFiles,
+            ]);
+        }
+
+        if ($this->maxFiles !== null) {
+            $options['maxFiles'] = $this->maxFiles;
+            $options['tooMany'] = $this->formatMessage($this->tooMany, [
+                'attribute' => $label,
+                'limit' => $this->maxFiles,
+            ]);
+        }
+
+        if ($this->maxLength !== null) {
+            $options['maxLength'] = $this->maxLength;
+            $options['tooLong'] = $this->formatMessage($this->tooLong, [
+                'attribute' => $label,
+                'maxLength' => $this->maxLength,
             ]);
         }
 

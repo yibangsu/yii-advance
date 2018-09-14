@@ -47,7 +47,6 @@ class FileSearch extends FileExtend
         $query = FileExtend::find();
 
         // add conditions that should always apply here
-        $puidId = Yii::$app->user->getUserCache('puidId');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -55,13 +54,13 @@ class FileSearch extends FileExtend
 
         $this->load($params);
 
-        if (!$this->validate() || !$puidId) {
+        if (!$this->validate() || !$this->fe_puid) {
             // uncomment the following line if you do not want to return any records when validation fails
             $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->where(['fe_puid' => $puidId])
+        $query->where(['fe_puid' => $this->fe_puid])
               ->addSelect(FileExtend::tableName().'.*')
               
               ->leftJoin(FileBase::tableName(), '`'.FileBase::tableName().'`'.'.`fb_id` = `'.FileExtend::tableName().'`.`fe_fb_id`')
@@ -80,13 +79,30 @@ class FileSearch extends FileExtend
             'fe_fb_id' => $this->fe_fb_id,
             'fe_from_ver' => $this->fe_from_ver,
             'fe_to_ver' => $this->fe_to_ver,
-            'sourceVersion' => $this->sourceVersion,
-            'targetVersion' => $this->targetVersion,
-            'fb_name' => $this->fb_name,
+            'source.sw_ver' => $this->sourceVersion,
+            'target.sw_ver' => $this->targetVersion,
+            FileBase::tableName().'.fb_name' => $this->fb_name,
         ]);
 
         $query->andFilterWhere(['like', 'fe_checksum', $this->fe_checksum]);
 
         return $dataProvider;
     }
+
+    /**
+     * find one by Id
+     *
+     * @param string id, the primary key for table
+     *
+     * @return mixed instanceof frontend\models\fotaSrc\FileExtend
+     */
+    public function findOneById($id)
+    {
+        $dataProvider = $this->search(null);
+        $query = $dataProvider->query;
+        $query->andWhere('`fe_id`=\''.$id.'\'');
+
+        return $query->one();
+    }
+
 }

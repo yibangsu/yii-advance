@@ -42135,3 +42135,383 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1536803594.994
     'REQUEST_TIME' => 1536803594
 ]
+2018-09-14 11:51:21 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:21 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:21 [127.0.0.1][2][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => 'fkhop6q312tafrphoe6gcsc023'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=fkhop6q312tafrphoe6gcsc023; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34132'
+    'REDIRECT_URL' => '/admin/route'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/route'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925880.999
+    'REQUEST_TIME' => 1536925880
+]
+2018-09-14 11:51:27 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:27 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:27 [127.0.0.1][2][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => '6upqb0b152geaer11s5lalnmb7'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/route'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=6upqb0b152geaer11s5lalnmb7; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34148'
+    'REDIRECT_URL' => '/admin/rule'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/rule'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925887.096
+    'REQUEST_TIME' => 1536925887
+]
+2018-09-14 11:51:29 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:29 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:29 [127.0.0.1][2][-][info][application] $_GET = [
+    'id' => 'admin'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => '6upqb0b152geaer11s5lalnmb7'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/rule'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=6upqb0b152geaer11s5lalnmb7; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34150'
+    'REDIRECT_QUERY_STRING' => 'id=admin'
+    'REDIRECT_URL' => '/admin/rule/view'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=admin'
+    'REQUEST_URI' => '/admin/rule/view?id=admin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925889.474
+    'REQUEST_TIME' => 1536925889
+]
+2018-09-14 11:51:36 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:36 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:36 [127.0.0.1][2][-][info][application] $_GET = [
+    'id' => 'admin'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => '6upqb0b152geaer11s5lalnmb7'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/rule/view?id=admin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=6upqb0b152geaer11s5lalnmb7; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34152'
+    'REDIRECT_QUERY_STRING' => 'id=admin'
+    'REDIRECT_URL' => '/admin/rule/update'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=admin'
+    'REQUEST_URI' => '/admin/rule/update?id=admin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925896.812
+    'REQUEST_TIME' => 1536925896
+]
+2018-09-14 11:51:42 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:42 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:42 [127.0.0.1][2][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => '6upqb0b152geaer11s5lalnmb7'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/rule/update?id=admin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=6upqb0b152geaer11s5lalnmb7; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34160'
+    'REDIRECT_URL' => '/admin/role'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/role'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925902.082
+    'REQUEST_TIME' => 1536925902
+]
+2018-09-14 11:51:44 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-14 11:51:44 [127.0.0.1][2][-][warning][application] user='2'
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/models/rules/AdminRule.php:24
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/Helper.php:124
+    in /data/suyibang/yii-application/vendor/mdmsoft/yii2-admin/components/AccessControl.php:70
+2018-09-14 11:51:44 [127.0.0.1][2][-][info][application] $_GET = [
+    'id' => 'admin'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF\";}'
+    'advanced-backend' => '6upqb0b152geaer11s5lalnmb7'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/role'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5dba4c5bfa52083a5bb2576ed68b0f66854f7ff815a0b106418714046027ddaaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22C7LkaaSdrKdoqAeBt4Vw3O1GgHUZaMKF%22%3B%7D; advanced-backend=6upqb0b152geaer11s5lalnmb7; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-application/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-application/backend/web/index.php'
+    'REMOTE_PORT' => '34160'
+    'REDIRECT_QUERY_STRING' => 'id=admin'
+    'REDIRECT_URL' => '/admin/role/view'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=admin'
+    'REQUEST_URI' => '/admin/role/view?id=admin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536925904.918
+    'REQUEST_TIME' => 1536925904
+]
