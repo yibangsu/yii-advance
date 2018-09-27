@@ -31,9 +31,9 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'cp_id',
+            //'cp_id',
             'cp_name',
-            'cp_pj_id',
+            //'cp_pj_id',
         ],
     ]) ?>
 

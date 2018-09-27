@@ -51,6 +51,16 @@ class Category extends \yii\db\ActiveRecord
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        $result = parent::load($data, $formName);
+        $this->cp_pj_id = Yii::$app->user->getUserCache('projectId');
+        return $result;
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function hasProject()

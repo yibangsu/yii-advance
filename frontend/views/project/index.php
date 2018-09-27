@@ -32,7 +32,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'pj_id',
+            //'pj_id',
             'pj_name',
             'pj_desc',
             //'pj_c_id',

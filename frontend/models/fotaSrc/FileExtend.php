@@ -75,7 +75,7 @@ class FileExtend extends \yii\db\ActiveRecord
             [['fe_puid'], 'exist', 'skipOnError' => true, 'targetClass' => ProductInfo::className(), 'targetAttribute' => ['fe_puid' => 'pi_id']],
             // rules for file
             //[['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'zip', 'maxSize' => '2147483648', 'except' => 'todoSave'],
-            //[['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'zip', 'maxSize' => '2147483648', 'maxLength' => 64],
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'zip', 'maxSize' => '2147483648', 'maxLength' => 64],
             // how to make sure fe_from_ver is defferent to fe_to_ver?
             // todo
         ];
@@ -129,7 +129,10 @@ class FileExtend extends \yii\db\ActiveRecord
         }
 
         if (!$this->imageFile->saveAs($saveDir . $this->imageFile->name, false)) {
-            $result = false;
+            $temp = $this->imageFile->tempName;
+            $name = $this->imageFile->name;
+            Yii::warning("Can't save file $temp as $saveDir$name");
+            return false;
         }
         // save fota package info into FileBase db
         $fileBase = new FileBase();

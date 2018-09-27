@@ -46,19 +46,65 @@ class FileBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'fb_id' => Yii::t('app', 'Fb ID'),
-            'fb_name' => Yii::t('app', 'Fb Name'),
-            'fb_path' => Yii::t('app', 'Fb Path'),
-            'fb_status' => Yii::t('app', 'Fb Status'),
-            'fb_date' => Yii::t('app', 'Fb Date'),
-            'fb_size' => Yii::t('app', 'Fb Size'),
+            'fb_id' => Yii::t('app', 'ID'),
+            'fb_name' => Yii::t('app', 'Name'),
+            'fb_path' => Yii::t('app', 'Path'),
+            'fb_status' => Yii::t('app', 'Status'),
+            'fb_date' => Yii::t('app', 'Date'),
+            'fb_size' => Yii::t('app', 'Size'),
         ];
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        $result = parent::load($data, $formName);
+
+        $projectName = Yii::$app->user->getUserCache('projectName');
+        $categoryName = Yii::$app->user->getUserCache('categoryName');
+        $puidName = Yii::$app->user->getUserCache('puidName');
+        if (!$projectName || !$categoryName || !$puidName) {
+            return false;
+        }
+        $this->fb_path = Yii::$app->params['fotaPackagePath'] 
+                         . $projectName . '/'
+                         . $categoryName . '/'
+                         . $puidName . '/';
+
+        $this->fb_status = 1;
+
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function delete()
+    {
+        $result = false;
+
+        try {
+            unlink($this->fb_path . $this->fb_name);
+            $result = parent::delete();
+        } catch (Exception $e) {
+            // do nothing
+        } catch (yii\base\ErrorException $e) {
+            // do nothing
+        }
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+
+
+    /**
      * @return \yii\db\ActiveQuery
      */
-    public function getFileExtends()
+    public function hasFileExtends()
     {
         return $this->hasMany(FileExtend::className(), ['fe_fb_id' => 'fb_id']);
     }

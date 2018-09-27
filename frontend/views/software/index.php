@@ -25,7 +25,9 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <p>
         <?= Html::a(Yii::t('app', 'Create Software'), ['create'], ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a(Yii::t('app', 'Upload Fota Package'), Url::toRoute('package/index'), ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Fota Manager'), Url::toRoute('fota/index'), ['class' => 'btn btn-success']) ?>
+
+        <?= Html::a(Yii::t('app', 'Fota Package'), Url::toRoute('upload/index'), ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -34,12 +36,12 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'sw_id',
+            //'sw_id',
             'sw_ver',
-            'sw_creator',
+            //'sw_creator',
             'sw_expiration_date',
             'sw_release_note:ntext',
-            //'sw_date',
+            'sw_date',
             //'sw_puid',
 
             ['class' => 'yii\grid\ActionColumn'],

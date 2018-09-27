@@ -33,6 +33,14 @@ class ProductInfoSearch extends ProductInfo
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        return parent::load($data, $formName, false);
+    }
+
+    /**
      * Creates data provider instance with search query applied
      *
      * @param array $params
@@ -44,7 +52,6 @@ class ProductInfoSearch extends ProductInfo
         $query = ProductInfo::find();
 
         // add conditions that should always apply here
-        $CategoryId = Yii::$app->user->getUserCache('categoryId');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,13 +59,13 @@ class ProductInfoSearch extends ProductInfo
 
         $this->load($params);
 
-        if (!$this->validate() || !$CategoryId) {
+        if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->where(['pi_cp_id' => $CategoryId]);
+        $query->where(['pi_cp_id' => $this->pi_cp_id]);
 
         // grid filtering conditions
         $query->andFilterWhere([

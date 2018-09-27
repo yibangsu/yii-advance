@@ -63,4 +63,64 @@ class Software extends \yii\db\ActiveRecord
             'sw_puid' => Yii::t('app', 'Puid'),
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        $id = $this->sw_id;
+        $puid = $this->sw_puid;
+        $creator = $this->sw_creator;
+        $result = parent::load($data, $formName);
+        // without sw_id, means this is a new list
+        if (!$id) {
+            $this->sw_creator = Yii::$app->user->id;
+            $this->sw_puid = Yii::$app->user->getUserCache('puidId');
+        } else {
+            $this->sw_creator = $creator;
+            $this->sw_puid = $puid;
+            $this->sw_id = $id;
+        }
+
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function update($runValidation = true, $attributeNames = null)
+    {
+        if ($this->sw_creator === Yii::$app->user->id) {
+            $this->sw_date = date("Y-m-d h:i:s",time());
+            return parent::update($runValidation, $attributeNames);
+        }
+
+        return false;
+    }
+
+   /**
+     * {@inheritdoc}
+     */
+    public function save($runValidation = true, $attributeNames = null)
+    {
+        if ($this->sw_creator === Yii::$app->user->id) {
+            $this->sw_date = date("Y-m-d h:i:s",time());
+            return parent::save($runValidation, $attributeNames);
+        }
+
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function delete()
+    {
+        if ($this->sw_creator === Yii::$app->user->id) {
+            return parent::delete();
+        }
+
+        return false;
+    }
 }

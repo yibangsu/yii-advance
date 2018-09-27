@@ -44,7 +44,6 @@ class SoftwareSearch extends Software
         $query = Software::find();
 
         // add conditions that should always apply here
-        $puidId = Yii::$app->user->getUserCache('puidId');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,25 +51,25 @@ class SoftwareSearch extends Software
 
         $this->load($params);
 
-        if (!$this->validate() || !$puidId) {
+        if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->where(['sw_puid' => $puidId]);
+        $query->where(['sw_puid' => $this->sw_puid]);
 
         // grid filtering conditions
         $query->andFilterWhere([
             'sw_id' => $this->sw_id,
             'sw_creator' => $this->sw_creator,
-            'sw_expiration_date' => $this->sw_expiration_date,
-            'sw_date' => $this->sw_date,
             'sw_puid' => $this->sw_puid,
         ]);
 
         $query->andFilterWhere(['like', 'sw_ver', $this->sw_ver])
-            ->andFilterWhere(['like', 'sw_release_note', $this->sw_release_note]);
+            ->andFilterWhere(['like', 'sw_release_note', $this->sw_release_note])
+            ->andFilterWhere(['like', 'sw_expiration_date', $this->sw_expiration_date])
+            ->andFilterWhere(['like', 'sw_date', $this->sw_date]);
 
         return $dataProvider;
     }

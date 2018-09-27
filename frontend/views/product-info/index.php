@@ -31,11 +31,11 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'pi_id',
+            //'pi_id',
             'PUID',
             //'pi_cp_id',
             'cp_used',
-            //'pi_date',
+            'pi_date',
             //'pi_u_id',
 
             [

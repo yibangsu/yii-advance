@@ -63,15 +63,62 @@ class ProductInfo extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function load($data, $formName = null)
+    public function load($data, $formName = null, $activeRecord = true)
     {
-        if (!parent::load($data, $formName))
-            return false;
+        $id = $this->pi_id;
+        $uid = $this->pi_u_id;
+
+        $result = parent::load($data, $formName);
 
         $this->pi_cp_id = Yii::$app->user->getUserCache('categoryId');
-        $this->pi_date = date("Y-m-d h:i:s",time());
-        $this->pi_u_id = Yii::$app->user->id;
-        return true;
+
+        if ($id) {
+            $this->pi_id = $id;
+        }
+
+        if ($uid) {
+            $this->pi_u_id = $uid;
+        }
+
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function update($runValidation = true, $attributeNames = null)
+    {
+        if ($this->pi_u_id === Yii::$app->user->id) {
+            $this->pi_date = date("Y-m-d h:i:s",time());
+            return parent::update($runValidation, $attributeNames);
+        }
+
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function save($runValidation = true, $attributeNames = null)
+    {
+        if ($this->pi_u_id === Yii::$app->user->id) {
+            $this->pi_date = date("Y-m-d h:i:s",time());
+            return parent::save($runValidation, $attributeNames);
+        }
+
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function delete()
+    {
+        if ($this->pi_u_id === Yii::$app->user->id) {
+            return parent::delete();
+        }
+
+        return false;
     }
 
     /**

@@ -31,12 +31,12 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'pi_id',
+            //'pi_id',
             'PUID',
-            'pi_cp_id',
+            //'pi_cp_id',
             'cp_used',
             'pi_date',
-            'pi_u_id',
+            //'pi_u_id',
         ],
     ]) ?>
 

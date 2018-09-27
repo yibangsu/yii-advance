@@ -51,9 +51,15 @@ class ProductInfoController extends Controller
      */
     public function actionNext($id, $name)
     {
-        Yii::$app->user->setUserCache('puidId', $id);
-        Yii::$app->user->setUserCache('puidName', $name);
-        return $this->redirect(['software/index']);
+        $model = $this->findModel($id);
+
+        if ($model->pi_u_id === Yii::$app->user->id) {
+            Yii::$app->user->setUserCache('puidId', $id);
+            Yii::$app->user->setUserCache('puidName', $name);
+            return $this->redirect(['software/index']);
+        }
+
+        return $this->actionIndex();
     }
 
     /**
@@ -98,7 +104,7 @@ class ProductInfoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->update()) {
             return $this->redirect(['view', 'id' => $model->pi_id]);
         }
 

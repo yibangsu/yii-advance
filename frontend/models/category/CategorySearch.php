@@ -44,7 +44,6 @@ class CategorySearch extends Category
         $query = Category::find();
 
         // add conditions that should always apply here
-        $projectId = Yii::$app->user->getUserCache('projectId');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,14 +51,13 @@ class CategorySearch extends Category
 
         $this->load($params);
 
-        if (!$this->validate() || !$projectId) {
+        if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            Yii::warning("herer");
             $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->where(['cp_pj_id' => $projectId]);
+        $query->where(['cp_pj_id' => $this->cp_pj_id]);
 
         // grid filtering conditions
         $query->andFilterWhere([

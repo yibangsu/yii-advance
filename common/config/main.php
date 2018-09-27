@@ -1,5 +1,8 @@
 <?php
+// add classmap
 Yii::$classMap['common\assets\CryptoAsset'] = '@common/assets/CryptoAsset.php';
+Yii::$classMap['common\assets\UploadFileAsset'] = '@common/assets/UploadFileAsset.php';
+
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

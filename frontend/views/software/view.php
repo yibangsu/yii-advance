@@ -29,13 +29,13 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'sw_id',
+            //'sw_id',
             'sw_ver',
-            'sw_creator',
+            //'sw_creator',
             'sw_expiration_date',
             'sw_release_note:ntext',
             'sw_date',
-            'sw_puid',
+            //'sw_puid',
         ],
     ]) ?>
 

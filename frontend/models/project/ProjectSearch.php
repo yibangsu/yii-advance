@@ -44,7 +44,6 @@ class ProjectSearch extends Project
         $query = Project::find();
 
         // add conditions that should always apply here
-        $userCompanyId = Yii::$app->user->getUserCompanyId();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,13 +51,13 @@ class ProjectSearch extends Project
 
         $this->load($params);
 
-        if (!$this->validate() || !$userCompanyId) {
+        if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->where(['pj_c_id' => $userCompanyId]);
+        $query->where(['pj_c_id' => $this->pj_c_id]);
 
         // grid filtering conditions
         $query->andFilterWhere([

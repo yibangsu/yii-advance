@@ -1,19 +1,43 @@
 <?php
+
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\grid\GridView;
 
-$this->title = Yii::t('app', 'Upload Software');
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\fotaSrc\FileBaseSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = Yii::t('app', 'Fota Package');
 // custom breadcrumbs with level
-$uploadBreadcrumbsLevel = 0;
-require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
-
+$breadcrumbsLevel = 5;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php'
 ?>
+<div class="file-base-index">
 
-<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= $form->field($model, 'imageFile')->fileInput() ?>
+    <p>
+        <?= Html::a(Yii::t('app', 'Upload Fota Package'), ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
-    <button>Submit</button>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
 
-<?php ActiveForm::end() ?>
+            //'fb_id',
+            'fb_name',
+            //'fb_path',
+            //'fb_status',
+            'fb_date',
+            //'fb_size',
 
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {delete}',
+            ],
+        ],
+    ]); ?>
+</div>
