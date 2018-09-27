@@ -9,9 +9,9 @@ use app\models\Get;
 /**
  * 检查 authorID 是否和通过参数传进来的 user 参数相符
  */
-class AdminRule extends Rule
+class UserRule extends Rule
 {
-    public $name = 'isAdmin';
+    public $name = 'isUser';
 
     /**
      * @param string|integer $user 用户 ID.
@@ -21,7 +21,6 @@ class AdminRule extends Rule
      */
     public function execute($user, $item, $params)
     {
-        //return isset($params['get']) ? $params['get']->createdBy == $user : false;
-        return (2 === $user);
+        return false;
     }
 }

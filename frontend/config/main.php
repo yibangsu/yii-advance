@@ -12,13 +12,12 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
 /*
-　　　　'modules' => [
+    'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
-
             'layout' => 'left-menu',
         ],
-  　　],
+    ],
 */
     'components' => [
         'request' => [
@@ -26,7 +25,7 @@ return [
         ],
         'user' => [
             'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+            //'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
@@ -83,16 +82,15 @@ return [
 
     ],
 
-// unmask bellow to enable rbac
-/*
     // copy from https://github.com/mdmsoft/yii2-admin/blob/master/docs/guide/configuration.md
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
             'site/*',
             //'admin/*',
-            'debug/*'
-            'company/*'
+            'debug/*',
+            //'software/*',
+            //'company/*',
             //'some-controller/some-action',
             // The actions listed here will be allowed to everyone including guests.
             // So, 'admin/*' should not appear here in the production, of course.
@@ -101,7 +99,6 @@ return [
             // otherwise you may not even take a first step.
         ],
     ], // end of 'as access'
-*/
 
     'params' => $params,
 ];
