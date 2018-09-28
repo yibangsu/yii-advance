@@ -59446,3 +59446,120 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1538098827.384
     'REQUEST_TIME' => 1538098827
 ]
+2018-09-28 06:12:46 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-28 06:12:46 [127.0.0.1][2][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'l1da0285ui9tqcnqkjkpoc44l4'
+    '_csrf-backend' => '5b0c2b3633e45637b3c533fbb81664bfb3b1aeddf22549d857fd9d4ac4790eb7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"1RlSauFasjjCVq4GC-AzbPGfiwIjJT1A\";}'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/route'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=l1da0285ui9tqcnqkjkpoc44l4; _csrf-backend=5b0c2b3633e45637b3c533fbb81664bfb3b1aeddf22549d857fd9d4ac4790eb7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%221RlSauFasjjCVq4GC-AzbPGfiwIjJT1A%22%3B%7D; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/backend/web/index.php'
+    'REMOTE_PORT' => '54248'
+    'REDIRECT_URL' => '/admin/user'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/user'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538115166.659
+    'REQUEST_TIME' => 1538115166
+]
+2018-09-28 06:28:47 [127.0.0.1][2][-][error][application] Failed to instantiate component or class "cache".
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Configs.php:127
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Configs.php:144
+    in /data/suyibang/yii-advance/vendor/mdmsoft/yii2-admin/components/Helper.php:107
+2018-09-28 06:28:47 [127.0.0.1][2][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '5b0c2b3633e45637b3c533fbb81664bfb3b1aeddf22549d857fd9d4ac4790eb7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"1RlSauFasjjCVq4GC-AzbPGfiwIjJT1A\";}'
+    'advanced-backend' => 'gt6s1v17tcon741nkq21ntf5a1'
+    '_identity-backend' => 'b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test/admin/user'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=5b0c2b3633e45637b3c533fbb81664bfb3b1aeddf22549d857fd9d4ac4790eb7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%221RlSauFasjjCVq4GC-AzbPGfiwIjJT1A%22%3B%7D; advanced-backend=gt6s1v17tcon741nkq21ntf5a1; _identity-backend=b1ef150e8d1a81d25f6f467e8d2c7d2ee4a79147e245fa833d441aea198ce230a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at backend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/backend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/backend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/backend/web/index.php'
+    'REMOTE_PORT' => '54730'
+    'REDIRECT_URL' => '/admin/user/signup'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/user/signup'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538116127.802
+    'REQUEST_TIME' => 1538116127
+]

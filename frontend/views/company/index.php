@@ -45,7 +45,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
                     //'update' => Yii::$app->user->canEdit("add company"),
                     //'delete' => Yii::$app->user->canEdit("add company"),
                 ],
-                'urlCreator' => function ($action, $model, $key, $index, $this) {
+                'urlCreator' => function ($action, $model, $key, $index) {
                     $params = is_array($key) ? $key : ['id' => (string) $key];
                     $params['name'] = Html::encode($model->c_name);
                     $params[0] = $this->context->id . '/' . $action; 

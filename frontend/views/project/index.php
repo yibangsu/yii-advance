@@ -46,7 +46,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
                     //'update' => Yii::$app->user->canEdit(ProjectSearch::tableName()),
                     //'delete' => Yii::$app->user->canEdit(ProjectSearch::tableName()),
                  ],
-                 'urlCreator' => function ($action, $model, $key, $index, $this) {
+                 'urlCreator' => function ($action, $model, $key, $index) {
                     $params = is_array($key) ? $key : ['id' => (string) $key];
                     $params[0] = $this->context->id . '/' . $action; 
                     $params['name'] = Html::encode($model->pj_name);
