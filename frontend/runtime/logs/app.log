@@ -12899,3 +12899,374 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1538098835.199
     'REQUEST_TIME' => 1538098835
 ]
+2018-09-28 08:08:27 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:55
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:08:27 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59458'
+    'REDIRECT_URL' => '/category/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/category/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122107.589
+    'REQUEST_TIME' => 1538122107
+]
+2018-09-28 08:10:22 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:55
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:10:22 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:57
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:10:22 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59512'
+    'REDIRECT_URL' => '/category/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/category/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122222.051
+    'REQUEST_TIME' => 1538122222
+]
+2018-09-28 08:10:51 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:55
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:10:51 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:57
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:10:51 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59538'
+    'REDIRECT_URL' => '/category/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/category/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122251.431
+    'REQUEST_TIME' => 1538122251
+]
+2018-09-28 08:11:47 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:55
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:11:47 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:57
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:11:47 [127.0.0.1][1][-][warning][application] ???: 
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:59
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:11:47 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59552'
+    'REDIRECT_URL' => '/category/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/category/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122307.841
+    'REQUEST_TIME' => 1538122307
+]
+2018-09-28 08:13:20 [127.0.0.1][1][-][warning][application] ???: 1
+    in /data/suyibang/yii-advance/frontend/controllers/ProjectController.php:74
+2018-09-28 08:13:20 [127.0.0.1][1][-][warning][application] ???: QS5509-QL
+    in /data/suyibang/yii-advance/frontend/controllers/ProjectController.php:76
+2018-09-28 08:13:20 [127.0.0.1][1][-][info][application] $_GET = [
+    'id' => '1'
+    'name' => 'QS5509-QL'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/next?id=1&name=QS5509-QL'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59596'
+    'REDIRECT_QUERY_STRING' => 'id=1&name=QS5509-QL'
+    'REDIRECT_URL' => '/project/next'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1&name=QS5509-QL'
+    'REQUEST_URI' => '/project/next?id=1&name=QS5509-QL'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122400.504
+    'REQUEST_TIME' => 1538122400
+]
+2018-09-28 08:15:08 [127.0.0.1][1][-][warning][application] ????
+    in /data/suyibang/yii-advance/frontend/models/category/Category.php:60
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:52
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:15:08 [127.0.0.1][1][-][warning][application] ???: 1
+    in /data/suyibang/yii-advance/frontend/models/category/CategorySearch.php:55
+    in /data/suyibang/yii-advance/frontend/controllers/CategoryController.php:39
+2018-09-28 08:15:08 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"abOZrRhuCF8SqGiE64gb_sprj9zo0BgV\",2592000]\";}'
+    'advanced-frontend' => 'mb3fk0aqhu5mfdp2950i82t813'
+    '_csrf-frontend' => '48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"pdlltoeDe07hWOMebNkLafTTG9GMHbGI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__LoginFormRandom' => 'UsISvmBRUcLjNZhcp1XCcNVqAKOnqk7F'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'frontend.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36'
+    'HTTP_REFERER' => 'http://frontend.test/project/next?id=1&name=QS5509-QL'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-frontend=34befd1d58bc33ef9573ec6bf877a9d7342557cc49283cdde1c38b1e70d1d450a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22abOZrRhuCF8SqGiE64gb_sprj9zo0BgV%22%2C2592000%5D%22%3B%7D; advanced-frontend=mb3fk0aqhu5mfdp2950i82t813; _csrf-frontend=48741ef9dfcd621909db62d8965efcb0295ff84e5cebd8532b469a7118f16fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22pdlltoeDe07hWOMebNkLafTTG9GMHbGI%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at frontend.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/suyibang/yii-advance/frontend/web/'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/data/suyibang/yii-advance/frontend/web/index.php'
+    'REMOTE_PORT' => '59646'
+    'REDIRECT_URL' => '/category/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/category/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1538122508.133
+    'REQUEST_TIME' => 1538122508
+]

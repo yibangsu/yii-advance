@@ -18,7 +18,7 @@ class CategorySearch extends Category
     public function rules()
     {
         return [
-            [['cp_id', 'cp_pj_id'], 'integer'],
+            [['cp_pj_id'], 'integer'],
             [['cp_name'], 'safe'],
         ];
     }
