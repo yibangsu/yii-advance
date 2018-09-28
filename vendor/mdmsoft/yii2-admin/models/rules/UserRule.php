@@ -21,6 +21,6 @@ class UserRule extends Rule
      */
     public function execute($user, $item, $params)
     {
-        return false;
+        return true;
     }
 }
