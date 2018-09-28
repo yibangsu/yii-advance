@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf-frontend">
+    <meta name="csrf-token" content="MhiPDNX5xXbKBXCeQs6_ajFrcWoS0e6cDLtyOib14lBYVPZ6g82jRqQ8I8YAufAnaDw_WCSytNpD4kYOS53WGg==">
+    <title>Login</title>
+    <link href="/assets/71c27aa1/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet"></head>
+<body>
+
+<div class="wrap">
+    <nav id="w42" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w42-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/index-test.php">Fota Manager</a></div><div id="w42-collapse" class="collapse navbar-collapse"><ul id="w43" class="navbar-nav navbar-right nav"><li><a href="/index-test.php/site/index">Home</a></li>
+<li><a href="/index-test.php/site/about">About</a></li>
+<li><a href="/index-test.php/site/contact">Contact</a></li>
+<li><a href="/index-test.php/site/signup">Signup</a></li>
+<li class="active"><a href="/index-test.php/site/login">Login</a></li></ul></div></div></nav>
+    <div class="container">
+        <ul class="breadcrumb"><li class="active">Login</li>
+<li class="active">Login</li>
+</ul>                
+
+
+
+<div class="site-login">
+    <h1>Login</h1>
+
+    <p>Please fill out the following fields to login:</p>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <form id="login-form" action="/index-test.php/site/login" method="post">
+<input type="hidden" name="_csrf-frontend" value="MhiPDNX5xXbKBXCeQs6_ajFrcWoS0e6cDLtyOib14lBYVPZ6g82jRqQ8I8YAufAnaDw_WCSytNpD4kYOS53WGg==">
+                <div class="form-group field-loginform-username required">
+<label class="control-label" for="loginform-username">Username</label>
+<input type="text" id="loginform-username" class="form-control" name="LoginForm[username]" value="erau" autofocus aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group field-loginform-password required has-error">
+<label class="control-label" for="loginform-password">Password</label>
+<input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" value="" aria-required="true" aria-invalid="true">
+
+<p class="help-block help-block-error">Incorrect username or password.</p>
+</div>
+                <div class="form-group field-loginform-rememberme">
+<div class="checkbox">
+<label for="loginform-rememberme">
+<input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked>
+Remember Me
+</label>
+<p class="help-block help-block-error"></p>
+
+</div>
+</div>
+                <div style="color:#999;margin:1em 0">
+                    If you forgot your password you can <a href="/index-test.php/site/request-password-reset">reset it</a>.
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" name="login-button">Login</button>                </div>
+
+            </form>        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; Hipad Intelligence <!--?= Html::encode(Yii::$app->name) ?--> 2018</p>
+
+        <p class="pull-right">Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></p>
+    </div>
+</footer>
+
+<script src="/assets/e870e373/core.js"></script>
+<script src="/assets/e870e373/sha256.js"></script>
+<script src="/assets/e870e373/hmac.js"></script>
+<script src="/assets/e870e373/hmac-sha256.js"></script>
+<script src="/assets/e870e373/md5.js"></script>
+<script src="/assets/5e136a65/jquery.js"></script>
+<script src="/assets/7c3488b2/yii.js"></script>
+<script src="/assets/7c3488b2/yii.validation.js"></script>
+<script src="/assets/7c3488b2/yii.activeForm.js"></script>
+<script src="/assets/71c27aa1/js/bootstrap.js"></script>
+<script>jQuery(function ($) {
+    $('#login-form').on('beforeSubmit', function(e) {
+        
+        var $form = $(this);
+        var $str = $.trim(document.getElementById("loginform-password").value);
+        var $random = $.trim('dmJEH0HRiKz81JInHnL_rt6J3D8IcSTt');
+
+        $str = $.trim(CryptoJS.MD5($str));
+        $str = CryptoJS.HmacSHA256($str, $random);
+        
+        document.getElementById("loginform-password").value = $str;
+    });
+jQuery('#login-form').yiiActiveForm([{"id":"loginform-username","name":"username","container":".field-loginform-username","input":"#loginform-username","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Username cannot be blank."});}},{"id":"loginform-password","name":"password","container":".field-loginform-password","input":"#loginform-password","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Password cannot be blank."});}},{"id":"loginform-rememberme","name":"rememberMe","container":".field-loginform-rememberme","input":"#loginform-rememberme","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Remember Me must be either \"1\" or \"0\".","skipOnEmpty":1});}}], []);
+});</script></body>
+</html>

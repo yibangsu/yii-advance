@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf-backend">
+    <meta name="csrf-token" content="sSFBDipz0jfBjfuHL_b0oq4ir0hz_hOHVAyIq2sY35D_TwtqGSy0QY65g_9bpprQ1GjjFzXNUdE8Q7HNH2ub8g==">
+    <title>Sign In</title>
+    <link href="/assets/dd602846/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/71c27aa1/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/4040fbd1/css/AdminLTE.min.css" rel="stylesheet">
+<link href="/assets/4040fbd1/css/skins/_all-skins.min.css" rel="stylesheet"></head>
+<body class="login-page">
+
+
+    
+
+
+
+<div class="login-box">
+    <div class="login-logo">
+        Fota Manager @
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form id="login-form" action="/site/login" method="post">
+<input type="hidden" name="_csrf-backend" value="sSFBDipz0jfBjfuHL_b0oq4ir0hz_hOHVAyIq2sY35D_TwtqGSy0QY65g_9bpprQ1GjjFzXNUdE8Q7HNH2ub8g==">
+        <div class="form-group has-feedback field-loginform-username required">
+
+<input type="text" id="loginform-username" class="form-control" name="LoginForm[username]" placeholder="Username" aria-required="true"><span class='glyphicon glyphicon-envelope form-control-feedback'></span>
+
+<p class="help-block help-block-error"></p>
+</div>
+        <div class="form-group has-feedback field-loginform-password required">
+
+<input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" value="" placeholder="Password" aria-required="true"><span class='glyphicon glyphicon-lock form-control-feedback'></span>
+
+<p class="help-block help-block-error"></p>
+</div>
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="form-group field-loginform-rememberme">
+<div class="checkbox">
+<label for="loginform-rememberme">
+<input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked>
+Remember Me
+</label>
+<p class="help-block help-block-error"></p>
+
+</div>
+</div>            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+                <button type="submit" class="btn btn-primary btn-block btn-flat" name="login-button">Sign in</button>            </div>
+            <!-- /.col -->
+        </div>
+
+
+        </form>
+        <!--div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in
+                using Facebook</a>
+            <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign
+                in using Google+</a>
+        </div-->
+        <!-- /.social-auth-links -->
+
+        <!-- to do -->
+        <a href="#">I forgot my password</a><br>
+        <a href="register.html" class="text-center">Register a new membership</a>
+
+    </div>
+    <!-- /.login-box-body -->
+</div><!-- /.login-box -->
+
+<script src="/assets/e870e373/core.js"></script>
+<script src="/assets/e870e373/sha256.js"></script>
+<script src="/assets/e870e373/hmac.js"></script>
+<script src="/assets/e870e373/hmac-sha256.js"></script>
+<script src="/assets/e870e373/md5.js"></script>
+<script src="/assets/5e136a65/jquery.js"></script>
+<script src="/assets/7c3488b2/yii.js"></script>
+<script src="/assets/7c3488b2/yii.activeForm.js"></script>
+<script src="/assets/71c27aa1/js/bootstrap.js"></script>
+<script src="/assets/4040fbd1/js/adminlte.min.js"></script>
+<script>jQuery(function ($) {
+    $('#login-form').on('beforeSubmit', function(e) {
+        
+        var $form = $(this);
+        var $str = $.trim(document.getElementById("loginform-password").value);
+        var $random = $.trim('yaj3_IsT3JzOhyQ-wGoVrc_KqciWoeey');
+
+        $str = $.trim(CryptoJS.MD5($str));
+        $str = CryptoJS.HmacSHA256($str, $random);
+        
+        document.getElementById("loginform-password").value = $str;
+    });
+jQuery('#login-form').yiiActiveForm([], []);
+});</script></body>
+</html>
