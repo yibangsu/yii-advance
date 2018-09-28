@@ -6,6 +6,13 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'hdCi3Ov7k3RrS1uekoWOcSSrAsRlp8B1',
         ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=HiFota',
+            'username' => 'fotaadmin',
+            'password' => 'fotaadmin@123',
+            'charset' => 'utf8',
+        ],
     ],
 ];
 
