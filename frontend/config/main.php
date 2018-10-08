@@ -71,6 +71,7 @@ return [
             ],
         ], // end of 'urlManager'
 
+/*
         // set authManager
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
@@ -78,7 +79,8 @@ return [
 
         'cache' => [ 
             'class' => 'yii\caching\FileCache',
-        ], 
+        ],
+*/ 
 
     ],
 
