@@ -74,6 +74,7 @@ return [
         // set authManager
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
+            'cache' => 'cache',
         ],
 
         'cache' => [ 

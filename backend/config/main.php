@@ -110,8 +110,12 @@ return [
         // set authManager
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
+            'cache' => 'cache',
         ],
 
+        'cache' => [ 
+            'class' => 'yii\caching\FileCache',
+        ], 
 
         //语言包配置
         'i18n'=>[
