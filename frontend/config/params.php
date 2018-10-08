@@ -1,6 +1,6 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
-    'fotaPackagePath' => '/home/suyibang/FotaPackages/',
-    'tempPackagePath' => '/home/suyibang/temp/',
+    'adminEmail' => 'suyibang@hipad.com',
+    'fotaPackagePath' => '/data/suyibang/FotaPackages/',
+    'tempPackagePath' => '/data/suyibang/temp/',
 ];
