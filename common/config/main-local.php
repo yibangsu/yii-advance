@@ -16,12 +16,16 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => false,
             'transport' => [
-                'class' => 'Swift_MailTransport',
-                //'host' => 'pop3.263.net',
-                //'username' => 'suyibang@hipad.com',
-                //'password' => 'syb@201806',
-                //'port' => '110',
-                //'encryption' => 'none',
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.163.com',
+                'username' => 'suyibang1987@163.com',
+                'password' => 'syb1233',
+                'port' => '25',
+                //'encryption' => 'tls',
+            ], 
+            'messageConfig' => [  
+                'charset' => 'UTF-8',
+                'from' => ['suyibang1987@163.com' => 'su']  
             ], 
         ],
     ],

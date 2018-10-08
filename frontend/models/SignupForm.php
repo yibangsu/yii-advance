@@ -1,17 +1,19 @@
 <?php
+
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
-use common\models\User;
 
 /**
- * Signup form
+ * ContactForm is the model behind the contact form.
  */
 class SignupForm extends Model
 {
-    public $username;
+    public $name;
     public $email;
     public $password;
+    public $verifyCode;
 
 
     /**
@@ -20,44 +22,44 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
-
-            ['email', 'trim'],
-            ['email', 'required'],
+            // name, email, subject and body are required
+            [['name', 'email', 'password'], 'required'],
+            // email has to be a valid email address
             ['email', 'email'],
-            ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
-
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            // password has to be string
+            ['password', 'string', 'max' => 32],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha'],
         ];
     }
 
     /**
-     * Signs user up.
-     *
-     * @return User|null the saved model or null if saving fails
+     * {@inheritdoc}
      */
-    public function signup()
+    public function attributeLabels()
     {
-        if (!$this->validate()) {
-            return null;
-        }
-        
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        if (YII_ENV === 'dev') {
-            return $user->save() ? $user : null;
-        } else {
-            // todo
-            // signup action in prod 
-            return null;
-        }
+        return [
+            'verifyCode' => 'Verification Code',
+        ];
+    }
+
+    /**
+     * Sends an email to the specified email address using the information collected by this model.
+     *
+     * @param string $email the target email address
+     * @return bool whether the email was sent
+     */
+    public function sendEmail($email)
+    {
+        $temp = 'suyibang@123.com...';
+
+        return Yii::$app->mailer->compose()
+            ->setTo($email)
+            //->setFrom([$this->email => $this->name])
+            ->setCc($this->email)
+            ->setSubject("signup requirement")
+            ->setTextBody("name: " . $this->name . "\r\n" .
+                          "password: " . $this->password . "\r\n")
+            ->send();
     }
 }
