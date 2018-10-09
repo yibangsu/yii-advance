@@ -72,9 +72,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Hipad Intelligence <!--?= Html::encode(Yii::$app->name) ?--> <?= date('Y') ?></p>
+        <p class="pull-left">Copyright &copy; <?= date('Y') ?> <a href="http://www.hipad.com">Hipad Intelligence</a>. All Rights Reserved. </p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <!--p class="pull-right"--><!--?= Yii::powered() ?--><!--/p-->
     </div>
 </footer>
 
