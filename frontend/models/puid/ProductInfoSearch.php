@@ -35,7 +35,7 @@ class ProductInfoSearch extends ProductInfo
     /**
      * {@inheritdoc}
      */
-    public function load($data, $formName = null)
+    public function load($data, $formName = null, $activeRecord = false)
     {
         return parent::load($data, $formName, false);
     }
