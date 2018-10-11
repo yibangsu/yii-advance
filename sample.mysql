@@ -1,0 +1,725 @@
+-- MySQL dump 10.13  Distrib 5.5.61, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: test
+-- ------------------------------------------------------
+-- Server version	5.5.61-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Category_Project`
+--
+
+DROP TABLE IF EXISTS `Category_Project`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Category_Project` (
+  `cp_id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `cp_name` varchar(20) DEFAULT 'Firmware',
+  `cp_pj_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`cp_id`),
+  KEY `cp_pj_id` (`cp_pj_id`),
+  CONSTRAINT `Category_Project_ibfk_1` FOREIGN KEY (`cp_pj_id`) REFERENCES `Project` (`pj_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Category_Project`
+--
+
+LOCK TABLES `Category_Project` WRITE;
+/*!40000 ALTER TABLE `Category_Project` DISABLE KEYS */;
+INSERT INTO `Category_Project` VALUES (1,'Firmware',1),(2,'123',1),(3,'eeee',2);
+/*!40000 ALTER TABLE `Category_Project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Company`
+--
+
+DROP TABLE IF EXISTS `Company`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Company` (
+  `c_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(64) NOT NULL,
+  `c_site` varchar(32) NOT NULL,
+  `c_desc` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Company`
+--
+
+LOCK TABLES `Company` WRITE;
+/*!40000 ALTER TABLE `Company` DISABLE KEYS */;
+INSERT INTO `Company` VALUES (1,'Hipad','ShenZhen',''),(2,'weilai','ShenZhen',NULL),(3,'Hipad','sz','software test'),(4,'test','eee','aaa');
+/*!40000 ALTER TABLE `Company` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Device`
+--
+
+DROP TABLE IF EXISTS `Device`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Device` (
+  `d_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `d_code` varchar(64) NOT NULL,
+  `d_dg_id` bigint(20) NOT NULL,
+  `d_bind_ver` varchar(20) NOT NULL,
+  `d_date` datetime NOT NULL,
+  `d_u_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`d_id`),
+  KEY `d_u_id` (`d_u_id`),
+  CONSTRAINT `Device_ibfk_1` FOREIGN KEY (`d_u_id`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Device`
+--
+
+LOCK TABLES `Device` WRITE;
+/*!40000 ALTER TABLE `Device` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Device` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Device_Group`
+--
+
+DROP TABLE IF EXISTS `Device_Group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Device_Group` (
+  `dg_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `dg_name` varchar(64) NOT NULL,
+  `dg_date` datetime NOT NULL,
+  `dg_u_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`dg_id`),
+  KEY `dg_u_id` (`dg_u_id`),
+  CONSTRAINT `Device_Group_ibfk_1` FOREIGN KEY (`dg_u_id`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Device_Group`
+--
+
+LOCK TABLES `Device_Group` WRITE;
+/*!40000 ALTER TABLE `Device_Group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Device_Group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `File_Base`
+--
+
+DROP TABLE IF EXISTS `File_Base`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `File_Base` (
+  `fb_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `fb_name` varchar(64) NOT NULL,
+  `fb_path` varchar(256) NOT NULL,
+  `fb_status` tinyint(20) NOT NULL,
+  `fb_date` datetime NOT NULL,
+  `fb_size` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`fb_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `File_Base`
+--
+
+LOCK TABLES `File_Base` WRITE;
+/*!40000 ALTER TABLE `File_Base` DISABLE KEYS */;
+INSERT INTO `File_Base` VALUES (1,'QS5509QL_v1A71_TO_v1','/home/android/note/QS5509QL_v1A71_TO_v1A72.zip',1,'2018-09-07 10:12:37',101690497),(2,'asdfafadsfasf','/home/android/note/HiFota_v1B01_TO_v1B02.zip',1,'2018-09-06 16:20:02',14303032),(3,'SystemUI.apk.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:26:27',1771439),(4,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:29:12',14694),(5,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:29:42',0),(6,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:33:51',14694),(7,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:34:56',14694),(8,'patch.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-14 10:48:48',10765),(9,'SystemUI_apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-14 10:51:03',1771439),(10,'QS5509QL_v1A71_TO_v1A73.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-09-27 01:24:08',1771439),(11,'dex2jar-2.0.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-17 03:00:14',2362460),(12,'SystemUI.apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-10-11 06:17:47',1771439),(13,'SystemUI.apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-10-11 06:25:09',1771439),(14,'QS5509QL_v1A71_TO_v1A72.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-11 06:37:40',101690497);
+/*!40000 ALTER TABLE `File_Base` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `File_Extend`
+--
+
+DROP TABLE IF EXISTS `File_Extend`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `File_Extend` (
+  `fe_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `fe_fb_id` bigint(20) NOT NULL,
+  `fe_from_ver` bigint(20) NOT NULL,
+  `fe_to_ver` bigint(20) NOT NULL,
+  `fe_checksum` varchar(64) NOT NULL,
+  `fe_puid` bigint(20) NOT NULL,
+  PRIMARY KEY (`fe_id`),
+  KEY `fe_id` (`fe_fb_id`),
+  KEY `fe_from_ver` (`fe_from_ver`),
+  KEY `fe_to_ver` (`fe_to_ver`),
+  KEY `fe_puid` (`fe_puid`),
+  CONSTRAINT `File_Extend_ibfk_1` FOREIGN KEY (`fe_fb_id`) REFERENCES `File_Base` (`fb_id`),
+  CONSTRAINT `File_Extend_ibfk_2` FOREIGN KEY (`fe_from_ver`) REFERENCES `Software` (`sw_id`),
+  CONSTRAINT `File_Extend_ibfk_3` FOREIGN KEY (`fe_to_ver`) REFERENCES `Software` (`sw_id`),
+  CONSTRAINT `File_Extend_ibfk_4` FOREIGN KEY (`fe_puid`) REFERENCES `Product_Info` (`pi_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `File_Extend`
+--
+
+LOCK TABLES `File_Extend` WRITE;
+/*!40000 ALTER TABLE `File_Extend` DISABLE KEYS */;
+INSERT INTO `File_Extend` VALUES (2,1,2,3,'efa47ed1bf96edf35e336ef8a70054e6026d49f9',2),(3,2,4,5,'e93bd9fe9e3a6f655be1863291720c115893393a',2),(16,14,1,1,'6d6f649fccfbb328d27bbedf3c1706d3',1),(17,10,4,1,'b42f56509f3bc3436cb9a2e54e2e788d',1);
+/*!40000 ALTER TABLE `File_Extend` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Force_Version`
+--
+
+DROP TABLE IF EXISTS `Force_Version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Force_Version` (
+  `fv_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `fv_sw_id` bigint(20) NOT NULL,
+  `fv_date` datetime NOT NULL,
+  `fv_u_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`fv_id`),
+  KEY `fv_sw_id` (`fv_sw_id`),
+  KEY `fv_u_id` (`fv_u_id`),
+  CONSTRAINT `Force_Version_ibfk_1` FOREIGN KEY (`fv_sw_id`) REFERENCES `Software` (`sw_id`),
+  CONSTRAINT `Force_Version_ibfk_2` FOREIGN KEY (`fv_u_id`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Force_Version`
+--
+
+LOCK TABLES `Force_Version` WRITE;
+/*!40000 ALTER TABLE `Force_Version` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Force_Version` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `PUID_Publish`
+--
+
+DROP TABLE IF EXISTS `PUID_Publish`;
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `PUID_Publish` (
+  `pi_id` tinyint NOT NULL,
+  `puid` tinyint NOT NULL,
+  `sw_ver` tinyint NOT NULL,
+  `sw_id` tinyint NOT NULL,
+  `sw_release_note` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `Product_Info`
+--
+
+DROP TABLE IF EXISTS `Product_Info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Product_Info` (
+  `pi_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `PUID` varchar(20) NOT NULL,
+  `pi_cp_id` smallint(6) NOT NULL,
+  `cp_used` tinyint(1) DEFAULT '0',
+  `pi_date` datetime NOT NULL,
+  `pi_u_id` int(11) NOT NULL,
+  PRIMARY KEY (`pi_id`),
+  UNIQUE KEY `PUID` (`PUID`),
+  KEY `pi_cp_id` (`pi_cp_id`),
+  KEY `pi_u_id` (`pi_u_id`),
+  CONSTRAINT `Product_Info_ibfk_1` FOREIGN KEY (`pi_cp_id`) REFERENCES `Category_Project` (`cp_id`),
+  CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Product_Info`
+--
+
+LOCK TABLES `Product_Info` WRITE;
+/*!40000 ALTER TABLE `Product_Info` DISABLE KEYS */;
+INSERT INTO `Product_Info` VALUES (1,'QS5509-FOTATEST',1,1,'2018-09-14 16:37:32',1),(2,'HiFota-FotaTest',1,1,'2018-09-06 15:39:37',1);
+/*!40000 ALTER TABLE `Product_Info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Project`
+--
+
+DROP TABLE IF EXISTS `Project`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Project` (
+  `pj_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `pj_name` varchar(32) NOT NULL,
+  `pj_desc` varchar(200) DEFAULT NULL,
+  `pj_c_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`pj_id`),
+  UNIQUE KEY `pj_name` (`pj_name`),
+  KEY `pj_c_id` (`pj_c_id`),
+  CONSTRAINT `Project_ibfk_1` FOREIGN KEY (`pj_c_id`) REFERENCES `Company` (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Project`
+--
+
+LOCK TABLES `Project` WRITE;
+/*!40000 ALTER TABLE `Project` DISABLE KEYS */;
+INSERT INTO `Project` VALUES (1,'QS5509-QL','att project',1),(2,'MWF7-SC1-2.0','IOT project for AWS',1),(3,'HiFota','fota project',2);
+/*!40000 ALTER TABLE `Project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `SPOP_Data`
+--
+
+DROP TABLE IF EXISTS `SPOP_Data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SPOP_Data` (
+  `spop_data_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `spop_data_value` varchar(64) NOT NULL,
+  PRIMARY KEY (`spop_data_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SPOP_Data`
+--
+
+LOCK TABLES `SPOP_Data` WRITE;
+/*!40000 ALTER TABLE `SPOP_Data` DISABLE KEYS */;
+INSERT INTO `SPOP_Data` VALUES (1,'0, 18, 24, 168, 336, 720'),(2,'True, False'),(3,'Null, Mandatory, Optional'),(4,'Auto, Manual'),(5,'0, 1, 2, 3, 6, 12, 24'),(6,'0:24'),(7,'0:2097152'),(8,'0:100');
+/*!40000 ALTER TABLE `SPOP_Data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `SPOP_Template`
+--
+
+DROP TABLE IF EXISTS `SPOP_Template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SPOP_Template` (
+  `template_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `template_title` varchar(64) NOT NULL,
+  `template_content` varchar(128) NOT NULL,
+  `template_notice` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`template_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SPOP_Template`
+--
+
+LOCK TABLES `SPOP_Template` WRITE;
+/*!40000 ALTER TABLE `SPOP_Template` DISABLE KEYS */;
+INSERT INTO `SPOP_Template` VALUES (1,'Install Reminder:','{\"data\":{\"count\":[8]}}','Range:0-100'),(2,'Check Period:','{\"data\":{\"time\":[1]}}',NULL),(3,'Download Limitation:','{\"data\":{\"size\":[7]}}','Note: KB, maximum is 2097152(2G)'),(4,'Download Peek Time:','{\"data\":{\"begin\":[6],\"end\":[6]}}','Range:0-24'),(5,'Check Wifi Only:','{\"data\":{\"check\":[2]}}',NULL),(6,'Download Wifi Only:','{\"data\":{\"Download\":[2]}}',NULL),(7,'Download Priority:','{\"data\":{\"type\":[3],\"type_data\":{\"download\":[4],\"install\":[4]}<2th>}}',NULL),(8,'Install Reminder Period','{\"data\":{\"reminder\":[5]}}',NULL);
+/*!40000 ALTER TABLE `SPOP_Template` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Software`
+--
+
+DROP TABLE IF EXISTS `Software`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Software` (
+  `sw_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `sw_ver` varchar(10) NOT NULL,
+  `sw_creator` int(11) NOT NULL,
+  `sw_expiration_date` datetime NOT NULL,
+  `sw_release_note` text NOT NULL,
+  `sw_date` datetime NOT NULL,
+  `sw_puid` bigint(20) NOT NULL,
+  PRIMARY KEY (`sw_id`),
+  UNIQUE KEY `sw_ver` (`sw_ver`),
+  KEY `sw_puid` (`sw_puid`),
+  KEY `sw_creator` (`sw_creator`),
+  CONSTRAINT `Software_ibfk_1` FOREIGN KEY (`sw_puid`) REFERENCES `Product_Info` (`pi_id`),
+  CONSTRAINT `Software_ibfk_2` FOREIGN KEY (`sw_creator`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Software`
+--
+
+LOCK TABLES `Software` WRITE;
+/*!40000 ALTER TABLE `Software` DISABLE KEYS */;
+INSERT INTO `Software` VALUES (1,'v1A71',1,'2019-01-10 00:00:00','\"??release note?\"','2018-09-27 06:22:57',1),(2,'v1B01',1,'2019-10-01 00:00:00','base version','2018-09-06 15:44:45',2),(3,'v1B02',1,'2019-10-01 00:00:00','upgrade version','2018-09-06 15:45:12',2),(4,'v1A72',1,'2018-10-01 00:00:00','0','2018-09-27 06:24:31',1),(5,'v1A73',1,'2019-03-04 09:09:09','test test and test','2018-09-27 06:24:01',1);
+/*!40000 ALTER TABLE `Software` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Software_Publish`
+--
+
+DROP TABLE IF EXISTS `Software_Publish`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Software_Publish` (
+  `sp_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `sp_sw_id` bigint(20) NOT NULL,
+  `sp_file_count` tinyint(3) unsigned NOT NULL,
+  `sp_date` datetime NOT NULL,
+  `sp_publisher` bigint(20) NOT NULL,
+  PRIMARY KEY (`sp_id`),
+  KEY `sp_sw_id` (`sp_sw_id`),
+  KEY `sp_publisher` (`sp_publisher`),
+  CONSTRAINT `Software_Publish_ibfk_1` FOREIGN KEY (`sp_sw_id`) REFERENCES `Software` (`sw_id`),
+  CONSTRAINT `Software_Publish_ibfk_2` FOREIGN KEY (`sp_publisher`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Software_Publish`
+--
+
+LOCK TABLES `Software_Publish` WRITE;
+/*!40000 ALTER TABLE `Software_Publish` DISABLE KEYS */;
+INSERT INTO `Software_Publish` VALUES (1,0,1,'2018-09-06 00:00:00',1),(3,5,1,'2018-09-06 15:46:23',1);
+/*!40000 ALTER TABLE `Software_Publish` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Upgrade_Configuration`
+--
+
+DROP TABLE IF EXISTS `Upgrade_Configuration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Upgrade_Configuration` (
+  `uc_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `uc_puid` bigint(20) NOT NULL,
+  `uc_spop_template_id` bigint(20) NOT NULL,
+  `uc_spop_value` varchar(128) NOT NULL,
+  PRIMARY KEY (`uc_id`),
+  KEY `uc_puid` (`uc_puid`),
+  KEY `uc_spop_id` (`uc_spop_template_id`),
+  CONSTRAINT `Upgrade_Configuration_ibfk_1` FOREIGN KEY (`uc_puid`) REFERENCES `Product_Info` (`pi_id`),
+  CONSTRAINT `Upgrade_Configuration_ibfk_2` FOREIGN KEY (`uc_spop_template_id`) REFERENCES `SPOP_Template` (`template_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Upgrade_Configuration`
+--
+
+LOCK TABLES `Upgrade_Configuration` WRITE;
+/*!40000 ALTER TABLE `Upgrade_Configuration` DISABLE KEYS */;
+INSERT INTO `Upgrade_Configuration` VALUES (1,1,1,'{\"data\":{\"count\":2}}'),(2,1,2,'{\"data\":{\"time\":0}}'),(3,1,3,'{\"data\":{\"size\":2}}'),(4,1,4,'{\"data\":{\"begin\":1,\"end\":2}}'),(5,1,5,'{\"data\":{\"check\":\"True\"}}'),(6,1,6,'{\"data\":{\"Download\":\"True\"}}'),(7,1,7,'{\"data\":{\"type\":\"Null\",\"type_data\":{\"download\":\"Auto\",\"install\":\"Auto\"}}}'),(8,1,8,'{\"data\":{\"reminder\":0}}');
+/*!40000 ALTER TABLE `Upgrade_Configuration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `User_Info`
+--
+
+DROP TABLE IF EXISTS `User_Info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `User_Info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `company_id` bigint(20) NOT NULL,
+  `enable` varchar(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `company_id` (`company_id`),
+  CONSTRAINT `User_Info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `User_Info_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `Company` (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `User_Info`
+--
+
+LOCK TABLES `User_Info` WRITE;
+/*!40000 ALTER TABLE `User_Info` DISABLE KEYS */;
+INSERT INTO `User_Info` VALUES (1,1,1,'Y'),(2,2,1,'Y');
+/*!40000 ALTER TABLE `User_Info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_assignment`
+--
+
+DROP TABLE IF EXISTS `auth_assignment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_assignment` (
+  `item_name` varchar(64) NOT NULL,
+  `user_id` varchar(64) NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`item_name`,`user_id`),
+  KEY `auth_assignment_user_id_idx` (`user_id`),
+  CONSTRAINT `auth_assignment_ibfk_1` FOREIGN KEY (`item_name`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_assignment`
+--
+
+LOCK TABLES `auth_assignment` WRITE;
+/*!40000 ALTER TABLE `auth_assignment` DISABLE KEYS */;
+INSERT INTO `auth_assignment` VALUES ('admin','2',1536560754),('User','1',1538043265),('User','3',1538043275);
+/*!40000 ALTER TABLE `auth_assignment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_item`
+--
+
+DROP TABLE IF EXISTS `auth_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_item` (
+  `name` varchar(64) NOT NULL,
+  `type` smallint(6) NOT NULL,
+  `description` text,
+  `rule_name` varchar(64) DEFAULT NULL,
+  `data` blob,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`name`),
+  KEY `rule_name` (`rule_name`),
+  KEY `type` (`type`),
+  CONSTRAINT `auth_item_ibfk_1` FOREIGN KEY (`rule_name`) REFERENCES `auth_rule` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_item`
+--
+
+LOCK TABLES `auth_item` WRITE;
+/*!40000 ALTER TABLE `auth_item` DISABLE KEYS */;
+INSERT INTO `auth_item` VALUES ('/*',2,NULL,NULL,NULL,1536571251,1536571251),('/admin/*',2,NULL,NULL,NULL,1536546763,1536546763),('/admin/assignment/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/revoke',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/default/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/default/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/refresh',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/activate',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/change-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/index',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/login',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/request-password-reset',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/reset-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/signup',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/view',2,NULL,NULL,NULL,1536571250,1536571250),('/category/*',2,NULL,NULL,NULL,1538041101,1538041101),('/category/create',2,NULL,NULL,NULL,1538041101,1538041101),('/category/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/category/index',2,NULL,NULL,NULL,1538041101,1538041101),('/category/next',2,NULL,NULL,NULL,1538041101,1538041101),('/category/update',2,NULL,NULL,NULL,1538041101,1538041101),('/category/view',2,NULL,NULL,NULL,1538041101,1538041101),('/company/*',2,NULL,NULL,NULL,1538041101,1538041101),('/company/create',2,NULL,NULL,NULL,1538030019,1538030019),('/company/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/company/index',2,NULL,NULL,NULL,1538041101,1538041101),('/company/next',2,NULL,NULL,NULL,1538041101,1538041101),('/company/update',2,NULL,NULL,NULL,1538041101,1538041101),('/company/view',2,NULL,NULL,NULL,1538041101,1538041101),('/debug/*',2,NULL,NULL,NULL,1536565279,1536565279),('/debug/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/db-explain',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/download-mail',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/toolbar',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/reset-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/set-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/fota/*',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/create',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/index',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/update',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/view',2,NULL,NULL,NULL,1538041101,1538041101),('/gii/*',2,NULL,NULL,NULL,1536565285,1536565285),('/gii/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/action',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/diff',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/preview',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/product-info/*',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/create',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/index',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/next',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/update',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/view',2,NULL,NULL,NULL,1538041101,1538041101),('/project/*',2,NULL,NULL,NULL,1538041101,1538041101),('/project/create',2,NULL,NULL,NULL,1538041101,1538041101),('/project/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/project/index',2,NULL,NULL,NULL,1538041101,1538041101),('/project/next',2,NULL,NULL,NULL,1538041101,1538041101),('/project/update',2,NULL,NULL,NULL,1538041101,1538041101),('/project/view',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/*',2,NULL,NULL,NULL,1538041102,1538041102),('/publish/create',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/index',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/update',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/view',2,NULL,NULL,NULL,1538041101,1538041101),('/site/*',2,NULL,NULL,NULL,1536571250,1536571250),('/site/about',2,NULL,NULL,NULL,1538041102,1538041102),('/site/captcha',2,NULL,NULL,NULL,1538041102,1538041102),('/site/contact',2,NULL,NULL,NULL,1538041102,1538041102),('/site/error',2,NULL,NULL,NULL,1536571250,1536571250),('/site/index',2,NULL,NULL,NULL,1536571250,1536571250),('/site/login',2,NULL,NULL,NULL,1536571250,1536571250),('/site/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/site/request-password-reset',2,NULL,NULL,NULL,1538041102,1538041102),('/site/reset-password',2,NULL,NULL,NULL,1538041102,1538041102),('/site/signup',2,NULL,NULL,NULL,1538041102,1538041102),('/software/*',2,NULL,NULL,NULL,1538041102,1538041102),('/software/create',2,NULL,NULL,NULL,1538041102,1538041102),('/software/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/software/index',2,NULL,NULL,NULL,1538041102,1538041102),('/software/update',2,NULL,NULL,NULL,1538041102,1538041102),('/software/view',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/*',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/create',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/index',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/update',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/upload',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/view',2,NULL,NULL,NULL,1538041102,1538041102),('admin',1,'check if admin',NULL,NULL,1536560642,1538098659),('User',1,'check if login',NULL,NULL,1538042585,1538098707);
+/*!40000 ALTER TABLE `auth_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_item_child`
+--
+
+DROP TABLE IF EXISTS `auth_item_child`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_item_child` (
+  `parent` varchar(64) NOT NULL,
+  `child` varchar(64) NOT NULL,
+  PRIMARY KEY (`parent`,`child`),
+  KEY `child` (`child`),
+  CONSTRAINT `auth_item_child_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `auth_item_child_ibfk_2` FOREIGN KEY (`child`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_item_child`
+--
+
+LOCK TABLES `auth_item_child` WRITE;
+/*!40000 ALTER TABLE `auth_item_child` DISABLE KEYS */;
+INSERT INTO `auth_item_child` VALUES ('admin','/*'),('User','/category/*'),('User','/category/create'),('User','/category/delete'),('User','/category/index'),('User','/category/next'),('User','/category/update'),('User','/category/view'),('User','/company/index'),('User','/company/next'),('User','/company/view'),('User','/debug/*'),('User','/debug/default/*'),('User','/debug/default/db-explain'),('User','/debug/default/download-mail'),('User','/debug/default/index'),('User','/debug/default/toolbar'),('User','/debug/default/view'),('User','/debug/user/*'),('User','/debug/user/reset-identity'),('User','/debug/user/set-identity'),('User','/fota/*'),('User','/fota/create'),('User','/fota/delete'),('User','/fota/index'),('User','/fota/update'),('User','/fota/view'),('User','/gii/*'),('User','/gii/default/*'),('User','/gii/default/action'),('User','/gii/default/diff'),('User','/gii/default/index'),('User','/gii/default/preview'),('User','/gii/default/view'),('User','/product-info/*'),('User','/product-info/create'),('User','/product-info/delete'),('User','/product-info/index'),('User','/product-info/next'),('User','/product-info/update'),('User','/product-info/view'),('User','/project/*'),('User','/project/create'),('User','/project/delete'),('User','/project/index'),('User','/project/next'),('User','/project/update'),('User','/project/view'),('User','/publish/*'),('User','/publish/create'),('User','/publish/delete'),('User','/publish/index'),('User','/publish/update'),('User','/publish/view'),('User','/site/*'),('User','/site/about'),('User','/site/captcha'),('User','/site/contact'),('User','/site/error'),('User','/site/index'),('User','/site/login'),('User','/site/logout'),('User','/site/request-password-reset'),('User','/site/reset-password'),('User','/site/signup'),('User','/software/*'),('User','/software/create'),('User','/software/delete'),('User','/software/index'),('User','/software/update'),('User','/software/view'),('User','/upload/*'),('User','/upload/create'),('User','/upload/delete'),('User','/upload/index'),('User','/upload/update'),('User','/upload/upload'),('User','/upload/view');
+/*!40000 ALTER TABLE `auth_item_child` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_rule`
+--
+
+DROP TABLE IF EXISTS `auth_rule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_rule` (
+  `name` varchar(64) NOT NULL,
+  `data` blob,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_rule`
+--
+
+LOCK TABLES `auth_rule` WRITE;
+/*!40000 ALTER TABLE `auth_rule` DISABLE KEYS */;
+INSERT INTO `auth_rule` VALUES ('admin','O:32:\"mdm\\admin\\models\\rules\\AdminRule\":3:{s:4:\"name\";s:5:\"admin\";s:9:\"createdAt\";i:1536560602;s:9:\"updatedAt\";i:1536560602;}',1536560602,1536560602),('isUser','O:31:\"mdm\\admin\\models\\rules\\UserRule\":3:{s:4:\"name\";s:6:\"isUser\";s:9:\"createdAt\";i:1538042545;s:9:\"updatedAt\";i:1538043014;}',1538042545,1538043014);
+/*!40000 ALTER TABLE `auth_rule` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu`
+--
+
+DROP TABLE IF EXISTS `menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `parent` int(11) DEFAULT NULL,
+  `route` varchar(255) DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `data` blob,
+  PRIMARY KEY (`id`),
+  KEY `parent` (`parent`),
+  CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu`
+--
+
+LOCK TABLES `menu` WRITE;
+/*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` VALUES (2,'users manager',NULL,'/admin/rule/index',1,'{\"icon\": \"fa fa-user\", \"visible\": false}');
+/*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migration`
+--
+
+DROP TABLE IF EXISTS `migration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migration`
+--
+
+LOCK TABLES `migration` WRITE;
+/*!40000 ALTER TABLE `migration` DISABLE KEYS */;
+INSERT INTO `migration` VALUES ('m000000_000000_base',1536389835),('m130524_201442_init',1536389840),('m140602_111327_create_menu_table',1536544116),('m160312_050000_create_user',1536544116);
+/*!40000 ALTER TABLE `migration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test_table`
+--
+
+DROP TABLE IF EXISTS `test_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test_table` (
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test_table`
+--
+
+LOCK TABLES `test_table` WRITE;
+/*!40000 ALTER TABLE `test_table` DISABLE KEYS */;
+INSERT INTO `test_table` VALUES (0,2),(0,2);
+/*!40000 ALTER TABLE `test_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL DEFAULT '10',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `password_reset_token` (`password_reset_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'test','abOZrRhuCF8SqGiE64gb_sprj9zo0BgV','e10adc3949ba59abbe56e057f20f883e','3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462','suyibang@hipad.com',10,1536396682,1536397462),(2,'admin','hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl','d0cda743418255f70c9e29bfc4d7322f',NULL,'hipad@hipad.com',10,1536548558,1536548558),(3,'test2','99eaMiXPyECmg8ILEzmUNjLFo4llpFlO','e10adc3949ba59abbe56e057f20f883e',NULL,'test2@hipad.com',10,1536631292,1536631292);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Final view structure for view `PUID_Publish`
+--
+
+/*!50001 DROP TABLE IF EXISTS `PUID_Publish`*/;
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `PUID_Publish` AS select `Product_Info`.`pi_id` AS `pi_id`,`Product_Info`.`PUID` AS `puid`,`Software`.`sw_ver` AS `sw_ver`,`Software`.`sw_id` AS `sw_id`,`Software`.`sw_release_note` AS `sw_release_note` from (`Software_Publish` left join (`Software` left join `Product_Info` on((`Product_Info`.`pi_id` = `Software`.`sw_puid`))) on((`Software`.`sw_id` = `Software_Publish`.`sp_sw_id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-10-11 16:22:56
