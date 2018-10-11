@@ -153,7 +153,7 @@ class UpgradeConfigurationItem extends Model
     /**
      *
      */
-    public function toArray()
+    public function toArray(array $fields = [], array $expand = [], $recursive = true)
     {
         if (empty($this->children)) {
             return [$this->name => $this->value];
