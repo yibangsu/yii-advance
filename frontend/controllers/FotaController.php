@@ -79,16 +79,8 @@ class FotaController extends Controller
     {
         $model = new FileExtend();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-
-            if ($model->allSave(true)) {
-                return $this->redirect(['view', 'id' => $model->fe_id]);
-            }
-        }
-
-        if (!$model->getSoftwareList()) {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->fe_id]);
         }
 
         return $this->render('create', [
@@ -107,16 +99,8 @@ class FotaController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-
-            if ($model->allSave()) {
-                return $this->redirect(['view', 'id' => $model->fe_id]);
-            }
-        }
-
-        if (!$model->getSoftwareList()) {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        if ($model->load(Yii::$app->request->post()) && $model->update()) {
+            return $this->redirect(['view', 'id' => $model->fe_id]);
         }
 
         return $this->render('update', [
