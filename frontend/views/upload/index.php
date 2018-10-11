@@ -27,12 +27,8 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php'
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'fb_id',
             'fb_name',
-            //'fb_path',
-            //'fb_status',
             'fb_date',
-            //'fb_size',
 
             [
                 'class' => 'yii\grid\ActionColumn',
