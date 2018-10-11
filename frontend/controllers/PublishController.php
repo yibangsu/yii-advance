@@ -122,7 +122,7 @@ class PublishController extends Controller
         $model = new UpgradeConfigSettings();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            
+            $this->redirect(['software/index']);
         }
 
         return $this->render('settings', [
@@ -146,14 +146,4 @@ class PublishController extends Controller
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
-        /**
-     * Finds the UpgradeConfigures model based on puid.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @return UpgradeConfigures the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findCurUpgradeConfig()
-    {
-        
-    }
 }
