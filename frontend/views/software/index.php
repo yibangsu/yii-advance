@@ -28,6 +28,8 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
         <?= Html::a(Yii::t('app', 'Fota Manager'), Url::toRoute('fota/index'), ['class' => 'btn btn-success']) ?>
 
         <?= Html::a(Yii::t('app', 'Fota Package'), Url::toRoute('upload/index'), ['class' => 'btn btn-success']) ?>
+
+        <?= Html::a(Yii::t('app', 'Fota Configure'), Url::toRoute('publish/settings'), ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
