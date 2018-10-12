@@ -104,7 +104,7 @@ class FileExtend extends \yii\db\ActiveRecord
         if ($filebase === null)
             return false;
 
-        $this->fe_checksum = md5($filebase->fb_path . $filebase->fb_name);
+        $this->fe_checksum = md5_file($filebase->fb_path . $filebase->fb_name);
 
         return $result;
     }
