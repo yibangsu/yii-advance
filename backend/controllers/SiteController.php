@@ -80,7 +80,7 @@ class SiteController extends Controller
             return $this->actionLogin();
         }
 
-        return $this->render('index');
+        return $this->redirect('/admin/user');
     }
 
     /**
