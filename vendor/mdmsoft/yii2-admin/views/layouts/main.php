@@ -3,12 +3,14 @@
 use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
 use yii\helpers\Html;
+use frontend\assets\AppAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 list(,$url) = Yii::$app->assetManager->publish('@mdm/admin/assets');
 $this->registerCssFile($url.'/main.css');
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,10 +37,22 @@ $this->registerCssFile($url.'/main.css');
             ]);
         }
 
+        $menuItems = $this->context->module->navbar;
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>';
+
         echo Nav::widget([
             'options' => ['class' => 'nav navbar-nav navbar-right'],
-            'items' => $this->context->module->navbar,
+            'items' => $menuItems,
          ]);
+        
+
         NavBar::end();
         ?>
 
@@ -48,7 +62,7 @@ $this->registerCssFile($url.'/main.css');
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-right"><?= Yii::powered() ?></p>
+                <p class="pull-right">&copy; <?= date('Y') ?> <a href="http://www.hipad.com">Hipad Intelligence</a>. All Rights Reserved.</p>
             </div>
         </footer>
 

@@ -51,6 +51,14 @@ return [
 */
 
             'layout' => 'left-menu',
+            'navbar' => [
+                ['label' => Yii::t('rbac-admin', 'Help'), 'url' => ['default/index']],
+                [
+                    'label' => Yii::t('rbac-admin', 'Application'), 
+                    'url' => ['/admin/user'],
+                    //'options'=> ['class'=>yii::$app->controller->id !== "default"? "active": ""],
+                ],
+            ],
         ],
     ],
     'components' => [
