@@ -139,7 +139,7 @@ CREATE TABLE `File_Base` (
   `fb_date` datetime NOT NULL,
   `fb_size` int(10) unsigned NOT NULL,
   PRIMARY KEY (`fb_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +148,7 @@ CREATE TABLE `File_Base` (
 
 LOCK TABLES `File_Base` WRITE;
 /*!40000 ALTER TABLE `File_Base` DISABLE KEYS */;
-INSERT INTO `File_Base` VALUES (1,'QS5509QL_v1A71_TO_v1','/home/android/note/QS5509QL_v1A71_TO_v1A72.zip',1,'2018-09-07 10:12:37',101690497),(2,'asdfafadsfasf','/home/android/note/HiFota_v1B01_TO_v1B02.zip',1,'2018-09-06 16:20:02',14303032),(3,'SystemUI.apk.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:26:27',1771439),(4,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:29:12',14694),(5,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:29:42',0),(6,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:33:51',14694),(7,'2018.09.05_11.57.14.zip','/data/suyibang/FotaPackages/1/',1,'2018-09-14 10:34:56',14694),(8,'patch.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-14 10:48:48',10765),(9,'SystemUI_apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-14 10:51:03',1771439),(10,'QS5509QL_v1A71_TO_v1A73.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-09-27 01:24:08',1771439),(11,'dex2jar-2.0.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-09-17 03:00:14',2362460),(12,'SystemUI.apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-10-11 06:17:47',1771439),(13,'SystemUI.apk.zip','/data/suyibang/FotaPackages/QS5509-FOTATEST/',1,'2018-10-11 06:25:09',1771439),(14,'QS5509QL_v1A71_TO_v1A72.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-11 06:37:40',101690497);
+INSERT INTO `File_Base` VALUES (15,'QS5509QL_v1A71_TO_v1A72.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-17 07:56:14',101690497);
 /*!40000 ALTER TABLE `File_Base` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,6 +165,7 @@ CREATE TABLE `File_Extend` (
   `fe_from_ver` bigint(20) NOT NULL,
   `fe_to_ver` bigint(20) NOT NULL,
   `fe_checksum` varchar(64) NOT NULL,
+  `fe_expiration_date` varchar(10) NOT NULL,
   `fe_puid` bigint(20) NOT NULL,
   PRIMARY KEY (`fe_id`),
   KEY `fe_id` (`fe_fb_id`),
@@ -175,7 +176,7 @@ CREATE TABLE `File_Extend` (
   CONSTRAINT `File_Extend_ibfk_2` FOREIGN KEY (`fe_from_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_3` FOREIGN KEY (`fe_to_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_4` FOREIGN KEY (`fe_puid`) REFERENCES `Product_Info` (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +185,7 @@ CREATE TABLE `File_Extend` (
 
 LOCK TABLES `File_Extend` WRITE;
 /*!40000 ALTER TABLE `File_Extend` DISABLE KEYS */;
-INSERT INTO `File_Extend` VALUES (2,1,2,3,'efa47ed1bf96edf35e336ef8a70054e6026d49f9',2),(3,2,4,5,'e93bd9fe9e3a6f655be1863291720c115893393a',2),(16,14,1,1,'6d6f649fccfbb328d27bbedf3c1706d3',1),(17,10,4,1,'b42f56509f3bc3436cb9a2e54e2e788d',1);
+INSERT INTO `File_Extend` VALUES (18,15,1,4,'d41d8cd98f00b204e9800998ecf8427e','2019-01-11',1);
 /*!40000 ALTER TABLE `File_Extend` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,23 +217,6 @@ LOCK TABLES `Force_Version` WRITE;
 /*!40000 ALTER TABLE `Force_Version` DISABLE KEYS */;
 /*!40000 ALTER TABLE `Force_Version` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Temporary table structure for view `PUID_Publish`
---
-
-DROP TABLE IF EXISTS `PUID_Publish`;
-/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `PUID_Publish` (
-  `pi_id` tinyint NOT NULL,
-  `puid` tinyint NOT NULL,
-  `sw_ver` tinyint NOT NULL,
-  `sw_id` tinyint NOT NULL,
-  `sw_release_note` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `Product_Info`
@@ -357,7 +341,6 @@ CREATE TABLE `Software` (
   `sw_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sw_ver` varchar(10) NOT NULL,
   `sw_creator` int(11) NOT NULL,
-  `sw_expiration_date` datetime NOT NULL,
   `sw_release_note` text NOT NULL,
   `sw_date` datetime NOT NULL,
   `sw_puid` bigint(20) NOT NULL,
@@ -376,7 +359,7 @@ CREATE TABLE `Software` (
 
 LOCK TABLES `Software` WRITE;
 /*!40000 ALTER TABLE `Software` DISABLE KEYS */;
-INSERT INTO `Software` VALUES (1,'v1A71',1,'2019-01-10 00:00:00','\"??release note?\"','2018-09-27 06:22:57',1),(2,'v1B01',1,'2019-10-01 00:00:00','base version','2018-09-06 15:44:45',2),(3,'v1B02',1,'2019-10-01 00:00:00','upgrade version','2018-09-06 15:45:12',2),(4,'v1A72',1,'2018-10-01 00:00:00','0','2018-09-27 06:24:31',1),(5,'v1A73',1,'2019-03-04 09:09:09','test test and test','2018-09-27 06:24:01',1);
+INSERT INTO `Software` VALUES (1,'v1A71',1,'\"??release note?\"','2018-09-27 06:22:57',1),(2,'v1B01',1,'base version','2018-10-16 03:11:19',2),(3,'v1B02',1,'upgrade version','2018-09-06 15:45:12',2),(4,'v1A72',1,'0','2018-09-27 06:24:31',1),(5,'v1A73',1,'test test and test','2018-09-27 06:24:01',1);
 /*!40000 ALTER TABLE `Software` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -392,13 +375,16 @@ CREATE TABLE `Software_Publish` (
   `sp_sw_id` bigint(20) NOT NULL,
   `sp_file_count` tinyint(3) unsigned NOT NULL,
   `sp_date` datetime NOT NULL,
-  `sp_publisher` bigint(20) NOT NULL,
+  `sp_puid` bigint(20) NOT NULL,
+  `sp_publisher` int(11) NOT NULL,
   PRIMARY KEY (`sp_id`),
   KEY `sp_sw_id` (`sp_sw_id`),
+  KEY `sp_puid` (`sp_puid`),
   KEY `sp_publisher` (`sp_publisher`),
   CONSTRAINT `Software_Publish_ibfk_1` FOREIGN KEY (`sp_sw_id`) REFERENCES `Software` (`sw_id`),
-  CONSTRAINT `Software_Publish_ibfk_2` FOREIGN KEY (`sp_publisher`) REFERENCES `User` (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  CONSTRAINT `Software_Publish_ibfk_2` FOREIGN KEY (`sp_puid`) REFERENCES `Product_Info` (`pi_id`),
+  CONSTRAINT `Software_Publish_ibfk_3` FOREIGN KEY (`sp_publisher`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -407,7 +393,7 @@ CREATE TABLE `Software_Publish` (
 
 LOCK TABLES `Software_Publish` WRITE;
 /*!40000 ALTER TABLE `Software_Publish` DISABLE KEYS */;
-INSERT INTO `Software_Publish` VALUES (1,0,1,'2018-09-06 00:00:00',1),(3,5,1,'2018-09-06 15:46:23',1);
+INSERT INTO `Software_Publish` VALUES (8,1,1,'2018-10-17 09:04:07',1,1);
 /*!40000 ALTER TABLE `Software_Publish` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -584,6 +570,29 @@ INSERT INTO `auth_rule` VALUES ('admin','O:32:\"mdm\\admin\\models\\rules\\Admin
 UNLOCK TABLES;
 
 --
+-- Table structure for table `date`
+--
+
+DROP TABLE IF EXISTS `date`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `date` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `date`
+--
+
+LOCK TABLES `date` WRITE;
+/*!40000 ALTER TABLE `date` DISABLE KEYS */;
+/*!40000 ALTER TABLE `date` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `menu`
 --
 
@@ -609,7 +618,6 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (2,'users manager',NULL,'/admin/rule/index',1,'{\"icon\": \"fa fa-user\", \"visible\": false}');
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -693,25 +701,6 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'test','abOZrRhuCF8SqGiE64gb_sprj9zo0BgV','e10adc3949ba59abbe56e057f20f883e','3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462','suyibang@hipad.com',10,1536396682,1536397462),(2,'admin','hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl','d0cda743418255f70c9e29bfc4d7322f',NULL,'hipad@hipad.com',10,1536548558,1536548558),(3,'test2','99eaMiXPyECmg8ILEzmUNjLFo4llpFlO','e10adc3949ba59abbe56e057f20f883e',NULL,'test2@hipad.com',10,1536631292,1536631292);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Final view structure for view `PUID_Publish`
---
-
-/*!50001 DROP TABLE IF EXISTS `PUID_Publish`*/;
-/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = latin1 */;
-/*!50001 SET character_set_results     = latin1 */;
-/*!50001 SET collation_connection      = latin1_swedish_ci */;
-/*!50001 CREATE ALGORITHM=MERGE */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `PUID_Publish` AS select `Product_Info`.`pi_id` AS `pi_id`,`Product_Info`.`PUID` AS `puid`,`Software`.`sw_ver` AS `sw_ver`,`Software`.`sw_id` AS `sw_id`,`Software`.`sw_release_note` AS `sw_release_note` from (`Software_Publish` left join (`Software` left join `Product_Info` on((`Product_Info`.`pi_id` = `Software`.`sw_puid`))) on((`Software`.`sw_id` = `Software_Publish`.`sp_sw_id`))) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -722,4 +711,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-11 16:22:56
+-- Dump completed on 2018-10-17 17:05:18

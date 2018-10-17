@@ -11,7 +11,6 @@ use frontend\models\puid\ProductInfo;
  * @property int $sw_id
  * @property string $sw_ver
  * @property int $sw_creator
- * @property string $sw_expiration_date
  * @property string $sw_release_note
  * @property string $sw_date
  * @property int $sw_puid
@@ -38,9 +37,9 @@ class Software extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sw_ver', 'sw_creator', 'sw_expiration_date', 'sw_release_note', 'sw_date', 'sw_puid'], 'required'],
+            [['sw_ver', 'sw_creator', 'sw_release_note', 'sw_date', 'sw_puid'], 'required'],
             [['sw_creator', 'sw_puid'], 'integer'],
-            [['sw_expiration_date', 'sw_date'], 'safe'],
+            [['sw_date'], 'safe'],
             [['sw_release_note'], 'string'],
             [['sw_ver'], 'string', 'max' => 10],
             [['sw_ver'], 'unique'],
@@ -57,7 +56,6 @@ class Software extends \yii\db\ActiveRecord
             'sw_id' => Yii::t('app', 'ID'),
             'sw_ver' => Yii::t('app', 'Version'),
             'sw_creator' => Yii::t('app', 'Creator'),
-            'sw_expiration_date' => Yii::t('app', 'Expiration Date'),
             'sw_release_note' => Yii::t('app', 'Release Note'),
             'sw_date' => Yii::t('app', 'Date'),
             'sw_puid' => Yii::t('app', 'Puid'),
