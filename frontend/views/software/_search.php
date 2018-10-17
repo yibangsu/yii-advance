@@ -21,11 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sw_creator') ?>
 
-    <?= $form->field($model, 'sw_expiration_date') ?>
-
     <?= $form->field($model, 'sw_release_note') ?>
 
-    <?php // echo $form->field($model, 'sw_date') ?>
+    <?= $form->field($model, 'sw_date') ?>
 
     <?php // echo $form->field($model, 'sw_puid') ?>
 

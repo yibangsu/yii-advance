@@ -53,9 +53,11 @@ class SoftwarePublishSearch extends SoftwarePublish
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
+
+        
 
         // grid filtering conditions
         $query->andFilterWhere([
@@ -63,9 +65,18 @@ class SoftwarePublishSearch extends SoftwarePublish
             'sp_sw_id' => $this->sp_sw_id,
             'sp_file_count' => $this->sp_file_count,
             'sp_date' => $this->sp_date,
+            'sp_puid' => $this->sp_puid,
             'sp_publisher' => $this->sp_publisher,
         ]);
 
         return $dataProvider;
+    }
+
+    public function removeAll()
+    {
+        $datas = SoftwarePublish::findAll(['sp_puid' => $this->sp_puid, 'sp_publisher' => $this->sp_publisher]);
+        foreach ($datas as $data) {
+            $data->delete();
+        }
     }
 }

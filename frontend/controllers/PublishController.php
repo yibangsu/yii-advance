@@ -25,6 +25,7 @@ class PublishController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'delete-all' => ['POST'],
                 ],
             ],
         ];
@@ -36,12 +37,13 @@ class PublishController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SoftwarePublishSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $model = $this->findModelByPuid(Yii::$app->user->getUserCache('puidId'));
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -122,12 +124,27 @@ class PublishController extends Controller
         $model = new UpgradeConfigSettings();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $this->redirect(['software/index']);
+            $this->redirect(['/software/index']);
         }
 
         return $this->render('settings', [
             'model' => $model,
         ]);
+    }
+
+    /**
+     * Remove published software.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDeleteAll()
+    {
+        $searchModel = new SoftwarePublishSearch();
+        $searchModel->removeAll();
+
+        return $this->redirect(['index']);
     }
 
     /**
@@ -144,6 +161,20 @@ class PublishController extends Controller
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    /**
+     * Finds the SoftwarePublish model based on its puid.
+     * @param integer $puid
+     * @return SoftwarePublish the loaded model
+     */
+    protected function findModelByPuid($puid)
+    {
+        if (($model = SoftwarePublish::findOne(['sp_puid' => $puid])) !== null) {
+            return $model;
+        }
+
+        return new SoftwarePublish();
     }
 
 }

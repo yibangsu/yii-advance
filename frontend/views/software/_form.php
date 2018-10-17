@@ -14,8 +14,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sw_ver')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sw_expiration_date')->textInput() ?>
-
     <?= $form->field($model, 'sw_release_note')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

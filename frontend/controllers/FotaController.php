@@ -11,6 +11,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
+use frontend\models\fotaSrc\FotaPackageUpload;
+
 /**
  * PackageController implements the CRUD actions for FileExtend model.
  */
@@ -32,17 +34,6 @@ class FotaController extends Controller
     }
 
     /**
-     * {@inheritdoc}
-     */
-/** just for test csrf
-    public function beforeAction($action)
-    {
-        $this->enableCsrfValidation = false;
-        return parent::beforeAction($action);
-    }
-*/
-
-    /**
      * Lists all FileExtend models.
      * @return mixed
      */
@@ -55,6 +46,24 @@ class FotaController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    /**
+     * Lists all FileBase models.
+     * @return mixed
+     */
+    public function actionUpload()
+    {
+        $model = new FotaPackageUpload();
+
+        if (Yii::$app->request->isPost) {
+            $model->load(Yii::$app->request->post());
+            $model->upload();
+        } else {
+            $model->setOver();
+        }
+        
+        return json_encode($model->uploadReturn);
     }
 
     /**
@@ -77,11 +86,11 @@ class FotaController extends Controller
      */
     public function actionCreate()
     {
-        $model = new FileExtend();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->fe_id]);
-        }
+        $model = new FotaPackageUpload();
+        $model->load(Yii::$app->request->post());
+        //if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //return $this->redirect(['view', 'id' => $model->fe_id]);
+        //}
 
         return $this->render('create', [
             'model' => $model,
