@@ -71,6 +71,7 @@ class ProductInfo extends \yii\db\ActiveRecord
         $result = parent::load($data, $formName);
 
         $this->pi_cp_id = Yii::$app->user->getUserCache('categoryId');
+        $this->cp_used = 1;
 
         if ($id) {
             $this->pi_id = $id;

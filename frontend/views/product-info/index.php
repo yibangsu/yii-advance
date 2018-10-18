@@ -34,7 +34,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
             //'pi_id',
             'PUID',
             //'pi_cp_id',
-            'cp_used',
+            //'cp_used',
             'pi_date',
             //'pi_u_id',
 
