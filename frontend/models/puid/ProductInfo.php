@@ -35,7 +35,7 @@ class ProductInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pi_id', 'PUID', 'pi_cp_id', 'pi_date', 'pi_u_id'], 'required'],
+            [['PUID', 'pi_cp_id', 'pi_date', 'pi_u_id'], 'required'],
             [['pi_id', 'pi_cp_id', 'cp_used', 'pi_u_id'], 'integer'],
             [['pi_date'], 'safe'],
             [['PUID'], 'string', 'max' => 20],
@@ -78,6 +78,8 @@ class ProductInfo extends \yii\db\ActiveRecord
 
         if ($uid) {
             $this->pi_u_id = $uid;
+        } else {
+            $this->pi_u_id = Yii::$app->user->id;
         }
 
         return $result;
@@ -88,7 +90,7 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function update($runValidation = true, $attributeNames = null)
     {
-        if ($this->pi_u_id === Yii::$app->user->id) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
             $this->pi_date = date("Y-m-d h:i:s",time());
             return parent::update($runValidation, $attributeNames);
         }
@@ -101,11 +103,10 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function save($runValidation = true, $attributeNames = null)
     {
-        if ($this->pi_u_id === Yii::$app->user->id) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
             $this->pi_date = date("Y-m-d h:i:s",time());
             return parent::save($runValidation, $attributeNames);
         }
-
         return false;
     }
 
@@ -114,7 +115,7 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function delete()
     {
-        if ($this->pi_u_id === Yii::$app->user->id) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
             return parent::delete();
         }
 
