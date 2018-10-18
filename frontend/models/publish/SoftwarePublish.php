@@ -56,6 +56,18 @@ class SoftwarePublish extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public function load($data, $formName = null)
+    {
+        $result = parent::load($data, $formName);
+        $this->sp_file_count = 1;
+        $this->sp_puid = Yii::$app->user->getUserCache('puidId');
+        $this->sp_publisher = Yii::$app->user->id;
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function save($runValidation = true, $attributeNames = null)
     {
          if (strval($this->sp_publisher) === strval(Yii::$app->user->id) 
