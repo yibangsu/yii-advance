@@ -26,7 +26,7 @@ class FotaPackageUpload extends Model
     public function rules()
     {
         return [
-            [['file', 'compare', 'toVersion', 'expireDate'], 'required'],
+            [['file', 'compare', 'toVersion'], 'required'],
             [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'zip', 'maxSize' => '2147483648', 'maxLength' => 64],
             [['fromVersion', 'toVersion'], 'integer', 'skipOnEmpty' => false],
             ['toVersion', 'compare', 'skipOnEmpty' => false, 'compareAttribute' => 'fromVersion', 'operator' => '!=', 'message' => Yii::t('app', 'Target version should be different with source version!')],
@@ -45,6 +45,9 @@ class FotaPackageUpload extends Model
         $this->fromVersion = isset($data['fromVersion'])? $data['fromVersion']: null;
         $this->toVersion = isset($data['toVersion'])? $data['toVersion']: null;
         $this->expireDate = isset($data['expireDate'])? $data['expireDate']: null;
+        if (empty($this->expireDate)) {
+            $this->expireDate = 'never';
+        }
         $this->blob = UploadedFile::getInstanceByName('blob');
 
         parent::load($data, $formName);

@@ -87,7 +87,10 @@ class FotaController extends Controller
     public function actionCreate()
     {
         $model = new FotaPackageUpload();
-        $model->load(Yii::$app->request->post());
+
+        //if (Yii::$app->request->isPost) {
+        //    $model->load(Yii::$app->request->post());
+        //}
         //if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //return $this->redirect(['view', 'id' => $model->fe_id]);
         //}
