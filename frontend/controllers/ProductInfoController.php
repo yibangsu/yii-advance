@@ -58,7 +58,7 @@ class ProductInfoController extends Controller
             Yii::$app->user->setUserCache('puidName', $name);
             return $this->redirect(['software/index']);
         }
-
+        Yii::$app->session->setFlash('error', Yii::t('app', 'You are not allowed to visit next page!'));
         return $this->actionIndex();
     }
 
@@ -88,6 +88,10 @@ class ProductInfoController extends Controller
             return $this->redirect(['view', 'id' => $model->pi_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create new product info failed!'));
+        }
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -106,6 +110,10 @@ class ProductInfoController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
             return $this->redirect(['view', 'id' => $model->pi_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update product info failed!'));
         }
 
         return $this->render('update', [
