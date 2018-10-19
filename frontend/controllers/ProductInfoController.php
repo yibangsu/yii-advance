@@ -112,7 +112,10 @@ class ProductInfoController extends Controller
             return $this->redirect(['view', 'id' => $model->pi_id]);
         }
 
-        Yii::$app->session->setFlash('error', Yii::t('app', 'Update product info failed!'));
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update product info failed!'));
+        }
+
         return $this->render('update', [
             'model' => $model,
         ]);
