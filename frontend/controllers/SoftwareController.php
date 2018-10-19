@@ -106,6 +106,10 @@ class SoftwareController extends Controller
             return $this->redirect(['view', 'id' => $model->sw_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create software failed!'));
+        }
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -124,6 +128,10 @@ class SoftwareController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->sw_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update software failed!'));
         }
 
         return $this->render('update', [

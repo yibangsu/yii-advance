@@ -98,6 +98,10 @@ class ProjectController extends Controller
             return $this->redirect(['view', 'id' => $model->pj_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create project failed!'));
+        }
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -116,6 +120,10 @@ class ProjectController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->pj_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update project failed!'));
         }
 
         return $this->render('update', [

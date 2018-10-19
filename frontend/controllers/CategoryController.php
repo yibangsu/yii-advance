@@ -82,6 +82,10 @@ class CategoryController extends Controller
             return $this->redirect(['view', 'id' => $model->cp_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create category failed!'));
+        }
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -100,6 +104,10 @@ class CategoryController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->cp_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update category failed!'));
         }
 
         return $this->render('update', [
