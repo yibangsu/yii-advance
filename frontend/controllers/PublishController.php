@@ -73,6 +73,10 @@ class PublishController extends Controller
             return $this->redirect(['view', 'id' => $model->sp_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Publish software failed!'));
+        }
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -91,6 +95,10 @@ class PublishController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->sp_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update publish failed!'));
         }
 
         return $this->render('update', [
@@ -125,6 +133,10 @@ class PublishController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $this->redirect(['/software/index']);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Set configurations failed!'));
         }
 
         return $this->render('settings', [
