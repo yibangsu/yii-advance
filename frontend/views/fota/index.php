@@ -31,6 +31,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
             'fb_name',
             'sourceVersion',
             'targetVersion',
+            'fe_checksum',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
