@@ -42,7 +42,6 @@ class Software extends \yii\db\ActiveRecord
             [['sw_date'], 'safe'],
             [['sw_release_note'], 'string'],
             [['sw_ver'], 'string', 'max' => 10],
-            [['sw_ver'], 'unique'],
             [['sw_puid'], 'exist', 'skipOnError' => true, 'targetClass' => ProductInfo::className(), 'targetAttribute' => ['sw_puid' => 'pi_id']],
         ];
     }
