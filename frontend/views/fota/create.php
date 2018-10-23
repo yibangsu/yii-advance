@@ -7,6 +7,7 @@ use yii\widgets\ActiveForm;
 use common\assets\UploadFileAsset;
 use yii\helpers\Url;
 use frontend\models\software\Software;
+use frontend\models\fotaSrc\ReleaseNoteLanguage
 use kartik\datetime\DateTimePickerAsset;
 use kartik\datetime\DateTimePicker;
 
@@ -43,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php 
         $puidId = Yii::$app->user->getUserCache('puidId');
         $versionList = Software::find()->where(['sw_puid' => $puidId])->all();
+        $languageList = ReleaseNoteLanguage::findAll();
         ?>
 
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -65,6 +67,10 @@ $this->params['breadcrumbs'][] = $this->title;
         )?>
 
         <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote]) ?>
+
+        <?= Html::dropDownList('language', ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
+
+        <?= Html::textInput('note') ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Upload'), ['class' => 'btn btn-success']) ?>
@@ -151,6 +157,7 @@ $js = <<<JS
             var targetDroplist = $("#fotapackageupload-toversion")[0];
             var targetVersion = targetDroplist.options[targetDroplist.selectedIndex].value;
             var expireDate = $("#fotapackageupload-expiredate")[0].value;
+            var releaseNote = $("#fotapackageupload-releasenote")[0].value;
 
             form_data.append('_csrf-frontend', meta);
             form_data.append('fromVersion', sourceVersion);
@@ -159,6 +166,7 @@ $js = <<<JS
             form_data.append('fb_name', file.name);
             form_data.append('totalBlobNum', total_blob_num);
             form_data.append('curBlobNum', blob_num);
+            form_data.append('releaseNote', releaseNote);
             form_data.append('blob', blob);
  
             xhr.open('POST', '$targetUrl', true);
