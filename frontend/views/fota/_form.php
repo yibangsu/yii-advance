@@ -36,6 +36,8 @@ use frontend\models\software\Software;
 
     <?= $form->field($model, 'fe_to_ver')->dropDownList(ArrayHelper::map($versionList, 'sw_id', 'sw_ver')) ?>
 
+    <?= $form->field($model, 'fe_release_note')->textarea() ?>
+
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>

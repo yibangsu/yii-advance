@@ -14,6 +14,7 @@ use frontend\models\puid\ProductInfo;
  * @property int $fe_from_ver
  * @property int $fe_to_ver
  * @property string $fe_checksum
+ * @property string $fe_release_note
  * @property string $fe_expiration_date 
  * @property int $fe_puid
  *
@@ -58,6 +59,7 @@ class FileExtend extends \yii\db\ActiveRecord
             [['fe_from_ver'], 'exist', 'skipOnError' => true, 'targetClass' => Software::className(), 'targetAttribute' => ['fe_from_ver' => 'sw_id']],
             [['fe_to_ver'], 'exist', 'skipOnError' => true, 'targetClass' => Software::className(), 'targetAttribute' => ['fe_to_ver' => 'sw_id']],
             [['fe_puid'], 'exist', 'skipOnError' => true, 'targetClass' => ProductInfo::className(), 'targetAttribute' => ['fe_puid' => 'pi_id']],
+            [['fe_release_note'], 'safe'],
         ];
     }
 
