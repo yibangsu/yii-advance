@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 use common\assets\UploadFileAsset;
 use yii\helpers\Url;
 use frontend\models\software\Software;
-use frontend\models\fotaSrc\ReleaseNoteLanguage
+use frontend\models\fotaSrc\ReleaseNoteLanguage;
 use kartik\datetime\DateTimePickerAsset;
 use kartik\datetime\DateTimePicker;
 
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php 
         $puidId = Yii::$app->user->getUserCache('puidId');
         $versionList = Software::find()->where(['sw_puid' => $puidId])->all();
-        $languageList = ReleaseNoteLanguage::findAll();
+        $languageList = ReleaseNoteLanguage::find()->all();
         ?>
 
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -68,9 +68,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote]) ?>
 
-        <?= Html::dropDownList('language', ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
+        <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
 
+        <div>
         <?= Html::textInput('note') ?>
+        </div>
+        <div class="help-block"></div>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Upload'), ['class' => 'btn btn-success']) ?>
