@@ -64,6 +64,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         ]
         )?>
 
+        <?= $form->field($model, 'fe_release_note')->textarea(['value' => $model->fe_release_note]) ?>
+
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Upload'), ['class' => 'btn btn-success']) ?>
         </div>
