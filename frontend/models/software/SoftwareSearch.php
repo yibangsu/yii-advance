@@ -19,7 +19,7 @@ class SoftwareSearch extends Software
     {
         return [
             [['sw_id', 'sw_creator', 'sw_puid'], 'integer'],
-            [['sw_ver', 'sw_release_note', 'sw_date'], 'safe'],
+            [['sw_ver', 'sw_date'], 'safe'],
         ];
     }
 
@@ -67,7 +67,6 @@ class SoftwareSearch extends Software
         ]);
 
         $query->andFilterWhere(['like', 'sw_ver', $this->sw_ver])
-            ->andFilterWhere(['like', 'sw_release_note', $this->sw_release_note])
             ->andFilterWhere(['like', 'sw_date', $this->sw_date]);
 
         return $dataProvider;
