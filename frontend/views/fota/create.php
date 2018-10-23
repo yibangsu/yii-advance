@@ -70,10 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
 
-        <div>
-        <?= Html::textInput('note') ?>
-        </div>
-        <div class="help-block"></div>
+        <?= $form->field($model, 'langNote')->textInput() ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Upload'), ['class' => 'btn btn-success']) ?>

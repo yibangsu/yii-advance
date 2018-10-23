@@ -20,6 +20,7 @@ class FotaPackageUpload extends Model
     public $toVersion;
     public $releaseNote;
     public $language;
+    public $langNote;
     public $expireDate;
 
     /**
