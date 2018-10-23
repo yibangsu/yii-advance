@@ -218,7 +218,7 @@ $js = <<<JS
         $.each(note,function(key, value){
             noteStr = noteStr + "<" + tag + ">"
                               + value 
-                              + "</" + tag + ">\n";
+                              + "</" + tag + ">\\n";
         });
         $("#fotapackageupload-releasenote")[0].value = noteStr;
     });
