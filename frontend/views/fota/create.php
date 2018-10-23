@@ -214,11 +214,13 @@ $js = <<<JS
         var tag = tagList.options[tagList.selectedIndex].value;
         var value = $("#fotapackageupload-langnote")[0].value;
         note[tag] = value;
+        var noteStr = "";
         $.each(note,function(key, value){
-            $("#fotapackageupload-releasenote")[0].value = "<" + tag + ">"
+            noteStr = noteStr + "<" + tag + ">"
                               + value 
-                              + "</" + tag + ">";
-        }
+                              + "</" + tag + ">\n";
+        });
+        $("#fotapackageupload-releasenote")[0].value = noteStr;
     });
 JS;
     $this->registerJs($js);
