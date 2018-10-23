@@ -8,7 +8,8 @@ use Yii;
  * This is the model class for table "File_Base".
  *
  * @property int $rnl_id
- * @property string $rnl_name
+ * @property string $rnl_tag
+ * @property string $rnl_note
  *
  * @property FileExtend[] $fileExtends
  */
@@ -28,8 +29,8 @@ class ReleaseNoteLanguage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['rnl_name'], 'required'],
-            [['rnl_name'], 'string', 'max' => 10],
+            [['rnl_tag', 'rnl_note'], 'required'],
+            [['rnl_tag', 'rnl_note'], 'string', 'max' => 10],
         ];
     }
 
@@ -40,7 +41,8 @@ class ReleaseNoteLanguage extends \yii\db\ActiveRecord
     {
         return [
             'rnl_id' => Yii::t('app', 'ID'),
-            'rnl_name' => Yii::t('app', 'Name'),
+            'rnl_tag' => Yii::t('app', 'Tag'),
+            'rnl_note' => Yii::t('app', 'Name'),
         ];
     }
 }

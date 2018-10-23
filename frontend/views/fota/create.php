@@ -68,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote, 'readonly' => 'readonly']) ?>
 
-        <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
+        <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_tag', 'rnl_note')) ?>
 
         <?= $form->field($model, 'langNote')->textInput() ?>
 
@@ -87,6 +87,7 @@ $targetUrl = Url::toRoute([$this->context->id . '/upload']);
 $finishedUrl = Url::toRoute([$this->context->id . '/index']);
 $js = <<<JS
     var upload = new Upload();
+    var note = {};
 
     function Upload() {
         
@@ -209,8 +210,15 @@ $js = <<<JS
     });
 
     $('#fotapackageupload-langnote').bind('input propertychange', function() {
+        var tagList = $("#fotapackageupload-language")[0];
+        var tag = tagList.options[tagList.selectedIndex].value;
         var value = $("#fotapackageupload-langnote")[0].value;
-        $("#fotapackageupload-releasenote")[0].value = value;
+        note[tag] = value;
+        $.each(note,function(key, value){
+            $("#fotapackageupload-releasenote")[0].value = "<" + tag + ">"
+                              + value 
+                              + "</" + tag + ">";
+        }
     });
 JS;
     $this->registerJs($js);
