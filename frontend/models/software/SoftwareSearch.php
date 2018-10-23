@@ -19,7 +19,7 @@ class SoftwareSearch extends Software
     {
         return [
             [['sw_id', 'sw_creator', 'sw_puid'], 'integer'],
-            [['sw_ver', 'sw_release_note', 'sw_date'], 'safe'],
+            [['sw_ver', 'sw_date'], 'safe'],
         ];
     }
 
