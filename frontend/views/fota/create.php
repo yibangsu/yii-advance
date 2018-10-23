@@ -66,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         ]
         )?>
 
-        <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote]) ?>
+        <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote, 'readonly' => 'readonly']) ?>
 
         <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_id', 'rnl_name')) ?>
 
@@ -206,6 +206,11 @@ $js = <<<JS
             alert('some field is going wrong.');
         }
         return false;
+    });
+
+    $('#fotapackageupload-langnote').bind('input propertychange', function() {
+        var value = $("#fotapackageupload-langnote")[0].value;
+        $("#fotapackageupload-releasenote")[0].value = value;
     });
 JS;
     $this->registerJs($js);
