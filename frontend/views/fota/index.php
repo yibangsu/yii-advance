@@ -36,7 +36,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {delete}',
+                'template' => '{view} {update} {delete}',
             ],
         ],
     ]); ?>

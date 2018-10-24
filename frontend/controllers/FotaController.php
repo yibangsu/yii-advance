@@ -107,7 +107,6 @@ class FotaController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-/*
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -120,7 +119,7 @@ class FotaController extends Controller
             'model' => $model,
         ]);
     }
-*/
+
     /**
      * Deletes an existing FileExtend model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
