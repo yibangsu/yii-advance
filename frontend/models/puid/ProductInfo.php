@@ -118,7 +118,7 @@ class ProductInfo extends \yii\db\ActiveRecord
     public function delete()
     {
         if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
-            $configs = UpgradeConfiguration::findAll(['uc_puid' => $puid]);
+            $configs = UpgradeConfiguration::findAll(['uc_puid' => $this->pi_id]);
             foreach ($configs as $config) {
                 $config->delete();
             }

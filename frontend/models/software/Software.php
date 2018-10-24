@@ -36,10 +36,9 @@ class Software extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sw_ver', 'sw_creator', 'sw_release_note', 'sw_date', 'sw_puid'], 'required'],
+            [['sw_ver', 'sw_creator', 'sw_date', 'sw_puid'], 'required'],
             [['sw_creator', 'sw_puid'], 'integer'],
             [['sw_date'], 'safe'],
-            [['sw_release_note'], 'string'],
             [['sw_ver'], 'string', 'max' => 10],
             [['sw_puid'], 'exist', 'skipOnError' => true, 'targetClass' => ProductInfo::className(), 'targetAttribute' => ['sw_puid' => 'pi_id']],
         ];
@@ -54,7 +53,6 @@ class Software extends \yii\db\ActiveRecord
             'sw_id' => Yii::t('app', 'ID'),
             'sw_ver' => Yii::t('app', 'Version'),
             'sw_creator' => Yii::t('app', 'Creator'),
-            'sw_release_note' => Yii::t('app', 'Release Note'),
             'sw_date' => Yii::t('app', 'Date'),
             'sw_puid' => Yii::t('app', 'Puid'),
         ];
