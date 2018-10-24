@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.61, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
 --
--- Host: localhost    Database: test
+-- Host: localhost    Database: HiFota
 -- ------------------------------------------------------
--- Server version	5.5.61-0ubuntu0.14.04.1
+-- Server version	5.7.23-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `Category_Project` (
   PRIMARY KEY (`cp_id`),
   KEY `cp_pj_id` (`cp_pj_id`),
   CONSTRAINT `Category_Project_ibfk_1` FOREIGN KEY (`cp_pj_id`) REFERENCES `Project` (`pj_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `Category_Project` (
 
 LOCK TABLES `Category_Project` WRITE;
 /*!40000 ALTER TABLE `Category_Project` DISABLE KEYS */;
-INSERT INTO `Category_Project` VALUES (1,'Firmware',1),(2,'123',1),(3,'eeee',2);
+INSERT INTO `Category_Project` VALUES (1,'Firmware',1),(2,'123',1),(3,'eeee',2),(4,'test1',2);
 /*!40000 ALTER TABLE `Category_Project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `File_Base` (
   `fb_date` datetime NOT NULL,
   `fb_size` int(10) unsigned NOT NULL,
   PRIMARY KEY (`fb_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +148,7 @@ CREATE TABLE `File_Base` (
 
 LOCK TABLES `File_Base` WRITE;
 /*!40000 ALTER TABLE `File_Base` DISABLE KEYS */;
-INSERT INTO `File_Base` VALUES (15,'QS5509QL_v1A71_TO_v1A72.zip','/data/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-17 07:56:14',101690497);
+INSERT INTO `File_Base` VALUES (7,'upgrade.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-18 07:41:21',4678848),(8,'QS5509QL_v1A71_TO_v1A73.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-19 02:33:30',1771439),(9,'QS5509QL_v1A71_TO_v1A72.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-22 07:20:39',101690497),(10,'SystemUI.apk.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-23 08:32:34',1771439),(11,'upgrade.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-22 09:25:09',4678848),(12,'QS5509QL_v1A73_TO_v1A74.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-24 02:11:34',11096229),(13,'SystemUI.apk.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-23 10:18:50',1771439);
 /*!40000 ALTER TABLE `File_Base` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,6 +165,7 @@ CREATE TABLE `File_Extend` (
   `fe_from_ver` bigint(20) NOT NULL,
   `fe_to_ver` bigint(20) NOT NULL,
   `fe_checksum` varchar(64) NOT NULL,
+  `fe_release_note` text NOT NULL,
   `fe_expiration_date` varchar(10) NOT NULL,
   `fe_puid` bigint(20) NOT NULL,
   PRIMARY KEY (`fe_id`),
@@ -176,7 +177,7 @@ CREATE TABLE `File_Extend` (
   CONSTRAINT `File_Extend_ibfk_2` FOREIGN KEY (`fe_from_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_3` FOREIGN KEY (`fe_to_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_4` FOREIGN KEY (`fe_puid`) REFERENCES `Product_Info` (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,9 +186,28 @@ CREATE TABLE `File_Extend` (
 
 LOCK TABLES `File_Extend` WRITE;
 /*!40000 ALTER TABLE `File_Extend` DISABLE KEYS */;
-INSERT INTO `File_Extend` VALUES (18,15,1,4,'d41d8cd98f00b204e9800998ecf8427e','2019-01-11',1);
+INSERT INTO `File_Extend` VALUES (8,7,5,6,'168e8f925cdacb0c5279dab138e24b87','test\ntest\nand test\n','2018-10-31',1),(9,8,1,5,'876bd07572d0c1dd5a21d041619b72eb','test\ntest\nand test\n','never',1),(10,9,1,4,'a52e5657ae6cc6ba0da4b38a4963656d','test\ntest\nand test\n','never',1);
 /*!40000 ALTER TABLE `File_Extend` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `File_Info`
+--
+
+DROP TABLE IF EXISTS `File_Info`;
+/*!50001 DROP VIEW IF EXISTS `File_Info`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `File_Info` AS SELECT 
+ 1 AS `fe_fb_id`,
+ 1 AS `from_ver`,
+ 1 AS `to_ver`,
+ 1 AS `fb_name`,
+ 1 AS `fb_path`,
+ 1 AS `fb_size`,
+ 1 AS `fe_checksum`,
+ 1 AS `fe_puid`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `Force_Version`
@@ -219,6 +239,22 @@ LOCK TABLES `Force_Version` WRITE;
 UNLOCK TABLES;
 
 --
+-- Temporary table structure for view `PUID_Publish`
+--
+
+DROP TABLE IF EXISTS `PUID_Publish`;
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `PUID_Publish` AS SELECT 
+ 1 AS `pi_id`,
+ 1 AS `puid`,
+ 1 AS `sw_ver`,
+ 1 AS `sw_id`,
+ 1 AS `fe_release_note`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `Product_Info`
 --
 
@@ -238,7 +274,7 @@ CREATE TABLE `Product_Info` (
   KEY `pi_u_id` (`pi_u_id`),
   CONSTRAINT `Product_Info_ibfk_1` FOREIGN KEY (`pi_cp_id`) REFERENCES `Category_Project` (`cp_id`),
   CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,7 +283,7 @@ CREATE TABLE `Product_Info` (
 
 LOCK TABLES `Product_Info` WRITE;
 /*!40000 ALTER TABLE `Product_Info` DISABLE KEYS */;
-INSERT INTO `Product_Info` VALUES (1,'QS5509-FOTATEST',1,1,'2018-09-14 16:37:32',1),(2,'HiFota-FotaTest',1,1,'2018-09-06 15:39:37',1);
+INSERT INTO `Product_Info` VALUES (1,'QS5509-FOTATEST',1,1,'2018-09-14 16:37:32',1),(2,'HiFota-FotaTest',1,1,'2018-09-06 15:39:37',1),(4,'eeee-puid',3,1,'2018-10-19 03:01:18',2),(5,'123',1,1,'2018-10-22 09:21:06',1),(7,'QS5509A',1,1,'2018-10-24 02:35:37',1);
 /*!40000 ALTER TABLE `Product_Info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,6 +314,31 @@ LOCK TABLES `Project` WRITE;
 /*!40000 ALTER TABLE `Project` DISABLE KEYS */;
 INSERT INTO `Project` VALUES (1,'QS5509-QL','att project',1),(2,'MWF7-SC1-2.0','IOT project for AWS',1),(3,'HiFota','fota project',2);
 /*!40000 ALTER TABLE `Project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Release_Note_Language`
+--
+
+DROP TABLE IF EXISTS `Release_Note_Language`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Release_Note_Language` (
+  `rnl_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `rnl_tag` varchar(10) NOT NULL,
+  `rnl_note` varchar(10) NOT NULL,
+  PRIMARY KEY (`rnl_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Release_Note_Language`
+--
+
+LOCK TABLES `Release_Note_Language` WRITE;
+/*!40000 ALTER TABLE `Release_Note_Language` DISABLE KEYS */;
+INSERT INTO `Release_Note_Language` VALUES (6,'en','English'),(7,'zh','Chinese');
+/*!40000 ALTER TABLE `Release_Note_Language` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -341,16 +402,15 @@ CREATE TABLE `Software` (
   `sw_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sw_ver` varchar(10) NOT NULL,
   `sw_creator` int(11) NOT NULL,
-  `sw_release_note` text NOT NULL,
   `sw_date` datetime NOT NULL,
   `sw_puid` bigint(20) NOT NULL,
+  `sw_svn` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`sw_id`),
-  UNIQUE KEY `sw_ver` (`sw_ver`),
   KEY `sw_puid` (`sw_puid`),
   KEY `sw_creator` (`sw_creator`),
   CONSTRAINT `Software_ibfk_1` FOREIGN KEY (`sw_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Software_ibfk_2` FOREIGN KEY (`sw_creator`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -359,7 +419,7 @@ CREATE TABLE `Software` (
 
 LOCK TABLES `Software` WRITE;
 /*!40000 ALTER TABLE `Software` DISABLE KEYS */;
-INSERT INTO `Software` VALUES (1,'v1A71',1,'\"??release note?\"','2018-09-27 06:22:57',1),(2,'v1B01',1,'base version','2018-10-16 03:11:19',2),(3,'v1B02',1,'upgrade version','2018-09-06 15:45:12',2),(4,'v1A72',1,'0','2018-09-27 06:24:31',1),(5,'v1A73',1,'test test and test','2018-09-27 06:24:01',1);
+INSERT INTO `Software` VALUES (1,'v1A71',1,'2018-09-27 06:22:57',1,NULL),(2,'v1B01',1,'2018-10-16 03:11:19',2,NULL),(3,'v1B02',1,'2018-09-06 15:45:12',2,NULL),(4,'v1A72',1,'2018-09-27 06:24:31',1,NULL),(5,'v1A73',1,'2018-09-27 06:24:01',1,NULL),(6,'v1A74',1,'2018-10-18 07:37:54',1,NULL);
 /*!40000 ALTER TABLE `Software` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -384,7 +444,7 @@ CREATE TABLE `Software_Publish` (
   CONSTRAINT `Software_Publish_ibfk_1` FOREIGN KEY (`sp_sw_id`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `Software_Publish_ibfk_2` FOREIGN KEY (`sp_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Software_Publish_ibfk_3` FOREIGN KEY (`sp_publisher`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -393,7 +453,7 @@ CREATE TABLE `Software_Publish` (
 
 LOCK TABLES `Software_Publish` WRITE;
 /*!40000 ALTER TABLE `Software_Publish` DISABLE KEYS */;
-INSERT INTO `Software_Publish` VALUES (8,1,1,'2018-10-17 09:04:07',1,1);
+INSERT INTO `Software_Publish` VALUES (3,5,1,'2018-09-06 15:46:23',2,1),(5,6,1,'2018-10-18 07:42:23',1,1);
 /*!40000 ALTER TABLE `Software_Publish` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -414,7 +474,7 @@ CREATE TABLE `Upgrade_Configuration` (
   KEY `uc_spop_id` (`uc_spop_template_id`),
   CONSTRAINT `Upgrade_Configuration_ibfk_1` FOREIGN KEY (`uc_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Upgrade_Configuration_ibfk_2` FOREIGN KEY (`uc_spop_template_id`) REFERENCES `SPOP_Template` (`template_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -423,7 +483,6 @@ CREATE TABLE `Upgrade_Configuration` (
 
 LOCK TABLES `Upgrade_Configuration` WRITE;
 /*!40000 ALTER TABLE `Upgrade_Configuration` DISABLE KEYS */;
-INSERT INTO `Upgrade_Configuration` VALUES (1,1,1,'{\"data\":{\"count\":2}}'),(2,1,2,'{\"data\":{\"time\":0}}'),(3,1,3,'{\"data\":{\"size\":2}}'),(4,1,4,'{\"data\":{\"begin\":1,\"end\":2}}'),(5,1,5,'{\"data\":{\"check\":\"True\"}}'),(6,1,6,'{\"data\":{\"Download\":\"True\"}}'),(7,1,7,'{\"data\":{\"type\":\"Null\",\"type_data\":{\"download\":\"Auto\",\"install\":\"Auto\"}}}'),(8,1,8,'{\"data\":{\"reminder\":0}}');
 /*!40000 ALTER TABLE `Upgrade_Configuration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -565,31 +624,8 @@ CREATE TABLE `auth_rule` (
 
 LOCK TABLES `auth_rule` WRITE;
 /*!40000 ALTER TABLE `auth_rule` DISABLE KEYS */;
-INSERT INTO `auth_rule` VALUES ('admin','O:32:\"mdm\\admin\\models\\rules\\AdminRule\":3:{s:4:\"name\";s:5:\"admin\";s:9:\"createdAt\";i:1536560602;s:9:\"updatedAt\";i:1536560602;}',1536560602,1536560602),('isUser','O:31:\"mdm\\admin\\models\\rules\\UserRule\":3:{s:4:\"name\";s:6:\"isUser\";s:9:\"createdAt\";i:1538042545;s:9:\"updatedAt\";i:1538043014;}',1538042545,1538043014);
+INSERT INTO `auth_rule` VALUES ('admin',_binary 'O:32:\"mdm\\admin\\models\\rules\\AdminRule\":3:{s:4:\"name\";s:5:\"admin\";s:9:\"createdAt\";i:1536560602;s:9:\"updatedAt\";i:1536560602;}',1536560602,1536560602),('isUser',_binary 'O:31:\"mdm\\admin\\models\\rules\\UserRule\":3:{s:4:\"name\";s:6:\"isUser\";s:9:\"createdAt\";i:1538042545;s:9:\"updatedAt\";i:1538043014;}',1538042545,1538043014);
 /*!40000 ALTER TABLE `auth_rule` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `date`
---
-
-DROP TABLE IF EXISTS `date`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `date` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `date`
---
-
-LOCK TABLES `date` WRITE;
-/*!40000 ALTER TABLE `date` DISABLE KEYS */;
-/*!40000 ALTER TABLE `date` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -609,7 +645,7 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`),
   KEY `parent` (`parent`),
   CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -701,6 +737,42 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'test','abOZrRhuCF8SqGiE64gb_sprj9zo0BgV','e10adc3949ba59abbe56e057f20f883e','3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462','suyibang@hipad.com',10,1536396682,1536397462),(2,'admin','hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl','d0cda743418255f70c9e29bfc4d7322f',NULL,'hipad@hipad.com',10,1536548558,1536548558),(3,'test2','99eaMiXPyECmg8ILEzmUNjLFo4llpFlO','e10adc3949ba59abbe56e057f20f883e',NULL,'test2@hipad.com',10,1536631292,1536631292);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `File_Info`
+--
+
+/*!50001 DROP VIEW IF EXISTS `File_Info`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `File_Info` AS select `ff`.`fe_fb_id` AS `fe_fb_id`,`ff`.`from_ver` AS `from_ver`,`tt`.`to_ver` AS `to_ver`,`tt`.`fb_name` AS `fb_name`,`tt`.`fb_path` AS `fb_path`,`tt`.`fb_size` AS `fb_size`,`tt`.`fe_checksum` AS `fe_checksum`,`ff`.`fe_puid` AS `fe_puid` from (((select `d`.`sw_ver` AS `to_ver`,`b`.`fe_fb_id` AS `fe_fb_id`,`b`.`fe_checksum` AS `fe_checksum`,`HiFota`.`File_Base`.`fb_name` AS `fb_name`,`HiFota`.`File_Base`.`fb_path` AS `fb_path`,`HiFota`.`File_Base`.`fb_size` AS `fb_size` from (`HiFota`.`File_Base` left join (`HiFota`.`File_Extend` `b` left join `HiFota`.`Software` `d` on((`d`.`sw_id` = `b`.`fe_to_ver`))) on((`HiFota`.`File_Base`.`fb_id` = `b`.`fe_fb_id`))))) `tt` left join (select `c`.`sw_ver` AS `from_ver`,`a`.`fe_fb_id` AS `fe_fb_id`,`a`.`fe_puid` AS `fe_puid` from (`HiFota`.`File_Extend` `a` left join `HiFota`.`Software` `c` on((`c`.`sw_id` = `a`.`fe_from_ver`)))) `ff` on((`ff`.`fe_fb_id` = `tt`.`fe_fb_id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `PUID_Publish`
+--
+
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `PUID_Publish` AS select `HiFota`.`Product_Info`.`pi_id` AS `pi_id`,`HiFota`.`Product_Info`.`PUID` AS `puid`,`HiFota`.`Software`.`sw_ver` AS `sw_ver`,`HiFota`.`Software`.`sw_id` AS `sw_id`,`tt`.`fe_release_note` AS `fe_release_note` from ((`HiFota`.`Software_Publish` left join (`HiFota`.`Software` left join `HiFota`.`Product_Info` on((`HiFota`.`Product_Info`.`pi_id` = `HiFota`.`Software`.`sw_puid`))) on((`HiFota`.`Software`.`sw_id` = `HiFota`.`Software_Publish`.`sp_sw_id`))) left join (select `HiFota`.`File_Extend`.`fe_puid` AS `fe_puid`,`HiFota`.`File_Extend`.`fe_to_ver` AS `fe_to_ver`,`HiFota`.`File_Extend`.`fe_release_note` AS `fe_release_note` from `HiFota`.`File_Extend`) `tt` on(((`tt`.`fe_puid` = `HiFota`.`Software_Publish`.`sp_puid`) and (`tt`.`fe_to_ver` = `HiFota`.`Software_Publish`.`sp_sw_id`)))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -711,4 +783,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-17 17:05:18
+-- Dump completed on 2018-10-24 10:44:13
