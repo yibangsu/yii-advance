@@ -34,6 +34,8 @@ class FileExtend extends \yii\db\ActiveRecord
         $attributes[] = 'sourceVersion';
         $attributes[] = 'targetVersion';
         $attributes[] = 'fb_name';
+        $attributes[] = 'language';
+        $attributes[] = 'langNote';
         return $attributes;
     }
 
@@ -77,6 +79,7 @@ class FileExtend extends \yii\db\ActiveRecord
             'fe_expiration_date' => Yii::t('app', 'Expiration Date'),
             'fe_puid' => Yii::t('app', 'Puid'),
             'fb_name' => Yii::t('app', 'File Name'),
+            'fe_release_note' => Yii::t('app', 'Release Note'),
         ];
     }
 
