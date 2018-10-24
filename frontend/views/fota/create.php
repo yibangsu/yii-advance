@@ -222,6 +222,15 @@ $js = <<<JS
         });
         $("#fotapackageupload-releasenote")[0].value = noteStr;
     });
+
+    $('#fotapackageupload-language').change(function() {
+        var tag = $('select#fotapackageupload-language option:selected').val();
+        if (tag in note) {
+            $("#fotapackageupload-langnote")[0].value = note[tag];
+        } else {
+            $("#fotapackageupload-langnote")[0].value = '';
+        }
+    });
 JS;
     $this->registerJs($js);
 ?>
