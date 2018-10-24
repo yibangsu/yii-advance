@@ -7,6 +7,7 @@ use yii\widgets\ActiveForm;
 use common\assets\UploadFileAsset;
 use yii\helpers\Url;
 use frontend\models\software\Software;
+use frontend\models\fotaSrc\ReleaseNoteLanguage;
 use kartik\datetime\DateTimePickerAsset;
 use kartik\datetime\DateTimePicker;
 
@@ -43,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php 
         $puidId = Yii::$app->user->getUserCache('puidId');
         $versionList = Software::find()->where(['sw_puid' => $puidId])->all();
+        $languageList = ReleaseNoteLanguage::find()->all();
         ?>
 
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -64,6 +66,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         ]
         )?>
 
+        <?= $form->field($model, 'releaseNote')->textarea(['value' => $model->releaseNote, 'readonly' => 'readonly']) ?>
+
+        <?= $form->field($model, 'language')->dropDownList(ArrayHelper::map($languageList, 'rnl_tag', 'rnl_note')) ?>
+
+        <?= $form->field($model, 'langNote')->textInput() ?>
+
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Upload'), ['class' => 'btn btn-success']) ?>
         </div>
@@ -79,6 +87,7 @@ $targetUrl = Url::toRoute([$this->context->id . '/upload']);
 $finishedUrl = Url::toRoute([$this->context->id . '/index']);
 $js = <<<JS
     var upload = new Upload();
+    var note = {};
 
     function Upload() {
         
@@ -149,6 +158,7 @@ $js = <<<JS
             var targetDroplist = $("#fotapackageupload-toversion")[0];
             var targetVersion = targetDroplist.options[targetDroplist.selectedIndex].value;
             var expireDate = $("#fotapackageupload-expiredate")[0].value;
+            var releaseNote = $("#fotapackageupload-releasenote")[0].value;
 
             form_data.append('_csrf-frontend', meta);
             form_data.append('fromVersion', sourceVersion);
@@ -157,6 +167,7 @@ $js = <<<JS
             form_data.append('fb_name', file.name);
             form_data.append('totalBlobNum', total_blob_num);
             form_data.append('curBlobNum', blob_num);
+            form_data.append('releaseNote', releaseNote);
             form_data.append('blob', blob);
  
             xhr.open('POST', '$targetUrl', true);
@@ -196,6 +207,20 @@ $js = <<<JS
             alert('some field is going wrong.');
         }
         return false;
+    });
+
+    $('#fotapackageupload-langnote').bind('input propertychange', function() {
+        var tagList = $("#fotapackageupload-language")[0];
+        var tag = tagList.options[tagList.selectedIndex].value;
+        var value = $("#fotapackageupload-langnote")[0].value;
+        note[tag] = value;
+        var noteStr = "";
+        $.each(note,function(key, value){
+            noteStr = noteStr + "<" + key + ">"
+                              + value 
+                              + "</" + key + ">\\n";
+        });
+        $("#fotapackageupload-releasenote")[0].value = noteStr;
     });
 JS;
     $this->registerJs($js);

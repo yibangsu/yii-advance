@@ -18,6 +18,9 @@ class FotaPackageUpload extends Model
     public $uploadReturn = [];
     public $fromVersion;
     public $toVersion;
+    public $releaseNote;
+    public $language;
+    public $langNote;
     public $expireDate;
 
     /**
@@ -44,6 +47,7 @@ class FotaPackageUpload extends Model
         $this->file_name = isset($data['fb_name'])? $data['fb_name']: null;
         $this->fromVersion = isset($data['fromVersion'])? $data['fromVersion']: null;
         $this->toVersion = isset($data['toVersion'])? $data['toVersion']: null;
+        $this->releaseNote = isset($data['releaseNote'])? $data['releaseNote']: null;
         $this->expireDate = isset($data['expireDate'])? $data['expireDate']: null;
         if (empty($this->expireDate)) {
             $this->expireDate = 'never';
@@ -52,7 +56,8 @@ class FotaPackageUpload extends Model
 
         parent::load($data, $formName);
 
-        return ($this->curBlobNum && $this->totalBlobNum && $this->file_name && $this->blob && $this->fromVersion && $this->toVersion && $this->expireDate);
+        return ($this->curBlobNum && $this->totalBlobNum && $this->file_name 
+                    && $this->blob && $this->fromVersion && $this->toVersion && $this->expireDate);
     }
 
     /**
@@ -136,6 +141,7 @@ class FotaPackageUpload extends Model
             foreach ($datas as $data) {
                 $data->fe_fb_id = $fileBase->fb_id;
                 $data->fe_checksum = md5_file($fileBase->fb_path . $fileBase->fb_name);
+                $data->fe_release_note = $this->releaseNote;
                 $data->fe_expiration_date = $this->expireDate;
                 $data->update();
             }
@@ -144,6 +150,7 @@ class FotaPackageUpload extends Model
             $fileExtend->fe_from_ver = $this->fromVersion;
             $fileExtend->fe_to_ver = $this->toVersion;
             $fileExtend->fe_checksum = md5_file($fileBase->fb_path . $fileBase->fb_name);
+            $fileExtend->fe_release_note = $this->releaseNote;
             $fileExtend->fe_expiration_date = $this->expireDate;
             $fileExtend->save();
         }

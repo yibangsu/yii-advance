@@ -84,7 +84,8 @@ class FotaSearch extends FileExtend
             FileBase::tableName().'.fb_name' => $this->fb_name,
         ]);
 
-        $query->andFilterWhere(['like', 'fe_checksum', $this->fe_checksum]);
+        $query->andFilterWhere(['like', 'fe_release_note', $this->fe_release_note])
+              ->andFilterWhere(['like', 'fe_checksum', $this->fe_checksum]);
 
         return $dataProvider;
     }

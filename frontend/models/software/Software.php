@@ -11,7 +11,6 @@ use frontend\models\puid\ProductInfo;
  * @property int $sw_id
  * @property string $sw_ver
  * @property int $sw_creator
- * @property string $sw_release_note
  * @property string $sw_date
  * @property int $sw_puid
  *
