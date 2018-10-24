@@ -118,7 +118,7 @@ class FotaPackageUpload extends Model
         $fileBase = new FileBase();
         $fileBase->load(null);
         $fileBase->fb_name = $this->file_name; // need file name to save file extend
-        $datas = FileBase::find()->where(['fb_name' => $fileBase->file_name, 'fb_path' => $fileBase->fb_path])->all();
+        $datas = FileBase::find()->where(['fb_name' => $fileBase->fb_name, 'fb_path' => $fileBase->fb_path])->all();
         if (count($datas) > 0) {
             foreach ($datas as $data) {
                 $data->fb_date = date("Y-m-d h:i:s", filectime($data->fb_path . $data->fb_name));
