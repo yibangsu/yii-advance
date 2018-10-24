@@ -117,7 +117,8 @@ class FotaPackageUpload extends Model
     {
         $fileBase = new FileBase();
         $fileBase->load(null);
-        $datas = FileBase::find()->where(['fb_name' => $this->file_name, 'fb_path' => $fileBase->fb_path])->all();
+        $fileBase->fb_name = $this->file_name; // need file name to save file extend
+        $datas = FileBase::find()->where(['fb_name' => $fileBase->fb_name, 'fb_path' => $fileBase->fb_path])->all();
         if (count($datas) > 0) {
             foreach ($datas as $data) {
                 $data->fb_date = date("Y-m-d h:i:s", filectime($data->fb_path . $data->fb_name));
@@ -127,7 +128,6 @@ class FotaPackageUpload extends Model
                 $fileBase->fb_id = $data->fb_id; // need a fb id for fe
             }
         } else {
-            $fileBase->fb_name = $this->file_name;
             $fileBase->fb_date = date("Y-m-d h:i:s", filectime($fileBase->fb_path . $fileBase->fb_name));
             $fileBase->fb_size = filesize($fileBase->fb_path . $fileBase->fb_name);
             $fileBase->save();
