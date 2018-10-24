@@ -4,6 +4,7 @@ namespace frontend\models\puid;
 
 use Yii;
 use frontend\models\category\Category;
+use frontend\models\fotaSrc\UpgradeConfiguration;
 
 /**
  * This is the model class for table "Product_Info".
@@ -117,6 +118,10 @@ class ProductInfo extends \yii\db\ActiveRecord
     public function delete()
     {
         if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
+            $configs = UpgradeConfiguration::findAll(['uc_puid' => $this->pi_id]);
+            foreach ($configs as $config) {
+                $config->delete();
+            }
             return parent::delete();
         }
 
