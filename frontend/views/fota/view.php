@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'fb_name',
             'sourceVersion',
             'targetVersion',
+            'fe_checksum',
+            'fe_release_note',
         ],
     ]) ?>
 

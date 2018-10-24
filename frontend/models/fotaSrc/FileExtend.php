@@ -76,6 +76,7 @@ class FileExtend extends \yii\db\ActiveRecord
             'fe_checksum' => Yii::t('app', 'Checksum'),
             'fe_expiration_date' => Yii::t('app', 'Expiration Date'),
             'fe_puid' => Yii::t('app', 'Puid'),
+            'fb_name' => Yii::t('app', 'File Name'),
         ];
     }
 
