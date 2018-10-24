@@ -34,7 +34,10 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
             'fe_checksum',
             'fe_release_note',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {delete}',
+            ],
         ],
     ]); ?>
 </div>
