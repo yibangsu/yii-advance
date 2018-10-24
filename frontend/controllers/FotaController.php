@@ -115,6 +115,10 @@ class FotaController extends Controller
             return $this->redirect(['view', 'id' => $model->fe_id]);
         }
 
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', "Update release note failed!\nPlease check if the release note keeps the same.\n"));
+        }
+
         return $this->render('update', [
             'model' => $model,
         ]);
