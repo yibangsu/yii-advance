@@ -3,16 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\puid\ProductInfo;
-use frontend\models\puid\ProductInfoSearch;
+use frontend\models\fotaSrc\DeviceGroup;
+use frontend\models\fotaSrc\DeviceGroupSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ProductInfoController implements the CRUD actions for ProductInfo model.
+ * DeviceGroupController implements the CRUD actions for DeviceGroup model.
  */
-class ProductInfoController extends Controller
+class DeviceGroupController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class ProductInfoController extends Controller
     }
 
     /**
-     * Lists all ProductInfo models.
+     * Lists all DeviceGroup models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ProductInfoSearch();
+        $searchModel = new DeviceGroupSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -44,26 +44,8 @@ class ProductInfoController extends Controller
         ]);
     }
 
-    /* Go to next web page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionNext($id, $name)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->pi_cp_id === Yii::$app->user->getUserCompanyId()) {
-            Yii::$app->user->setUserCache('puidId', $id);
-            Yii::$app->user->setUserCache('puidName', $name);
-            return $this->redirect(['software/index']);
-        }
-        Yii::$app->session->setFlash('error', Yii::t('app', 'You are not allowed to visit next page!'));
-        return $this->actionIndex();
-    }
-
     /**
-     * Displays a single ProductInfo model.
+     * Displays a single DeviceGroup model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -76,20 +58,16 @@ class ProductInfoController extends Controller
     }
 
     /**
-     * Creates a new ProductInfo model.
+     * Creates a new DeviceGroup model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ProductInfo();
+        $model = new DeviceGroup();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->pi_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Create new product info failed!'));
+            return $this->redirect(['view', 'id' => $model->dg_id]);
         }
 
         return $this->render('create', [
@@ -98,7 +76,7 @@ class ProductInfoController extends Controller
     }
 
     /**
-     * Updates an existing ProductInfo model.
+     * Updates an existing DeviceGroup model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -108,12 +86,8 @@ class ProductInfoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->update()) {
-            return $this->redirect(['view', 'id' => $model->pi_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Update product info failed!'));
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->dg_id]);
         }
 
         return $this->render('update', [
@@ -122,7 +96,7 @@ class ProductInfoController extends Controller
     }
 
     /**
-     * Deletes an existing ProductInfo model.
+     * Deletes an existing DeviceGroup model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -136,15 +110,15 @@ class ProductInfoController extends Controller
     }
 
     /**
-     * Finds the ProductInfo model based on its primary key value.
+     * Finds the DeviceGroup model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ProductInfo the loaded model
+     * @return DeviceGroup the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ProductInfo::findOne($id)) !== null) {
+        if (($model = DeviceGroup::findOne($id)) !== null) {
             return $model;
         }
 

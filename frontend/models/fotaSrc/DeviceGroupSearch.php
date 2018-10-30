@@ -1,16 +1,17 @@
 <?php
 
-namespace frontend\models\software;
+namespace frontend\models\fotaSrc;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\software\Software;
+use frontend\models\fotaSrc\DeviceGroup;
+use common\models\User;
 
 /**
- * SoftwareSearch represents the model behind the search form of `frontend\models\software\Software`.
+ * DeviceGroupSearch represents the model behind the search form of `frontend\models\fotaSrc\DeviceGroup`.
  */
-class SoftwareSearch extends Software
+class DeviceGroupSearch extends DeviceGroup
 {
     /**
      * {@inheritdoc}
@@ -18,8 +19,8 @@ class SoftwareSearch extends Software
     public function rules()
     {
         return [
-            [['sw_id', 'sw_creator', 'sw_puid'], 'integer'],
-            [['sw_ver', 'sw_date'], 'safe'],
+            [['dg_id', 'dg_u_id'], 'integer'],
+            [['dg_name', 'dg_date', 'creator'], 'safe'],
         ];
     }
 
@@ -37,9 +38,8 @@ class SoftwareSearch extends Software
      */
     public function load($data, $formName = null)
     {
-        $result = parent::load($data, $formName);
-        unset($this->sw_creator);
-        return $result;
+        parent::load($data, $formName);
+        $this->dg_u_id = null;
     }
 
     /**
@@ -51,7 +51,7 @@ class SoftwareSearch extends Software
      */
     public function search($params)
     {
-        $query = Software::find();
+        $query = DeviceGroup::find();
 
         // add conditions that should always apply here
 
@@ -67,17 +67,22 @@ class SoftwareSearch extends Software
             return $dataProvider;
         }
 
-        $query->where(['sw_puid' => $this->sw_puid]);
+        $query->where(['dg_puid' => $this->dg_puid])
+              ->addSelect(DeviceGroup::tableName().'.*')
+
+              ->leftJoin(User::tableName(), User::tableName().'.`id` = `'.DeviceGroup::tableName().'`.`dg_u_id`')
+              ->addSelect(User::tableName().'.`username` as creator')
+              ;
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sw_id' => $this->sw_id,
-            'sw_creator' => $this->sw_creator,
-            'sw_puid' => $this->sw_puid,
+            'dg_id' => $this->dg_id,
+            'dg_date' => $this->dg_date,
+            'dg_u_id' => $this->dg_u_id,
         ]);
 
-        $query->andFilterWhere(['like', 'sw_ver', $this->sw_ver])
-            ->andFilterWhere(['like', 'sw_date', $this->sw_date]);
+        $query->andFilterWhere(['like', 'dg_name', $this->dg_name])
+              ->andFilterWhere(['like', User::tableName().'.`username`', $this->creator]);
 
         return $dataProvider;
     }
