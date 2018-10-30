@@ -728,3 +728,175 @@ $_SERVER = [
     ]
     'argc' => 3
 ]
+2018-10-30 03:22:56 [-][-][-][error][yii\base\InvalidConfigException] exception 'ReflectionException' with message 'Class cache does not exist' in /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php:428
+Stack trace:
+#0 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(428): ReflectionClass->__construct('cache')
+#1 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('cache')
+#2 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('cache', Array, Array)
+#3 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Instance.php(167): yii\di\Container->get('cache')
+#4 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Instance.php(137): yii\di\Instance->get(NULL)
+#5 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/DbManager.php(114): yii\di\Instance::ensure('cache', 'yii\caching\Cac...')
+#6 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\rbac\DbManager->init()
+#7 [internal function]: yii\base\BaseObject->__construct(Array)
+#8 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(383): ReflectionClass->newInstanceArgs(Array)
+#9 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('yii\rbac\DbMana...', Array, Array)
+#10 /data/suyibang/yii-advance/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('yii\rbac\DbMana...', Array, Array)
+#11 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#12 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('authManager', false)
+#13 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Application.php(599): yii\base\Module->get('authManager', false)
+#14 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php(25): yii\base\Application->getAuthManager()
+#15 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php(51): m140506_102106_rbac_init->getAuthManager()
+#16 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m140506_102106_rbac_init->up()
+#17 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m140506_102106_...')
+#18 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#19 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#20 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#21 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#22 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#23 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#24 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#25 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#26 /data/suyibang/yii-advance/yii(23): yii\base\Application->run()
+#27 {main}
+
+Next exception 'yii\base\InvalidConfigException' with message 'Failed to instantiate component or class "cache".' in /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Instance.php:139
+Stack trace:
+#0 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/DbManager.php(114): yii\di\Instance::ensure('cache', 'yii\caching\Cac...')
+#1 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\rbac\DbManager->init()
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(383): ReflectionClass->newInstanceArgs(Array)
+#4 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('yii\rbac\DbMana...', Array, Array)
+#5 /data/suyibang/yii-advance/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('yii\rbac\DbMana...', Array, Array)
+#6 /data/suyibang/yii-advance/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#7 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('authManager', false)
+#8 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Application.php(599): yii\base\Module->get('authManager', false)
+#9 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php(25): yii\base\Application->getAuthManager()
+#10 /data/suyibang/yii-advance/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php(51): m140506_102106_rbac_init->getAuthManager()
+#11 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m140506_102106_rbac_init->up()
+#12 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m140506_102106_...')
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#17 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#18 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 /data/suyibang/yii-advance/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 /data/suyibang/yii-advance/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /data/suyibang/yii-advance/yii(23): yii\base\Application->run()
+#22 {main}
+2018-10-30 03:22:42 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'zh_CN.UTF-8'
+    'LC_ADDRESS' => 'zh_CN.UTF-8'
+    'XDG_SESSION_ID' => 'c2'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/android'
+    'SELINUX_INIT' => 'YES'
+    'LC_MONETARY' => 'zh_CN.UTF-8'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'SESSION' => 'ubuntu'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-K5JFr6/gpg:0:1'
+    'TERM' => 'xterm'
+    'ARMINC' => '/opt/arm/arm501bld94//include'
+    'VTE_VERSION' => '3409'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'SHELL' => '/bin/bash'
+    'ARMTOOLS' => 'ARMCT5.01'
+    'ARMHOME' => '/opt/arm/arm501bld94/'
+    'HEXAGON_Q6VERSION' => 'v4'
+    'WINDOWID' => '21004579'
+    'LC_NUMERIC' => 'zh_CN.UTF-8'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/2554'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-K5JFr6'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'android'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'LC_TELEPHONE' => 'zh_CN.UTF-8'
+    'HEXAGON_ROOT' => '/opt/HEXAGON_Tools'
+    'ARMLIB' => '/opt/arm/arm501bld94//lib'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-K5JFr6/ssh'
+    'HEXAGON_IMAGE_ENTRY' => '0x08400000'
+    'T32ID' => 'T32'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'SESSION_MANAGER' => 'local/U-NSGWD180026-yibang:@/tmp/.ICE-unix/2722,unix/U-NSGWD180026-yibang:/tmp/.ICE-unix/2722'
+    'T32SYS' => '/data/suyibang/tool/trace32'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'PATH' => '/data/tools/jdk_new/bin:/data/tools/jdk_new/lib:/data/tools/android-sdk-linux_x86/tools:/data/tools/android-sdk-linux_x86/platform-tools:/data/tools/android-ndk:/data/tools/android-studio/gradle/gradle-2.5/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:/usr/lib/jvm/java-8-openjdk-amd64//lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib:/usr/lib/jvm/java-8-openjdk-amd64//bin::/opt/arm/arm501bld94//bin64:/opt/arm/arm501bld94/bin64:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/data/suyibang/bin:/data/suyibang/tool/host/linux-x86/bin:/data/suyibang/tool/trace32/bin/pc_linux64'
+    'ARMINCLUDE' => '/opt/arm/arm501bld94//include'
+    'QT_IM_MODULE' => 'xim'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'LC_IDENTIFICATION' => 'zh_CN.UTF-8'
+    'PWD' => '/data/suyibang/yii-advance'
+    'JOB' => 'gnome-session'
+    'T32TMP' => '/tmp'
+    'JAVA_HOME' => '/usr/lib/jvm/java-8-openjdk-amd64'
+    'XMODIFIERS' => '@im=fcitx'
+    'GNOME_KEYRING_PID' => '2551'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'LC_MEASUREMENT' => 'zh_CN.UTF-8'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'IM_CONFIG_PHASE' => '1'
+    'HEXAGON_RTOS_RELEASE' => '5.0.01'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'HOME' => '/data/suyibang'
+    'XDG_SEAT' => 'seat0'
+    'LANGUAGE' => 'en'
+    'LIBGL_ALWAYS_SOFTWARE' => '1'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'UPSTART_INSTANCE' => ''
+    'PYTHONPATH' => '/data/tools/Qualcomm/pythonanywhere/Python-2.6.2/bin'
+    'UPSTART_EVENTS' => 'started starting'
+    'LOGNAME' => 'android'
+    'COMPIZ_BIN_PATH' => '/usr/bin/'
+    'CLASSPATH' => ':/usr/share/tomcat7/lib/servlet-api.jar:/data/suyibang/tomcat/lib/commons-fileupload-1.3.3.jar:/data/suyibang/tomcat/lib/commons-io-2.6.jar'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-35f4WNOVE5'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'
+    'QT4_IM_MODULE' => 'fcitx'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'PKG_CONFIG_PATH' => '/opt/intel/opencl:'
+    'JDK_NEW_LIB_PATH' => '/data/tools/jdk_new/lib'
+    'TEXTDOMAIN' => 'im-config'
+    'INSTANCE' => 'Unity'
+    'UPSTART_JOB' => 'unity-settings-daemon'
+    'ARMROOT' => '/opt/arm/arm501bld94/'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'fcitx'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'ARMBIN' => '/opt/arm/arm501bld94//bin64'
+    'LC_TIME' => 'zh_CN.UTF-8'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'LC_NAME' => 'zh_CN.UTF-8'
+    'XAUTHORITY' => '/data/suyibang/.Xauthority'
+    'COLORTERM' => 'gnome-terminal'
+    'OLDPWD' => '/data/suyibang'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1540869762.9157
+    'REQUEST_TIME' => 1540869762
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii/rbac/migrations/'
+    ]
+    'argc' => 3
+]

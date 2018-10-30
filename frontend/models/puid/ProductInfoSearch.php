@@ -37,7 +37,9 @@ class ProductInfoSearch extends ProductInfo
      */
     public function load($data, $formName = null, $activeRecord = false)
     {
-        return parent::load($data, $formName, false);
+        $result = parent::load($data, $formName, false);
+        unset($this->pi_u_id);
+        return $result;
     }
 
     /**

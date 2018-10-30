@@ -22,7 +22,7 @@ class FotaSearch extends FileExtend
         return [
             [['fe_id', 'fe_fb_id', 'fe_from_ver', 'fe_to_ver'], 'integer'],
             [['sourceVersion', 'targetVersion', 'fb_name'], 'string'],
-            [['fe_checksum'], 'safe'],
+            [['fe_checksum', 'fe_release_note'], 'safe'],
         ];
     }
 
