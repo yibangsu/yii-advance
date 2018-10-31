@@ -5,6 +5,7 @@ namespace frontend\models\puid;
 use Yii;
 use frontend\models\category\Category;
 use frontend\models\fotaSrc\UpgradeConfiguration;
+use frontend\models\role\Role;
 
 /**
  * This is the model class for table "Product_Info".
@@ -92,7 +93,7 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function update($runValidation = true, $attributeNames = null)
     {
-        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id) || Role::beAdmin()) {
             $this->pi_date = date("Y-m-d h:i:s",time());
             return parent::update($runValidation, $attributeNames);
         }
@@ -105,7 +106,7 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function save($runValidation = true, $attributeNames = null)
     {
-        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id) || Role::beAdmin()) {
             $this->pi_date = date("Y-m-d h:i:s",time());
             return parent::save($runValidation, $attributeNames);
         }
@@ -117,7 +118,7 @@ class ProductInfo extends \yii\db\ActiveRecord
      */
     public function delete()
     {
-        if (strval($this->pi_u_id) === strval(Yii::$app->user->id)) {
+        if (strval($this->pi_u_id) === strval(Yii::$app->user->id) || Role::beAdmin()) {
             $configs = UpgradeConfiguration::findAll(['uc_puid' => $this->pi_id]);
             foreach ($configs as $config) {
                 $config->delete();

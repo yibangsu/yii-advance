@@ -5,6 +5,7 @@ namespace frontend\models\fotaSrc;
 use Yii;
 use common\models\User;
 use frontend\models\puid\ProductInfo;
+use frontend\models\role\Role;
 
 /**
  * This is the model class for table "Device".
@@ -90,7 +91,7 @@ class Device extends \yii\db\ActiveRecord
      */
     public function save($runValidation = true, $attributeNames = null)
     {
-        if ($this->d_u_id === Yii::$app->user->id) {
+        if ($this->d_u_id === Yii::$app->user->id || Role::beAdmin()) {
             $this->d_date = date("Y-m-d h:i:s",time());
             if ('No Choose' === $this->d_bind_ver) {
                 $this->d_bind_ver = null;
@@ -106,7 +107,7 @@ class Device extends \yii\db\ActiveRecord
      */
     public function update($runValidation = true, $attributeNames = null)
     {
-        if ($this->d_u_id === Yii::$app->user->id) {
+        if ($this->d_u_id === Yii::$app->user->id || Role::beAdmin()) {
             $this->d_date = date("Y-m-d h:i:s",time());
             if ('No Choose' === $this->d_bind_ver) {
                 $this->d_bind_ver = null;

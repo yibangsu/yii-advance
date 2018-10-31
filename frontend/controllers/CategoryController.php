@@ -8,6 +8,7 @@ use frontend\models\category\CategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * CategoryController implements the CRUD actions for Category model.
@@ -79,6 +80,7 @@ class CategoryController extends Controller
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->cp_id, $model->cp_name, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->cp_id]);
         }
 
@@ -103,6 +105,7 @@ class CategoryController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->cp_id, $model->cp_name, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->cp_id]);
         }
 
@@ -124,7 +127,16 @@ class CategoryController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->cp_id;
+        $name = $model->cp_name;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete category failed!'));
+        }
 
         return $this->redirect(['index']);
     }

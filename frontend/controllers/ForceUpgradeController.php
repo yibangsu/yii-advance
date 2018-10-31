@@ -3,20 +3,19 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\publish\SoftwarePublish;
-use frontend\models\publish\SoftwarePublishSearch;
-use frontend\models\fotaSrc\UpgradeConfigSettings;
+use frontend\models\forceUpgrade\ForceVersion;
+use frontend\models\forceUpgrade\ForceVersionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use frontend\models\operationRecord\OperationRecord;
 
+use frontend\models\operationRecord\OperationRecord;
 use frontend\models\software\Software;
 
 /**
- * PublishController implements the CRUD actions for SoftwarePublish model.
+ * ForceUpgradeController implements the CRUD actions for ForceVersion model.
  */
-class PublishController extends Controller
+class ForceUpgradeController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -35,7 +34,7 @@ class PublishController extends Controller
     }
 
     /**
-     * Lists all SoftwarePublish models.
+     * Lists all ForceVersion models.
      * @return mixed
      */
     public function actionIndex()
@@ -45,11 +44,11 @@ class PublishController extends Controller
         if (Yii::$app->request->isPost) {
             $model->load(Yii::$app->request->post());
             if ($model->save()) {
-                $id = $model->sp_id;
-                $software = Software::findOne(['sw_id' => $model->sp_sw_id]);
+                $id = $model->fv_id;
+                $software = Software::findOne(['sw_id' => $model->fv_sw_id]);
                 OperationRecord::record($model->tableName(), $id, $software? $software->sw_ver: 'item not found!', OperationRecord::ACTION_UPDATE);
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Set publish version failed'));
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Set force upgrade version failed'));
             }
         }
 
@@ -59,7 +58,7 @@ class PublishController extends Controller
     }
 
     /**
-     * Displays a single SoftwarePublish model.
+     * Displays a single ForceVersion model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -72,25 +71,19 @@ class PublishController extends Controller
         ]);
     }
 */
+
     /**
-     * Creates a new SoftwarePublish model.
+     * Creates a new ForceVersion model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
 /*
     public function actionCreate()
     {
-        $model = new SoftwarePublish();
+        $model = new ForceVersion();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $id = $model->sp_id;
-            $software = Software::findOne(['sw_id' => $model->sp_sw_id]);
-            OperationRecord::record($model->tableName(), $id, $software? $software->sw_ver: 'item not found!', OperationRecord::ACTION_ADD);
-            return $this->redirect(['view', 'id' => $model->sp_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Publish software failed!'));
+            return $this->redirect(['view', 'id' => $model->fv_id]);
         }
 
         return $this->render('create', [
@@ -99,7 +92,7 @@ class PublishController extends Controller
     }
 */
     /**
-     * Updates an existing SoftwarePublish model.
+     * Updates an existing ForceVersion model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -111,14 +104,7 @@ class PublishController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $id = $model->sp_id;
-            $software = Software::findOne(['sw_id' => $model->sp_sw_id]);
-            OperationRecord::record($model->tableName(), $id, $software? $software->sw_ver: 'item not found!', OperationRecord::ACTION_UPDATE);
-            return $this->redirect(['view', 'id' => $model->sp_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Update publish failed!'));
+            return $this->redirect(['view', 'id' => $model->fv_id]);
         }
 
         return $this->render('update', [
@@ -127,7 +113,7 @@ class PublishController extends Controller
     }
 */
     /**
-     * Deletes an existing SoftwarePublish model.
+     * Deletes an existing ForceVersion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -136,44 +122,11 @@ class PublishController extends Controller
 /*
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        $table = $model->tableName();
-        $id = $model->sp_id;
-        $software = Software::findOne(['sw_id' => $model->sp_sw_id]);
-        $name = $software? $software->sw_ver: 'item not found!';
-        $result = $model->delete();
-        if ($result) {
-            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
-        } else {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete publish failed!'));
-        }
+        $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
     }
 */
-    /**
-     * Set spop.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionSettings()
-    {
-        $model = new UpgradeConfigSettings();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            OperationRecord::record('Upgrade_Configuration', intval(Yii::$app->user->getUserCache('puidId')), 'Configuration', OperationRecord::ACTION_UPDATE);
-            $this->redirect(['/software/index']);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Set configurations failed!'));
-        }
-
-        return $this->render('settings', [
-            'model' => $model,
-        ]);
-    }
 
     /**
      * Remove published software.
@@ -184,7 +137,7 @@ class PublishController extends Controller
      */
     public function actionDeleteAll()
     {
-        $searchModel = new SoftwarePublishSearch();
+        $searchModel = new ForceVersionSearch();
         $searchModel->removeAll();
         OperationRecord::record($searchModel->tableName(), 0, 'all', OperationRecord::ACTION_DELETE_ALL);
 
@@ -192,33 +145,32 @@ class PublishController extends Controller
     }
 
     /**
-     * Finds the SoftwarePublish model based on its primary key value.
+     * Finds the ForceVersion model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return SoftwarePublish the loaded model
+     * @return ForceVersion the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SoftwarePublish::findOne($id)) !== null) {
+        if (($model = ForceVersion::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
-    /**
+     /**
      * Finds the SoftwarePublish model based on its puid.
      * @param integer $puid
      * @return SoftwarePublish the loaded model
      */
     protected function findModelByPuid($puid)
     {
-        if (($model = SoftwarePublish::findOne(['sp_puid' => $puid])) !== null) {
+        if (($model = ForceVersion::findOne(['fv_puid' => $puid])) !== null) {
             return $model;
         }
 
-        return new SoftwarePublish();
+        return new ForceVersion();
     }
-
 }

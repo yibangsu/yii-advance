@@ -51,6 +51,12 @@ return [
 */
 
             'layout' => 'left-menu',
+            'menus' => [
+                'operation-record' => [
+                    'label' => 'Operation Records', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
+            ],
         ],
     ],
     'components' => [

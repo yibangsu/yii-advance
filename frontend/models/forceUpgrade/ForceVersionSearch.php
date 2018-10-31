@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\models\publish;
+namespace frontend\models\forceUpgrade;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\publish\SoftwarePublish;
+use frontend\models\forceUpgrade\ForceVersion;
 use frontend\models\role\Role;
 
 /**
- * SoftwarePublishSearch represents the model behind the search form of `frontend\models\publish\SoftwarePublish`.
+ * ForceVersionSearch represents the model behind the search form of `frontend\models\forceUpgrade\ForceVersion`.
  */
-class SoftwarePublishSearch extends SoftwarePublish
+class ForceVersionSearch extends ForceVersion
 {
     /**
      * {@inheritdoc}
@@ -19,8 +19,8 @@ class SoftwarePublishSearch extends SoftwarePublish
     public function rules()
     {
         return [
-            [['sp_id', 'sp_sw_id', 'sp_file_count', 'sp_publisher'], 'integer'],
-            [['sp_date'], 'safe'],
+            [['fv_id', 'fv_sw_id', 'fv_u_id', 'fv_puid'], 'integer'],
+            [['fv_date'], 'safe'],
         ];
     }
 
@@ -30,7 +30,7 @@ class SoftwarePublishSearch extends SoftwarePublish
     public function load($data, $formName = null)
     {
         $result = parent::load($data, $formName);
-        unset($this->sp_publisher);
+        unset($this->fv_u_id);
         return $result;
     }
 
@@ -52,7 +52,7 @@ class SoftwarePublishSearch extends SoftwarePublish
      */
     public function search($params)
     {
-        $query = SoftwarePublish::find();
+        $query = ForceVersion::find();
 
         // add conditions that should always apply here
 
@@ -68,16 +68,13 @@ class SoftwarePublishSearch extends SoftwarePublish
             return $dataProvider;
         }
 
-        
-
         // grid filtering conditions
         $query->andFilterWhere([
-            'sp_id' => $this->sp_id,
-            'sp_sw_id' => $this->sp_sw_id,
-            'sp_file_count' => $this->sp_file_count,
-            'sp_date' => $this->sp_date,
-            'sp_puid' => $this->sp_puid,
-            'sp_publisher' => $this->sp_publisher,
+            'fv_id' => $this->fv_id,
+            'fv_sw_id' => $this->fv_sw_id,
+            'fv_date' => $this->fv_date,
+            'fv_u_id' => $this->fv_u_id,
+            'fv_puid' => $this->fv_puid,
         ]);
 
         return $dataProvider;
@@ -86,12 +83,12 @@ class SoftwarePublishSearch extends SoftwarePublish
     public function removeAll()
     {
         if (Role::beAdmin()) {
-            $datas = SoftwarePublish::findAll(['sp_puid' => $this->sp_puid]);
+            $datas = ForceVersion::findAll(['fv_puid' => $this->fv_puid]);
             foreach ($datas as $data) {
                 $data->delete();
             }
         } else {
-            $datas = SoftwarePublish::findAll(['sp_puid' => $this->sp_puid, 'sp_publisher' => $this->sp_publisher]);
+            $datas = SoftwarePublish::findAll(['fv_puid' => $this->fv_puid, 'fv_u_id' => $this->fv_u_id]);
             foreach ($datas as $data) {
                 $data->delete();
             }

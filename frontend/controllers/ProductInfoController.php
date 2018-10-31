@@ -8,6 +8,7 @@ use frontend\models\puid\ProductInfoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * ProductInfoController implements the CRUD actions for ProductInfo model.
@@ -85,6 +86,7 @@ class ProductInfoController extends Controller
         $model = new ProductInfo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->pi_id, $model->PUID, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->pi_id]);
         }
 
@@ -109,6 +111,7 @@ class ProductInfoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
+            OperationRecord::record($model->tableName(), $model->pi_id, $model->PUID, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->pi_id]);
         }
 
@@ -130,7 +133,16 @@ class ProductInfoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->pi_id;
+        $name = $model->PUID;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete product info failed!'));
+        }
 
         return $this->redirect(['index']);
     }
