@@ -62,7 +62,7 @@ return [
 
             'menus' => [
                 'operation-record' => [
-                    'label' => 'operation record', // change label
+                    'label' => 'Operation Records', // change label
                     //'url' => ['/operation-record/index'],
                 ],
             ],
