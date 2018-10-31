@@ -11,7 +11,7 @@ use yii\filters\VerbFilter;
 
 use frontend\models\upload\UploadForm;
 use yii\web\UploadedFile;
-
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * SoftwareController implements the CRUD actions for Software model.
@@ -103,6 +103,7 @@ class SoftwareController extends Controller
         $model = new Software();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->sw_id, $model->sw_ver, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->sw_id]);
         }
 
@@ -127,6 +128,7 @@ class SoftwareController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->sw_id, $model->sw_ver, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->sw_id]);
         }
 
@@ -148,7 +150,16 @@ class SoftwareController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->sw_id;
+        $name = $model->sw_ver;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete software failed!'));
+        }
 
         return $this->redirect(['index']);
     }

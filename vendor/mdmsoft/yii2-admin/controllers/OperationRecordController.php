@@ -1,19 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace mdm\admin\controllers;
 
 use Yii;
-use frontend\models\company\Company;
-use frontend\models\company\CompanySearch;
+use mdm\admin\models\OperationRecord\OperationRecord;
+use mdm\admin\models\OperationRecord\OperationRecordSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use frontend\models\operationRecord\OperationRecord;
 
 /**
- * CompanyController implements the CRUD actions for Company model.
+ * OperationRecordController implements the CRUD actions for OperationRecord model.
  */
-class CompanyController extends Controller
+class OperationRecordController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +30,12 @@ class CompanyController extends Controller
     }
 
     /**
-     * Lists all Company models.
+     * Lists all OperationRecord models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CompanySearch();
+        $searchModel = new OperationRecordSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,110 +45,86 @@ class CompanyController extends Controller
     }
 
     /**
-     * Go to next web page.
+     * Displays a single OperationRecord model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionNext($id, $name)
-    {
-        return $this->redirect(['project/index']);
-    }
-
-    /**
-     * Displays a single Company model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+/*
     public function actionView($id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
+*/
 
     /**
-     * Creates a new Company model.
+     * Creates a new OperationRecord model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+/*
     public function actionCreate()
     {
-        $model = new Company();
+        $model = new OperationRecord();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            OperationRecord::record($model->tableName(), $model->c_id, $model->c_name, OperationRecord::ACTION_ADD);
-            return $this->redirect(['view', 'id' => $model->c_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Create company failed!'));
+            return $this->redirect(['view', 'id' => $model->or_id]);
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
     }
+*/
 
     /**
-     * Updates an existing Company model.
+     * Updates an existing OperationRecord model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+/*
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            OperationRecord::record($model->tableName(), $model->c_id, $model->c_name, OperationRecord::ACTION_UPDATE);
-            return $this->redirect(['view', 'id' => $model->c_id]);
-        }
-
-        if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Update company failed!'));
+            return $this->redirect(['view', 'id' => $model->or_id]);
         }
 
         return $this->render('update', [
             'model' => $model,
         ]);
     }
-
+*/
     /**
-     * Deletes an existing Company model.
+     * Deletes an existing OperationRecord model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+/*
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        $table = $model->tableName();
-        $id = $model->c_id;
-        $name = $model->c_name;
-        $result = $model->delete();
-        if ($result) {
-            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
-        } else {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete company failed!'));
-        }
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
-
+*/
     /**
-     * Finds the Company model based on its primary key value.
+     * Finds the OperationRecord model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Company the loaded model
+     * @return OperationRecord the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Company::findOne($id)) !== null) {
+        if (($model = OperationRecord::findOne($id)) !== null) {
             return $model;
         }
 

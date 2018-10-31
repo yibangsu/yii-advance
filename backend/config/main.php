@@ -59,6 +59,14 @@ return [
                     //'options'=> ['class'=>yii::$app->controller->id !== "default"? "active": ""],
                 ],
             ],
+
+            'menus' => [
+                'operation-record' => [
+                    'label' => 'operation record', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
+            ],
+
         ],
     ],
     'components' => [

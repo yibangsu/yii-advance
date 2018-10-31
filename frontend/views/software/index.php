@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
+use frontend\models\role\Role;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\software\SoftwareSearch */
@@ -25,13 +26,21 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <p>
         <?= Html::a(Yii::t('app', 'Create Software'), ['create'], ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a(Yii::t('app', 'Fota Manager'), Url::toRoute('fota/index'), ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Fota Manager'), Url::toRoute('/fota/index'), ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a(Yii::t('app', 'Fota Configure'), Url::toRoute('publish/settings'), ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Fota Configure'), Url::toRoute('/publish/settings'), ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a(Yii::t('app', 'Software Publish'), Url::toRoute('publish/index'), ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Software Publish'), Url::toRoute('/publish/index'), ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a(Yii::t('app', 'Test Devices'), Url::toRoute('device/index'), ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Test Devices'), Url::toRoute('/device/index'), ['class' => 'btn btn-success']) ?>
+
+        <?= Html::a(Yii::t('app', 'Force Upgrade'), Url::toRoute('/force-upgrade/index'), ['class' => 'btn btn-success']) ?>
+
+        <?php
+        if (Role::beAdmin()) {
+            echo Html::a(Yii::t('app', 'Note Language'), Url::toRoute('/release-note-language/index'), ['class' => 'btn btn-success']);
+        }
+        ?>
     </p>
 
     <?= GridView::widget([

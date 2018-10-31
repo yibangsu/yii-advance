@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 use yii\helpers\Url;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * ProjectController implements the CRUD actions for Project model.
@@ -95,6 +96,7 @@ class ProjectController extends Controller
         $model = new Project();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->pj_id, $model->pj_name, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->pj_id]);
         }
 
@@ -119,6 +121,7 @@ class ProjectController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->pj_id, $model->pj_name, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->pj_id]);
         }
 
@@ -140,7 +143,16 @@ class ProjectController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->pj_id;
+        $name = $model->pj_name;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete project failed!'));
+        }
 
         return $this->redirect(['index']);
     }

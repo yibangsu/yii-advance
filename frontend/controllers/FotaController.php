@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 use frontend\models\fotaSrc\FotaPackageUpload;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * PackageController implements the CRUD actions for FileExtend model.
@@ -58,11 +59,13 @@ class FotaController extends Controller
 
         if (Yii::$app->request->isPost) {
             $model->load(Yii::$app->request->post());
-            $model->upload();
-        } else {
-            $model->setOver();
+            if ($model->upload() && $model->uploadReturn['id']) {
+                $id = $model->uploadReturn['id'];
+                $model = findModel($id);
+                OperationRecord::record($model->tableName(), $id, $model? $model->fb_name: 'item not found!', OperationRecord::ACTION_ADD);
+            }
         }
-        
+
         return json_encode($model->uploadReturn);
     }
 
@@ -112,6 +115,7 @@ class FotaController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
+            OperationRecord::record($model->tableName(), $model->fe_id, $model->fb_name, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->fe_id]);
         }
 
@@ -133,7 +137,16 @@ class FotaController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->fe_id;
+        $name = $model->fb_name;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete fota package failed!'));
+        }
 
         return $this->redirect(['index']);
     }

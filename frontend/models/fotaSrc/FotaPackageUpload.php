@@ -71,8 +71,10 @@ class FotaPackageUpload extends Model
         }
 
         if ($blob) {
-            $blob->saveAs($tempDir . $this->file_name . "." . $this->curBlobNum . ".temp");
+            return $blob->saveAs($tempDir . $this->file_name . "." . $this->curBlobNum . ".temp");
         }
+
+        return false;
     }
 
     /**
@@ -144,6 +146,7 @@ class FotaPackageUpload extends Model
                 $data->fe_release_note = $this->releaseNote;
                 $data->fe_expiration_date = $this->expireDate;
                 $data->update();
+                $fileExtend->fe_id = $data->fe_id;
             }
         } else {
             $fileExtend->fe_fb_id = $fileBase->fb_id;
@@ -154,6 +157,8 @@ class FotaPackageUpload extends Model
             $fileExtend->fe_expiration_date = $this->expireDate;
             $fileExtend->save();
         }
+
+        return $fileExtend->fe_id;
     }
 
     public function upload()
@@ -161,16 +166,24 @@ class FotaPackageUpload extends Model
         $this->isUploading = true;
        
         // save temp file
-        $this->saveTempFile($this->blob);
+        if (!$this->saveTempFile($this->blob)) {
+            $this->uploadReturn['error'] = 'saveTempFileError';
+            $this->isUploading = false;
+            return false;
+        }
 
         // if send over, merge target file and delete the temp
         if ($this->curBlobNum === $this->totalBlobNum) {
-            // merge the target file
-            $this->saveTargetFile();
-
-            $this->saveDbInfo();
-
             $this->uploadReturn['finish'] = true;
+
+            // merge the target file
+            if ($this->saveTargetFile()) {
+                $id = $this->saveDbInfo();
+                $this->uploadReturn['id'] = $id;
+            } else {
+                $this->uploadReturn['error'] = 'saveTargetFileError';
+                return false;
+            }
         } else {
             $this->uploadReturn['finish'] = false;
         }

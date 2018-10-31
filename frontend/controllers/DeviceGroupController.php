@@ -8,6 +8,7 @@ use frontend\models\fotaSrc\DeviceGroupSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * DeviceGroupController implements the CRUD actions for DeviceGroup model.
@@ -67,7 +68,12 @@ class DeviceGroupController extends Controller
         $model = new DeviceGroup();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->dg_id, $model->dg_name, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->dg_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create device group failed!'));
         }
 
         return $this->render('create', [
@@ -87,7 +93,12 @@ class DeviceGroupController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->dg_id, $model->dg_name, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->dg_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update device group failed!'));
         }
 
         return $this->render('update', [
@@ -104,7 +115,16 @@ class DeviceGroupController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->dg_id;
+        $name = $model->dg_name;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete device group failed!'));
+        }
 
         return $this->redirect(['index']);
     }

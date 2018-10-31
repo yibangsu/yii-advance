@@ -4,6 +4,7 @@ namespace frontend\models\software;
 
 use Yii;
 use frontend\models\puid\ProductInfo;
+use frontend\models\role\Role;
 
 /**
  * This is the model class for table "Software".
@@ -85,7 +86,7 @@ class Software extends \yii\db\ActiveRecord
      */
     public function update($runValidation = true, $attributeNames = null)
     {
-        if ($this->sw_creator === Yii::$app->user->id) {
+        if ($this->sw_creator === Yii::$app->user->id || Role::beAdmin()) {
             $this->sw_date = date("Y-m-d h:i:s",time());
             return parent::update($runValidation, $attributeNames);
         }
@@ -98,7 +99,7 @@ class Software extends \yii\db\ActiveRecord
      */
     public function save($runValidation = true, $attributeNames = null)
     {
-        if ($this->sw_creator === Yii::$app->user->id) {
+        if ($this->sw_creator === Yii::$app->user->id || Role::beAdmin()) {
             $this->sw_date = date("Y-m-d h:i:s",time());
             return parent::save($runValidation, $attributeNames);
         }
@@ -111,7 +112,7 @@ class Software extends \yii\db\ActiveRecord
      */
     public function delete()
     {
-        if ($this->sw_creator === Yii::$app->user->id) {
+        if ($this->sw_creator === Yii::$app->user->id || Role::beAdmin()) {
             return parent::delete();
         }
 

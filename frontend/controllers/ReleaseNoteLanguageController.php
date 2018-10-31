@@ -8,6 +8,7 @@ use frontend\models\fotaSrc\ReleaseNoteLanguageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * ReleaseNoteLanguageController implements the CRUD actions for ReleaseNoteLanguage model.
@@ -67,7 +68,12 @@ class ReleaseNoteLanguageController extends Controller
         $model = new ReleaseNoteLanguage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->rnl_id, $model->rnl_note, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->rnl_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create release note language failed!'));
         }
 
         return $this->render('create', [
@@ -87,7 +93,12 @@ class ReleaseNoteLanguageController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->rnl_id, $model->rnl_note, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->rnl_id]);
+        }
+
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update release note language failed!'));
         }
 
         return $this->render('update', [
@@ -104,7 +115,16 @@ class ReleaseNoteLanguageController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->rnl_id;
+        $name = $model->rnl_note;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete release note language failed!'));
+        }
 
         return $this->redirect(['index']);
     }

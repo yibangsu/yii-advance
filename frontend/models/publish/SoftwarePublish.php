@@ -4,6 +4,7 @@ namespace frontend\models\publish;
 
 use Yii;
 use frontend\models\software\Software;
+use frontend\models\role\Role;
 
 /**
  * This is the model class for table "Software_Publish".
@@ -71,7 +72,9 @@ class SoftwarePublish extends \yii\db\ActiveRecord
     public function save($runValidation = true, $attributeNames = null)
     {
          if (strval($this->sp_publisher) === strval(Yii::$app->user->id) 
-                    && strval($this->sp_puid) === strval(Yii::$app->user->getUserCache('puidId'))) {
+             && strval($this->sp_puid) === strval(Yii::$app->user->getUserCache('puidId'))
+             || Role::beAdmin()) 
+         {
              $this->sp_date = date("Y-m-d h:i:s",time());
              return parent::save($runValidation, $attributeNames);
          }
@@ -84,7 +87,9 @@ class SoftwarePublish extends \yii\db\ActiveRecord
     public function update($runValidation = true, $attributeNames = null)
     {
          if (strval($this->sp_publisher) === strval(Yii::$app->user->id) 
-                    && strval($this->sp_puid) === strval(Yii::$app->user->getUserCache('puidId'))) {
+             && strval($this->sp_puid) === strval(Yii::$app->user->getUserCache('puidId')) 
+             || Role::beAdmin()) 
+         {
              $this->sp_date = date("Y-m-d h:i:s",time());
              return parent::update($runValidation, $attributeNames);
          }

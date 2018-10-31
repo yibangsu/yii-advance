@@ -51,24 +51,4 @@ class UserInfo extends \yii\db\ActiveRecord
             'enable' => 'Enable',
         ];
     }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-/*
-    public function hasUser()
-    {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
-    }
-*/
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-/*
-    public function hasCompany()
-    {
-        return $this->hasOne(Company::className(), ['c_id' => 'company_id']);
-    }
-*/
-
 }

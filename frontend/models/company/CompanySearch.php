@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\company\Company;
+use frontend\models\role\Role;
 
 /**
  * CompanySearch represents the model behind the search form of `frontend\models\company\Company`.
@@ -59,7 +60,9 @@ class CompanySearch extends Company
         }
 
         // select the company with user info
-        $query->where(['c_id' => $userCompanyId]);
+        if (!Role::beAdmin()) {
+            $query->where(['c_id' => $userCompanyId]);
+        }
 
         // grid filtering conditions
         $query->andFilterWhere([

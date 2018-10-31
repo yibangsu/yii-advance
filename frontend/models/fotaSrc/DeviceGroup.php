@@ -4,6 +4,7 @@ namespace frontend\models\fotaSrc;
 
 use Yii;
 use common\models\User;
+use frontend\models\role\Role;
 
 /**
  * This is the model class for table "Device_Group".
@@ -81,7 +82,7 @@ class DeviceGroup extends \yii\db\ActiveRecord
      */
     public function save($runValidation = true, $attributeNames = null)
     {
-        if ($this->dg_u_id === Yii::$app->user->id) {
+        if ($this->dg_u_id === Yii::$app->user->id || Role::beAdmin()) {
             $this->dg_date = date("Y-m-d h:i:s",time());
             return parent::save($runValidation, $attributeNames);
         }
@@ -94,7 +95,7 @@ class DeviceGroup extends \yii\db\ActiveRecord
      */
     public function update($runValidation = true, $attributeNames = null)
     {
-        if ($this->dg_u_id === Yii::$app->user->id) {
+        if ($this->dg_u_id === Yii::$app->user->id || Role::beAdmin()) {
             $this->dg_date = date("Y-m-d h:i:s",time());
             return parent::update($runValidation, $attributeNames);
         }

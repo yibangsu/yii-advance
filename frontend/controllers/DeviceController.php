@@ -8,6 +8,7 @@ use frontend\models\fotaSrc\DeviceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\operationRecord\OperationRecord;
 
 /**
  * DeviceController implements the CRUD actions for Device model.
@@ -67,11 +68,12 @@ class DeviceController extends Controller
         $model = new Device();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->d_id, $model->d_code, OperationRecord::ACTION_ADD);
             return $this->redirect(['view', 'id' => $model->d_id]);
         }
 
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Create test devices failed!'));
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Create test device failed!'));
         }
 
         return $this->render('create', [
@@ -91,11 +93,12 @@ class DeviceController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            OperationRecord::record($model->tableName(), $model->d_id, $model->d_code, OperationRecord::ACTION_UPDATE);
             return $this->redirect(['view', 'id' => $model->d_id]);
         }
 
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->setFlash('error', Yii::t('app', 'Update test devices failed!'));
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Update test device failed!'));
         }
 
         return $this->render('update', [
@@ -112,7 +115,16 @@ class DeviceController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $table = $model->tableName();
+        $id = $model->d_id;
+        $name = $model->d_code;
+        $result = $model->delete();
+        if ($result) {
+            OperationRecord::record($table, $id, $name, OperationRecord::ACTION_DELETE);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Delete test device failed!'));
+        }
 
         return $this->redirect(['index']);
     }
