@@ -43,7 +43,7 @@ class PublishController extends Controller
         $model = $this->findModelByPuid(Yii::$app->user->getUserCache('puidId'));
 
         if (Yii::$app->request->isPost) {
-            $model->load(Yii::$app->request->post()
+            $model->load(Yii::$app->request->post());
             if ($model->save()) {
                 $id = $model->sp_id;
                 $software = Software::findOne(['sw_id' => $model->sp_sw_id]);
