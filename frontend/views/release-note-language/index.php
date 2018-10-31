@@ -8,7 +8,9 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Release Note Languages');
-$this->params['breadcrumbs'][] = $this->title;
+// custom breadcrumbs with level
+$breadcrumbsLevel = 5;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 ?>
 <div class="release-note-language-index">
 

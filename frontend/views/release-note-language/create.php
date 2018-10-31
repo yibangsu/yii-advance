@@ -7,6 +7,11 @@ use yii\helpers\Html;
 /* @var $model frontend\models\fotaSrc\ReleaseNoteLanguage */
 
 $this->title = Yii::t('app', 'Create Release Note Language');
+// custom breadcrumbs with level
+$breadcrumbsLevel = 5;
+$skipMainTitle = true;
+require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Release Note Languages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
