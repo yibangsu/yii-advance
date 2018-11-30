@@ -10,6 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use frontend\models\operationRecord\OperationRecord;
 
+use Aws\S3\S3Client;
+use Aws\Sdk;
+
 /**
  * CompanyController implements the CRUD actions for Company model.
  */
@@ -139,6 +142,59 @@ class CompanyController extends Controller
 
         return $this->redirect(['index']);
     }
+
+/*
+    public function actionAws()
+    {
+        // Use the us-east-2 region and latest version of each client.
+        $sharedConfig = [
+            'profile' => 'default',
+            'region'  => 'us-west-2',
+            'version' => 'latest'
+        ];
+
+        // Create an SDK class used to share configuration across clients.
+        $sdk = new \Aws\Sdk($sharedConfig);
+
+        // Use an Aws\Sdk class to create the S3Client object.
+        $s3Client = $sdk->createS3();
+
+        // Send a PutObject request and get the result object.
+        $result = $s3Client->putObject([
+            'Bucket' => 'create-han-test',
+            'Key'    => 'S3-test.txt',
+            'Body'   => 'this is php sdk test!',
+        ]);
+
+        // Download the contents of the object.
+        //$result = $s3Client->getObject([
+        //    'Bucket' => 'my-bucket',
+        //    'Key'    => 'my-key'
+        //]);
+        
+
+        // Print the body of the result by indexing into the result object.
+        Yii::$app->session->setFlash('error', $result->__toString());
+
+        // use for large file upload
+        //use Aws\S3\MultipartUploader;
+        //use Aws\Exception\MultipartUploadException;
+
+        //$uploader = new MultipartUploader($s3Client, '/path/to/large/file.zip', [
+        //    'bucket' => 'your-bucket',
+        //    'key'    => 'my-file.zip',
+        //]);
+
+        //try {
+        //    $result = $uploader->upload();
+        //    echo "Upload complete: {$result['ObjectURL']}\n";
+        //} catch (MultipartUploadException $e) {
+        //    echo $e->getMessage() . "\n";
+        //}
+
+        return $this->redirect(['index']);
+    }
+/*
 
     /**
      * Finds the Company model based on its primary key value.
