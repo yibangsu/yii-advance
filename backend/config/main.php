@@ -51,12 +51,30 @@ return [
 */
 
             'layout' => 'left-menu',
+            'navbar' => [
+                ['label' => Yii::t('rbac-admin', 'Help'), 'url' => ['default/index']],
+                [
+                    'label' => Yii::t('rbac-admin', 'Application'), 
+                    'url' => ['/admin/user'],
+                    //'options'=> ['class'=>yii::$app->controller->id !== "default"? "active": ""],
+                ],
+            ],
+
             'menus' => [
                 'operation-record' => [
                     'label' => 'Operation Records', // change label
                     //'url' => ['/operation-record/index'],
                 ],
+                'company' => [
+                    'label' => 'Company', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
+                'info' => [
+                    'label' => 'User Info', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
             ],
+
         ],
     ],
     'components' => [
@@ -122,6 +140,7 @@ return [
         'cache' => [ 
             'class' => 'yii\caching\FileCache',
         ], 
+
 
         //语言包配置
         'i18n'=>[

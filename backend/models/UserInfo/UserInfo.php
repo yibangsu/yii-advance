@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend\models\userInfo;
+namespace backend\models\UserInfo;
 
 use Yii;
-use common\models\User;
 use frontend\models\company\Company;
+use common\models\User;
 
 /**
  * This is the model class for table "User_Info".
@@ -19,6 +19,18 @@ use frontend\models\company\Company;
  */
 class UserInfo extends \yii\db\ActiveRecord
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function attributes ()
+    {
+        $attributes = parent::attributes();
+        $attributes[] = 'userName';
+        $attributes[] = 'companyName';
+        return $attributes;
+    }
+
+
     /**
      * {@inheritdoc}
      */
@@ -47,10 +59,26 @@ class UserInfo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'user_id' => 'User ID',
-            'company_id' => 'Company ID',
-            'enable' => 'Enable',
+            'id' => Yii::t('app', 'ID'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'company_id' => Yii::t('app', 'Company ID'),
+            'enable' => Yii::t('app', 'Enable'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCompany()
+    {
+        return $this->hasOne(Company::className(), ['c_id' => 'company_id']);
     }
 }

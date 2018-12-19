@@ -7,10 +7,10 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\company\Company */
 
 $this->title = $model->c_name;
-//$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Companies'), 'url' => ['index']];
 // custom breadcrumbs with level
-$breadcrumbsLevel = 1;
-require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+//$breadcrumbsLevel = 1;
+//require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
 ?>
 <div class="company-view">
@@ -18,14 +18,14 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?php //echo Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->c_id], ['class' => 'btn btn-primary']) ?>
-        <?php /*echo Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->c_id], [
+        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->c_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->c_id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
-        ]) */?>
+        ]) ?>
     </p>
 
     <?= DetailView::widget([
