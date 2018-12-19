@@ -23,6 +23,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
     <p>
         <?= Html::a(Yii::t('app', 'Create Company'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?php //echo Html::a(Yii::t('app', 'aws'), ['aws'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

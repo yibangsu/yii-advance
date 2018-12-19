@@ -12,6 +12,8 @@ use frontend\models\operationRecord\OperationRecord;
 
 use Aws\S3\S3Client;
 use Aws\Sdk;
+use Aws\S3\MultipartUploader;
+use Aws\Exception\MultipartUploadException;
 
 /**
  * CompanyController implements the CRUD actions for Company model.
@@ -160,6 +162,8 @@ class CompanyController extends Controller
         $s3Client = $sdk->createS3();
 
         // Send a PutObject request and get the result object.
+/*
+/*
         $result = $s3Client->putObject([
             'Bucket' => 'create-han-test',
             'Key'    => 'S3-test.txt',
@@ -167,35 +171,35 @@ class CompanyController extends Controller
         ]);
 
         // Download the contents of the object.
-        //$result = $s3Client->getObject([
-        //    'Bucket' => 'my-bucket',
-        //    'Key'    => 'my-key'
-        //]);
+        $result = $s3Client->getObject([
+            'Bucket' => 'create-han-test',
+            'Key'    => 'S3-test.txt',
+        ]);
         
 
         // Print the body of the result by indexing into the result object.
-        Yii::$app->session->setFlash('error', $result->__toString());
-
+        Yii::$app->session->setFlash('error', $result['Body']->__toString());
+*/
+/*
         // use for large file upload
         //use Aws\S3\MultipartUploader;
         //use Aws\Exception\MultipartUploadException;
 
-        //$uploader = new MultipartUploader($s3Client, '/path/to/large/file.zip', [
-        //    'bucket' => 'your-bucket',
-        //    'key'    => 'my-file.zip',
-        //]);
+        $uploader = new MultipartUploader($s3Client, '/data/suyibang/Downloads/QS5509QL_v1A71_TO_v1A72_rezip.zip', [
+            'bucket' => 'create-han-test',
+            'key'    => 'test.zip',
+        ]);
 
-        //try {
-        //    $result = $uploader->upload();
-        //    echo "Upload complete: {$result['ObjectURL']}\n";
-        //} catch (MultipartUploadException $e) {
-        //    echo $e->getMessage() . "\n";
-        //}
+        try {
+            $result = $uploader->upload();
+            Yii::$app->session->setFlash('success',  "Upload complete: {$result['ObjectURL']}");
+        } catch (MultipartUploadException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
 
         return $this->redirect(['index']);
     }
-/*
-
+*/
     /**
      * Finds the Company model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
