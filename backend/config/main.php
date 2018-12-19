@@ -65,6 +65,14 @@ return [
                     'label' => 'Operation Records', // change label
                     //'url' => ['/operation-record/index'],
                 ],
+                'company' => [
+                    'label' => 'Company', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
+                'info' => [
+                    'label' => 'User Info', // change label
+                    //'url' => ['/operation-record/index'],
+                ],
             ],
 
         ],

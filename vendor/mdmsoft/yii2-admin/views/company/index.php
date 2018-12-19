@@ -9,10 +9,10 @@ use yii\helpers\Url;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Companies');
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 // custom breadcrumbs with level
-$breadcrumbsLevel = 0;
-require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
+//$breadcrumbsLevel = 0;
+//require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
 ?>
 <div class="company-index">
@@ -22,7 +22,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?php //echo Html::a(Yii::t('app', 'Create Company'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Company'), ['create'], ['class' => 'btn btn-success']) ?>
         <?php //echo Html::a(Yii::t('app', 'aws'), ['aws'], ['class' => 'btn btn-success']) ?>
     </p>
 
@@ -39,7 +39,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{next} {view} ',
+                'template' => '{next} {view} {update} {delete}',
                 'visibleButtons' => [
                     'next' => true,
                     //'view' => Yii::$app->user->canEdit("add company"),

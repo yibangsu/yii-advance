@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\controllers;
+namespace mdm\admin\controllers;
 
 use Yii;
 use frontend\models\company\Company;
@@ -79,7 +79,6 @@ class CompanyController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-/*
     public function actionCreate()
     {
         $model = new Company();
@@ -97,7 +96,7 @@ class CompanyController extends Controller
             'model' => $model,
         ]);
     }
-*/
+
     /**
      * Updates an existing Company model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -105,7 +104,6 @@ class CompanyController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-/*
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -123,7 +121,7 @@ class CompanyController extends Controller
             'model' => $model,
         ]);
     }
-*/
+
     /**
      * Deletes an existing Company model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -131,7 +129,6 @@ class CompanyController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-/*
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
@@ -147,7 +144,6 @@ class CompanyController extends Controller
 
         return $this->redirect(['index']);
     }
-*/
 
 /*
     public function actionAws()
