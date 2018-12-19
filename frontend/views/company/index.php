@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use yii\helpers\Url;
+use frontend\models\role\Role;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\company\CompanySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -22,7 +23,7 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Company'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?php if (Role::beAdmin()) { echo Html::a(Yii::t('app', 'Create Company'), ['create'], ['class' => 'btn btn-success']);} ?>
     </p>
 
     <?= GridView::widget([

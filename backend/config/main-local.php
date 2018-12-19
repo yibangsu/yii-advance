@@ -8,7 +8,7 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=HiFota',
+            'dsn' => 'mysql:host=fotainstance.cwhqnqtmrtqa.us-east-2.rds.amazonaws.com;dbname=HiFota',
             'username' => 'fotaadmin',
             'password' => 'fotaadmin@123',
             'charset' => 'utf8',

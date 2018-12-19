@@ -8,7 +8,7 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=HiFota',
+            'dsn' => 'mysql:host=fotainstance.cwhqnqtmrtqa.us-east-2.rds.amazonaws.com;dbname=HiFota',
             'username' => 'fotauser',
             'password' => 'fotauser#123',
             'charset' => 'utf8',
@@ -22,13 +22,13 @@ if (YII_DEBUG) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
-        'allowedIPs' => ['127.0.0.1', '10.1.152.228', '::1'], 
+        'allowedIPs' => ['183.62.194.98', '::1'], 
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        'allowedIPs' => ['127.0.0.1', '10.1.152.228', '::1'], 
+        'allowedIPs' => ['183.62.194.98', '::1'], 
     ];
 }
 
