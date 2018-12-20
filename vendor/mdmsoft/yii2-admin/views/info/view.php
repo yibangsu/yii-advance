@@ -2,11 +2,19 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use common\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\UserInfo\UserInfo */
 
-$this->title = $model->id;
+$user = User::find(['id' => $model->id])->one();
+if ($user) {
+$userName = $user->username;
+}
+
+$this->title = Yii::t('app', 'View User Info: ' . $userName, [
+    'nameAttribute' => '' . $model->id,
+]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'User Infos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
