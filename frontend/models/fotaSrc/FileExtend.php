@@ -111,10 +111,18 @@ class FileExtend extends \yii\db\ActiveRecord
         $this->fe_puid = Yii::$app->user->getUserCache('puidId');
 
         $filebase = FileBase::find()->where(['fb_id' => $this->fe_fb_id])->one();
-        if ($filebase === null)
+        if ($filebase === null) {
+            Yii::warning("bnot file base");
             return false;
+        }
 
-        $this->fe_checksum = md5_file($filebase->fb_path . $filebase->fb_name);
+        $file = $filebase->getEc2Path() . $filebase->fb_name;
+        if (!file_exists($file)) {
+            Yii::warning("$file : is not file");
+            return false;
+        }
+
+        $this->fe_checksum = md5_file($file);
 
         return $result;
     }

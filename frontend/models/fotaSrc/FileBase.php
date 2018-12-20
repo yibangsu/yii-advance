@@ -62,13 +62,15 @@ class FileBase extends \yii\db\ActiveRecord
     {
         $result = parent::load($data, $formName);
 
+        $companyName = Yii::$app->user->getUserCompanyName();
         $projectName = Yii::$app->user->getUserCache('projectName');
         $categoryName = Yii::$app->user->getUserCache('categoryName');
         $puidName = Yii::$app->user->getUserCache('puidName');
         if (!$projectName || !$categoryName || !$puidName) {
             return false;
         }
-        $this->fb_path = Yii::$app->params['fotaPackagePath'] 
+        $this->fb_path = Yii::$app->params['s3BucketRoot'] 
+                         . $companyName . '/'
                          . $projectName . '/'
                          . $categoryName . '/'
                          . $puidName . '/';
@@ -86,7 +88,10 @@ class FileBase extends \yii\db\ActiveRecord
         $result = false;
 
         try {
-            unlink($this->fb_path . $this->fb_name);
+            $path = $this->getEc2Path();
+            if (is_dir($path)) {
+                unlink($path . $this->fb_name);
+            }
             $result = parent::delete();
         } catch (Exception $e) {
             // do nothing
@@ -107,5 +112,19 @@ class FileBase extends \yii\db\ActiveRecord
     public function hasFileExtends()
     {
         return $this->hasMany(FileExtend::className(), ['fe_fb_id' => 'fb_id']);
+    }
+
+    /**
+     * @return String - EC2 mouned path
+     */
+    public function getEc2Path()
+    {
+        if ($this->fb_path) {
+            $ec2Root = Yii::$app->params['s2MountRoot'];
+            $s3Root = Yii::$app->params['s3BucketRoot'];
+            return strtr($this->fb_path, [$s3Root => $ec2Root]);
+        }
+
+        return null;
     }
 }

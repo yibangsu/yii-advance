@@ -67,7 +67,9 @@ class FotaPackageUpload extends Model
     protected function saveTempFile($blob) {
         $tempDir = Yii::$app->params['tempPackagePath'];
         if (!is_dir($tempDir)) {
-            mkdir($tempDir, 0755, true);
+            umask(0000);
+            mkdir($tempDir, 0770, true);
+            umask(0022);
         }
 
         if ($blob) {
@@ -89,18 +91,30 @@ class FotaPackageUpload extends Model
         $fileBase = new FileBase();
         $fileBase->load(null);
 
-        if (!is_dir($fileBase->fb_path)) {
-            mkdir($fileBase->fb_path, 0755, true);
+        if (!is_dir($fileBase->getEc2Path())) {
+            $targetDir = $fileBase->getEc2Path();
+            Yii::warning("mkdir $targetDir");
+            umask(0000);
+            mkdir($fileBase->getEc2Path(), 0770, true);
+            umask(0022);
         }
 
-        $tagetFile = fopen($fileBase->fb_path . $this->file_name, "wb");
-        if (!$tagetFile) return false;
+        umask(0000);
+        $tagetFile = fopen($fileBase->getEc2Path() . $this->file_name, "wb");
+        if (!$tagetFile) {
+            Yii::warining("can't open target file");
+            return false;
+        }
 
         for ($i=1; $i<=$this->totalBlobNum; $i++) {
             // read temp file
             $tempFileName = $tempDir . $this->file_name . "." . $i . ".temp";
             $tempFile = fopen($tempFileName, "rb");
-            if (!$tempFile) return false;
+            if (!$tempFile) {
+                Yii::warning("no temp file $tempFileName");
+                umask(0022);
+                return false;
+            }
             $tempContent = fread($tempFile, filesize($tempFileName));
             fclose($tempFile);
             if ($deleteTemp) {
@@ -112,6 +126,7 @@ class FotaPackageUpload extends Model
 
         fclose($tagetFile);
 
+        umask(0022);
         return true;
     }
 
@@ -123,15 +138,15 @@ class FotaPackageUpload extends Model
         $datas = FileBase::find()->where(['fb_name' => $fileBase->fb_name, 'fb_path' => $fileBase->fb_path])->all();
         if (count($datas) > 0) {
             foreach ($datas as $data) {
-                $data->fb_date = date("Y-m-d h:i:s", filectime($data->fb_path . $data->fb_name));
-                $data->fb_size = filesize($data->fb_path . $data->fb_name);
+                $data->fb_date = date("Y-m-d h:i:s", filectime($data->getEc2Path() . $data->fb_name));
+                $data->fb_size = filesize($data->getEc2Path() . $data->fb_name);
                 $data->fb_status = $fileBase->fb_status;
                 $data->update();
                 $fileBase->fb_id = $data->fb_id; // need a fb id for fe
             }
         } else {
-            $fileBase->fb_date = date("Y-m-d h:i:s", filectime($fileBase->fb_path . $fileBase->fb_name));
-            $fileBase->fb_size = filesize($fileBase->fb_path . $fileBase->fb_name);
+            $fileBase->fb_date = date("Y-m-d h:i:s", filectime($fileBase->getEc2Path() . $fileBase->fb_name));
+            $fileBase->fb_size = filesize($fileBase->getEc2Path() . $fileBase->fb_name);
             $fileBase->save();
         }
 
@@ -142,7 +157,7 @@ class FotaPackageUpload extends Model
         if (count($datas) > 0) {
             foreach ($datas as $data) {
                 $data->fe_fb_id = $fileBase->fb_id;
-                $data->fe_checksum = md5_file($fileBase->fb_path . $fileBase->fb_name);
+                $data->fe_checksum = md5_file($fileBase->getEc2Path() . $fileBase->fb_name);
                 $data->fe_release_note = $this->releaseNote;
                 $data->fe_expiration_date = $this->expireDate;
                 $data->update();
@@ -152,7 +167,7 @@ class FotaPackageUpload extends Model
             $fileExtend->fe_fb_id = $fileBase->fb_id;
             $fileExtend->fe_from_ver = $this->fromVersion;
             $fileExtend->fe_to_ver = $this->toVersion;
-            $fileExtend->fe_checksum = md5_file($fileBase->fb_path . $fileBase->fb_name);
+            $fileExtend->fe_checksum = md5_file($fileBase->getEc2Path() . $fileBase->fb_name);
             $fileExtend->fe_release_note = $this->releaseNote;
             $fileExtend->fe_expiration_date = $this->expireDate;
             $fileExtend->save();
@@ -167,6 +182,7 @@ class FotaPackageUpload extends Model
        
         // save temp file
         if (!$this->saveTempFile($this->blob)) {
+            Yii::warning("save temp file error!");
             $this->uploadReturn['error'] = 'saveTempFileError';
             $this->isUploading = false;
             return false;
@@ -180,16 +196,19 @@ class FotaPackageUpload extends Model
             if ($this->saveTargetFile()) {
                 $id = $this->saveDbInfo();
                 $this->uploadReturn['id'] = $id;
+                return true;
             } else {
+                Yii::warning("save target file error");
                 $this->uploadReturn['error'] = 'saveTargetFileError';
                 return false;
             }
         } else {
             $this->uploadReturn['finish'] = false;
+            $this->uploadReturn['curBlobNum'] = $this->curBlobNum + 1;
+            return false;
         }
-        $this->uploadReturn['curBlobNum'] = $this->curBlobNum + 1;
 
-        return true;
+        return false;
     }
 
     public function setOver()
