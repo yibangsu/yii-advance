@@ -55,7 +55,16 @@ require __DIR__ . '/../../../common/views/main-breadcrumbs.php';
             'sw_date',
             //'sw_puid',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'urlCreator' => function ($action, $model, $key, $index) {
+                    $params = ['id' => $model->sw_id];
+                    $params[0] = $this->context->id . '/' . $action; 
+                    $params['name'] = Html::encode($model->sw_ver);
+
+                    return Url::toRoute($params);
+                },
+            ],
         ],
     ]); ?>
 </div>
