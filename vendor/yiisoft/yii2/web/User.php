@@ -844,7 +844,7 @@ class User extends Component
                     return $companyId;
                 } else {
                     // find the database
-                    $userInfo = UserInfo::find()->where(['id' => $this->id, 'enable' => 'Y'])->one();
+                    $userInfo = UserInfo::find()->where(['user_id' => $this->id, 'enable' => 'Y'])->one();
                     if ($userInfo) {
                         $companyId = $cache->set($curCompanyId, $userInfo->company_id);
                         return $userInfo->company_id;
