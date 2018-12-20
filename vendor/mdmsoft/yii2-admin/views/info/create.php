@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     $userList = User::find()->all();
     $companyList =  Company::find()->all();
-    $enableList = ['Y', 'N'];
+    $enableList = ['Y' => 'Y', 'N' => 'N'];
     ?>
 
 
