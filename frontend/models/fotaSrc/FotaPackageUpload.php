@@ -180,16 +180,20 @@ class FotaPackageUpload extends Model
             if ($this->saveTargetFile()) {
                 $id = $this->saveDbInfo();
                 $this->uploadReturn['id'] = $id;
+                return true;
             } else {
                 $this->uploadReturn['error'] = 'saveTargetFileError';
                 return false;
             }
         } else {
             $this->uploadReturn['finish'] = false;
-        }
-        $this->uploadReturn['curBlobNum'] = $this->curBlobNum + 1;
+            $this->uploadReturn['curBlobNum'] = $this->curBlobNum + 1;
 
-        return true;
+            return false;
+        }
+        
+
+        return false;
     }
 
     public function setOver()

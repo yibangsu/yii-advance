@@ -61,8 +61,8 @@ class FotaController extends Controller
             $model->load(Yii::$app->request->post());
             if ($model->upload() && $model->uploadReturn['id']) {
                 $id = $model->uploadReturn['id'];
-                $model = findModel($id);
-                OperationRecord::record($model->tableName(), $id, $model? $model->fb_name: 'item not found!', OperationRecord::ACTION_ADD);
+                $fbModel = $this->findModel($id);
+                OperationRecord::record($fbModel->tableName(), $id, $fbModel? $fbModel->fb_name: 'item not found!', OperationRecord::ACTION_ADD);
             }
         }
 
