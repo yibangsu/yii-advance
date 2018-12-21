@@ -67,9 +67,9 @@ class FotaPackageUpload extends Model
     protected function saveTempFile($blob) {
         $tempDir = Yii::$app->params['tempPackagePath'];
         if (!is_dir($tempDir)) {
-            umask(0000);
+            $umask = umask(0000);
             mkdir($tempDir, 0770, true);
-            umask(0022);
+            umask($umask);
         }
 
         if ($blob) {
@@ -94,12 +94,12 @@ class FotaPackageUpload extends Model
         if (!is_dir($fileBase->getEc2Path())) {
             $targetDir = $fileBase->getEc2Path();
             Yii::warning("mkdir $targetDir");
-            umask(0000);
+            $umask = umask(0000);
             mkdir($fileBase->getEc2Path(), 0770, true);
-            umask(0022);
+            umask($umask);
         }
 
-        umask(0000);
+        $umask = umask(0000);
         $tagetFile = fopen($fileBase->getEc2Path() . $this->file_name, "wb");
         if (!$tagetFile) {
             Yii::warining("can't open target file");
@@ -112,7 +112,7 @@ class FotaPackageUpload extends Model
             $tempFile = fopen($tempFileName, "rb");
             if (!$tempFile) {
                 Yii::warning("no temp file $tempFileName");
-                umask(0022);
+                umask($umask);
                 return false;
             }
             $tempContent = fread($tempFile, filesize($tempFileName));
@@ -126,7 +126,7 @@ class FotaPackageUpload extends Model
 
         fclose($tagetFile);
 
-        umask(0022);
+        umask($umask);
         return true;
     }
 
