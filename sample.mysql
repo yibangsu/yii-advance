@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: test
+-- Host: fotainstance.cwhqnqtmrtqa.us-east-2.rds.amazonaws.com    Database: HiFota
 -- ------------------------------------------------------
--- Server version	5.5.62-0ubuntu0.14.04.1
+-- Server version	5.6.41-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `Category_Project` (
   PRIMARY KEY (`cp_id`),
   KEY `cp_pj_id` (`cp_pj_id`),
   CONSTRAINT `Category_Project_ibfk_1` FOREIGN KEY (`cp_pj_id`) REFERENCES `Project` (`pj_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `Category_Project` (
 
 LOCK TABLES `Category_Project` WRITE;
 /*!40000 ALTER TABLE `Category_Project` DISABLE KEYS */;
-INSERT INTO `Category_Project` VALUES (1,'Firmware',1),(3,'eeee',2);
+INSERT INTO `Category_Project` VALUES (1,'firmware',1);
 /*!40000 ALTER TABLE `Category_Project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +55,7 @@ CREATE TABLE `Company` (
   `c_site` varchar(32) NOT NULL,
   `c_desc` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `Company` (
 
 LOCK TABLES `Company` WRITE;
 /*!40000 ALTER TABLE `Company` DISABLE KEYS */;
-INSERT INTO `Company` VALUES (1,'Hipad','ShenZhen',''),(2,'weilai','ShenZhen',NULL),(3,'Hipad','sz','software test'),(4,'test','eee','aaa');
+INSERT INTO `Company` VALUES (1,'hipad','shenzhen','llllllll'),(2,'testCom','shen zhen','test'),(3,'admin','anywhere','admin');
 /*!40000 ALTER TABLE `Company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,6 @@ CREATE TABLE `Device` (
 
 LOCK TABLES `Device` WRITE;
 /*!40000 ALTER TABLE `Device` DISABLE KEYS */;
-INSERT INTO `Device` VALUES (1,1,'device1',2,'v1A71','2018-10-30 09:15:08',1),(2,1,'12343456567677',5,'v1A71','2018-10-30 09:26:44',1),(3,1,'123213131312312321312313213213213',2,NULL,'2018-10-30 09:39:26',1);
 /*!40000 ALTER TABLE `Device` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +118,7 @@ CREATE TABLE `Device_Group` (
   KEY `Device_Group_ibfk_2` (`dg_puid`),
   CONSTRAINT `Device_Group_ibfk_1` FOREIGN KEY (`dg_u_id`) REFERENCES `user` (`id`),
   CONSTRAINT `Device_Group_ibfk_2` FOREIGN KEY (`dg_puid`) REFERENCES `Product_Info` (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +127,6 @@ CREATE TABLE `Device_Group` (
 
 LOCK TABLES `Device_Group` WRITE;
 /*!40000 ALTER TABLE `Device_Group` DISABLE KEYS */;
-INSERT INTO `Device_Group` VALUES (2,1,'group1','2018-10-30 08:53:53',1),(3,1,'group2','2018-10-30 09:12:54',1),(5,1,'group3','2018-10-30 09:25:33',1);
 /*!40000 ALTER TABLE `Device_Group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -147,7 +145,7 @@ CREATE TABLE `File_Base` (
   `fb_date` datetime NOT NULL,
   `fb_size` int(10) unsigned NOT NULL,
   PRIMARY KEY (`fb_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +154,7 @@ CREATE TABLE `File_Base` (
 
 LOCK TABLES `File_Base` WRITE;
 /*!40000 ALTER TABLE `File_Base` DISABLE KEYS */;
-INSERT INTO `File_Base` VALUES (7,'upgrade.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-18 07:41:21',4678848),(8,'QS5509QL_v1A71_TO_v1A73.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-19 02:33:30',1771439),(9,'QS5509QL_v1A71_TO_v1A72.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-22 07:20:39',101690497),(10,'SystemUI.apk.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509-FOTATEST/',1,'2018-10-23 08:32:34',1771439),(11,'upgrade.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-24 09:27:59',4678848),(12,'QS5509QL_v1A73_TO_v1A74.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-29 02:50:13',12015244),(13,'SystemUI.apk.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-23 10:18:50',1771439),(14,'QS5509QL_v1A71_TO_v1ADP.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-24 09:37:49',18808686),(15,'QS5509QL_v1A74_TO_v1A73.zip','/home/suyibang/FotaPackages/QS5509-QL/Firmware/QS5509A/',1,'2018-10-29 02:20:33',12030485);
+INSERT INTO `File_Base` VALUES (2,'QS5509QL_v1A73_TO_v1A74.zip','ec2-18-224-151-94.us-east-2.compute.amazonaws.com/hipad/Fota/firmware/HiFota-FotaTest/',1,'1970-01-01 12:00:00',11096229),(3,'QS5509QL_v1A73_TO_v1A75.zip','ec2-18-224-151-94.us-east-2.compute.amazonaws.com/hipad/Fota/firmware/HiFota-FotaTest/',1,'1970-01-01 12:00:00',11096229);
 /*!40000 ALTER TABLE `File_Base` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,18 +172,18 @@ CREATE TABLE `File_Extend` (
   `fe_to_ver` bigint(20) NOT NULL,
   `fe_checksum` varchar(64) NOT NULL,
   `fe_release_note` mediumtext NOT NULL,
-  `fe_expiration_date` varchar(10) NOT NULL,
+  `fe_expiration_date` varchar(20) NOT NULL,
   `fe_puid` bigint(20) NOT NULL,
   PRIMARY KEY (`fe_id`),
   KEY `fe_id` (`fe_fb_id`),
   KEY `fe_from_ver` (`fe_from_ver`),
   KEY `fe_to_ver` (`fe_to_ver`),
   KEY `fe_puid` (`fe_puid`),
-  CONSTRAINT `File_Extend_ibfk_1` FOREIGN KEY (`fe_fb_id`) REFERENCES `File_Base` (`fb_id`),
+  CONSTRAINT `File_Extend_ibfk_1` FOREIGN KEY (`fe_fb_id`) REFERENCES `File_Base` (`fb_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `File_Extend_ibfk_2` FOREIGN KEY (`fe_from_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_3` FOREIGN KEY (`fe_to_ver`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `File_Extend_ibfk_4` FOREIGN KEY (`fe_puid`) REFERENCES `Product_Info` (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,9 +192,29 @@ CREATE TABLE `File_Extend` (
 
 LOCK TABLES `File_Extend` WRITE;
 /*!40000 ALTER TABLE `File_Extend` DISABLE KEYS */;
-INSERT INTO `File_Extend` VALUES (8,7,5,6,'168e8f925cdacb0c5279dab138e24b87','test\ntest\nand test\n','2018-10-31',1),(9,8,1,5,'876bd07572d0c1dd5a21d041619b72eb','test\ntest\nand test\n','never',1),(10,9,1,4,'a52e5657ae6cc6ba0da4b38a4963656d','test\ntest\nand test\n','never',1),(14,14,7,9,'70f3cdda6f2346cfe9ede841c9bd8e18','<en>1A75 TEST</en>\r\n<zh>1A75 测试</zh>\r\n','never',7),(15,15,8,7,'64d5fe56a2d655cf33483a84905bbd21','<en>74-73 test aathe allfa falkdjfj a fdja laaaaf fffe  aaf  dc  d e  daa ff ffeeddaa fffdd aaaff fffa fffffffffffffffffffffffffffff aaaaaaaaaaaaaa aaaaaaaa</en>\r\n','never',7),(16,12,7,8,'344432f2ed4b0e629d31c1809cf49bbb','<en>a</en>\r\n','never',7);
+INSERT INTO `File_Extend` VALUES (6,2,1,2,'51649b220842bda5ec9239583d9e0512','','never',1),(7,3,2,1,'51649b220842bda5ec9239583d9e0512','','never',1);
 /*!40000 ALTER TABLE `File_Extend` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `File_Info`
+--
+
+DROP TABLE IF EXISTS `File_Info`;
+/*!50001 DROP VIEW IF EXISTS `File_Info`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `File_Info` (
+  `fe_fb_id` tinyint NOT NULL,
+  `from_ver` tinyint NOT NULL,
+  `to_ver` tinyint NOT NULL,
+  `fb_name` tinyint NOT NULL,
+  `fb_path` tinyint NOT NULL,
+  `fb_size` tinyint NOT NULL,
+  `fe_checksum` tinyint NOT NULL,
+  `fe_puid` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `Force_Version`
@@ -210,11 +228,14 @@ CREATE TABLE `Force_Version` (
   `fv_sw_id` bigint(20) NOT NULL,
   `fv_date` datetime NOT NULL,
   `fv_u_id` int(11) NOT NULL,
+  `fv_puid` bigint(20) NOT NULL,
   PRIMARY KEY (`fv_id`),
   KEY `fv_sw_id` (`fv_sw_id`),
   KEY `fv_u_id` (`fv_u_id`),
+  KEY `fv_puid` (`fv_puid`),
   CONSTRAINT `Force_Version_ibfk_1` FOREIGN KEY (`fv_sw_id`) REFERENCES `Software` (`sw_id`),
-  CONSTRAINT `Force_Version_ibfk_2` FOREIGN KEY (`fv_u_id`) REFERENCES `user` (`id`)
+  CONSTRAINT `Force_Version_ibfk_2` FOREIGN KEY (`fv_u_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `Force_Version_ibfk_3` FOREIGN KEY (`fv_puid`) REFERENCES `Product_Info` (`pi_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -228,6 +249,54 @@ LOCK TABLES `Force_Version` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Operation_Record`
+--
+
+DROP TABLE IF EXISTS `Operation_Record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Operation_Record` (
+  `or_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `or_u_id` int(11) NOT NULL,
+  `or_table_name` varchar(64) NOT NULL,
+  `or_table_item_id` bigint(20) NOT NULL,
+  `or_table_item_name` varchar(255) NOT NULL,
+  `or_table_action` varchar(64) NOT NULL,
+  `or_date` datetime NOT NULL,
+  PRIMARY KEY (`or_id`),
+  KEY `or_u_id` (`or_u_id`),
+  CONSTRAINT `Operation_Record_ibfk_1` FOREIGN KEY (`or_u_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Operation_Record`
+--
+
+LOCK TABLES `Operation_Record` WRITE;
+/*!40000 ALTER TABLE `Operation_Record` DISABLE KEYS */;
+INSERT INTO `Operation_Record` VALUES (1,2,'Company',2,'testCom','add','2018-12-19 06:44:31'),(2,2,'Company',3,'admin','add','2018-12-20 01:39:44'),(3,2,'Release_Note_Language',1,'English','add','2018-12-20 04:00:14'),(4,2,'Release_Note_Language',2,'??','add','2018-12-20 04:00:35'),(5,1,'File_Extend',1,'QS5509QL_v1A73_TO_v1A74.zip','update','2018-12-20 06:45:32'),(6,1,'File_Extend',1,'QS5509QL_v1A73_TO_v1A74.zip','delete','2018-12-20 06:47:18'),(7,1,'File_Extend',2,'QS5509QL_v1A73_TO_v1A74.zip','delete','2018-12-20 07:42:09'),(8,1,'File_Extend',3,'QS5509QL_v1A73_TO_v1A74.zip','add','2018-12-20 07:47:54'),(9,1,'File_Extend',3,'QS5509QL_v1A73_TO_v1A74.zip','delete','2018-12-20 07:54:40'),(10,1,'File_Extend',4,'QS5509QL_v1A73_TO_v1A74.zip','add','2018-12-20 07:55:02'),(11,1,'File_Extend',4,'QS5509QL_v1A73_TO_v1A74.zip','delete','2018-12-20 07:58:50'),(12,1,'File_Extend',5,'QS5509QL_v1A73_TO_v1A74.zip','add','2018-12-20 08:15:04'),(13,1,'File_Extend',5,'QS5509QL_v1A73_TO_v1A74.zip','delete','2018-12-20 08:15:18'),(14,1,'File_Extend',6,'QS5509QL_v1A73_TO_v1A74.zip','add','2018-12-20 08:15:44'),(15,1,'Software',3,'test','add','2018-12-20 09:16:39'),(16,1,'Software',3,'test','delete','2018-12-20 09:27:52'),(17,1,'File_Extend',7,'QS5509QL_v1A73_TO_v1A75.zip','add','2018-12-21 02:09:55');
+/*!40000 ALTER TABLE `Operation_Record` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `PUID_Publish`
+--
+
+DROP TABLE IF EXISTS `PUID_Publish`;
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `PUID_Publish` (
+  `pi_id` tinyint NOT NULL,
+  `puid` tinyint NOT NULL,
+  `sw_ver` tinyint NOT NULL,
+  `sw_id` tinyint NOT NULL,
+  `fe_release_note` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `Product_Info`
 --
 
@@ -236,7 +305,7 @@ DROP TABLE IF EXISTS `Product_Info`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Product_Info` (
   `pi_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `PUID` varchar(20) NOT NULL,
+  `PUID` varchar(36) NOT NULL,
   `pi_cp_id` smallint(6) NOT NULL,
   `cp_used` tinyint(1) DEFAULT '0',
   `pi_date` datetime NOT NULL,
@@ -247,7 +316,7 @@ CREATE TABLE `Product_Info` (
   KEY `pi_u_id` (`pi_u_id`),
   CONSTRAINT `Product_Info_ibfk_1` FOREIGN KEY (`pi_cp_id`) REFERENCES `Category_Project` (`cp_id`),
   CONSTRAINT `Product_Info_ibfk_2` FOREIGN KEY (`pi_u_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +325,7 @@ CREATE TABLE `Product_Info` (
 
 LOCK TABLES `Product_Info` WRITE;
 /*!40000 ALTER TABLE `Product_Info` DISABLE KEYS */;
-INSERT INTO `Product_Info` VALUES (1,'QS5509-FOTATEST',1,1,'2018-09-14 16:37:32',1),(2,'HiFota-FotaTest',1,1,'2018-09-06 15:39:37',1),(4,'eeee-puid',3,1,'2018-10-19 03:01:18',2),(7,'QS5509A',1,1,'2018-10-24 02:35:37',1);
+INSERT INTO `Product_Info` VALUES (1,'HiFota-FotaTest',1,1,'2018-12-14 02:35:59',1);
 /*!40000 ALTER TABLE `Product_Info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,14 +338,14 @@ DROP TABLE IF EXISTS `Project`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Project` (
   `pj_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `pj_name` varchar(32) NOT NULL,
+  `pj_name` varchar(36) NOT NULL,
   `pj_desc` varchar(200) DEFAULT NULL,
   `pj_c_id` bigint(20) NOT NULL,
   PRIMARY KEY (`pj_id`),
   UNIQUE KEY `pj_name` (`pj_name`),
   KEY `pj_c_id` (`pj_c_id`),
   CONSTRAINT `Project_ibfk_1` FOREIGN KEY (`pj_c_id`) REFERENCES `Company` (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -285,7 +354,7 @@ CREATE TABLE `Project` (
 
 LOCK TABLES `Project` WRITE;
 /*!40000 ALTER TABLE `Project` DISABLE KEYS */;
-INSERT INTO `Project` VALUES (1,'QS5509-QL','att project',1),(2,'MWF7-SC1-2.0','IOT project for AWS',1),(3,'HiFota','fota project',2);
+INSERT INTO `Project` VALUES (1,'Fota','Fota on aws',1);
 /*!40000 ALTER TABLE `Project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,7 +370,7 @@ CREATE TABLE `Release_Note_Language` (
   `rnl_tag` varchar(10) NOT NULL,
   `rnl_note` varchar(10) NOT NULL,
   PRIMARY KEY (`rnl_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -310,7 +379,7 @@ CREATE TABLE `Release_Note_Language` (
 
 LOCK TABLES `Release_Note_Language` WRITE;
 /*!40000 ALTER TABLE `Release_Note_Language` DISABLE KEYS */;
-INSERT INTO `Release_Note_Language` VALUES (6,'en','English'),(7,'zh','中文');
+INSERT INTO `Release_Note_Language` VALUES (1,'en','English'),(2,'zh','中文');
 /*!40000 ALTER TABLE `Release_Note_Language` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,7 +394,7 @@ CREATE TABLE `SPOP_Data` (
   `spop_data_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `spop_data_value` varchar(64) NOT NULL,
   PRIMARY KEY (`spop_data_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -334,7 +403,6 @@ CREATE TABLE `SPOP_Data` (
 
 LOCK TABLES `SPOP_Data` WRITE;
 /*!40000 ALTER TABLE `SPOP_Data` DISABLE KEYS */;
-INSERT INTO `SPOP_Data` VALUES (1,'0, 18, 24, 168, 336, 720'),(2,'True, False'),(3,'Null, Mandatory, Optional'),(4,'Auto, Manual'),(5,'0, 1, 2, 3, 6, 12, 24'),(6,'0:24'),(7,'0:2097152'),(8,'0:100');
 /*!40000 ALTER TABLE `SPOP_Data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,7 +419,7 @@ CREATE TABLE `SPOP_Template` (
   `template_content` varchar(128) NOT NULL,
   `template_notice` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`template_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -360,7 +428,6 @@ CREATE TABLE `SPOP_Template` (
 
 LOCK TABLES `SPOP_Template` WRITE;
 /*!40000 ALTER TABLE `SPOP_Template` DISABLE KEYS */;
-INSERT INTO `SPOP_Template` VALUES (1,'Install Reminder:','{\"data\":{\"count\":[8]}}','Range:0-100'),(2,'Check Period:','{\"data\":{\"time\":[1]}}',NULL),(3,'Download Limitation:','{\"data\":{\"size\":[7]}}','Note: KB, maximum is 2097152(2G)'),(4,'Download Peek Time:','{\"data\":{\"begin\":[6],\"end\":[6]}}','Range:0-24'),(5,'Check Wifi Only:','{\"data\":{\"check\":[2]}}',NULL),(6,'Download Wifi Only:','{\"data\":{\"Download\":[2]}}',NULL),(7,'Download Priority:','{\"data\":{\"type\":[3],\"type_data\":{\"download\":[4],\"install\":[4]}<2th>}}',NULL),(8,'Install Reminder Period','{\"data\":{\"reminder\":[5]}}',NULL);
 /*!40000 ALTER TABLE `SPOP_Template` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,12 +445,13 @@ CREATE TABLE `Software` (
   `sw_date` datetime NOT NULL,
   `sw_puid` bigint(20) NOT NULL,
   `sw_svn` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`sw_id`),
+  PRIMARY KEY (`sw_id`,`sw_ver`),
+  UNIQUE KEY `sw_id` (`sw_id`),
   KEY `sw_puid` (`sw_puid`),
   KEY `sw_creator` (`sw_creator`),
   CONSTRAINT `Software_ibfk_1` FOREIGN KEY (`sw_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Software_ibfk_2` FOREIGN KEY (`sw_creator`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -392,7 +460,7 @@ CREATE TABLE `Software` (
 
 LOCK TABLES `Software` WRITE;
 /*!40000 ALTER TABLE `Software` DISABLE KEYS */;
-INSERT INTO `Software` VALUES (1,'v1A71',1,'2018-09-27 06:22:57',1,NULL),(2,'v1B01',1,'2018-10-16 03:11:19',2,NULL),(3,'v1B02',1,'2018-09-06 15:45:12',2,NULL),(4,'v1A72',1,'2018-09-27 06:24:31',1,NULL),(5,'v1A73',1,'2018-09-27 06:24:01',1,NULL),(6,'v1A74',1,'2018-10-18 07:37:54',1,NULL),(7,'v1A73',1,'2018-10-24 03:22:07',7,NULL),(8,'v1A74',1,'2018-10-24 03:22:16',7,NULL),(9,'v1A75',1,'2018-10-24 09:27:07',7,NULL);
+INSERT INTO `Software` VALUES (1,'v1A73',1,'2018-12-14 02:38:29',1,NULL),(2,'v1A74',1,'2018-12-14 02:38:29',1,NULL);
 /*!40000 ALTER TABLE `Software` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -417,7 +485,7 @@ CREATE TABLE `Software_Publish` (
   CONSTRAINT `Software_Publish_ibfk_1` FOREIGN KEY (`sp_sw_id`) REFERENCES `Software` (`sw_id`),
   CONSTRAINT `Software_Publish_ibfk_2` FOREIGN KEY (`sp_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Software_Publish_ibfk_3` FOREIGN KEY (`sp_publisher`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -426,7 +494,7 @@ CREATE TABLE `Software_Publish` (
 
 LOCK TABLES `Software_Publish` WRITE;
 /*!40000 ALTER TABLE `Software_Publish` DISABLE KEYS */;
-INSERT INTO `Software_Publish` VALUES (3,5,1,'2018-09-06 15:46:23',2,1),(5,6,1,'2018-10-18 07:42:23',1,1),(6,8,1,'2018-10-29 03:34:44',7,1);
+INSERT INTO `Software_Publish` VALUES (1,2,1,'2018-12-14 07:18:32',1,1);
 /*!40000 ALTER TABLE `Software_Publish` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -447,7 +515,7 @@ CREATE TABLE `Upgrade_Configuration` (
   KEY `uc_spop_id` (`uc_spop_template_id`),
   CONSTRAINT `Upgrade_Configuration_ibfk_1` FOREIGN KEY (`uc_puid`) REFERENCES `Product_Info` (`pi_id`),
   CONSTRAINT `Upgrade_Configuration_ibfk_2` FOREIGN KEY (`uc_spop_template_id`) REFERENCES `SPOP_Template` (`template_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +524,6 @@ CREATE TABLE `Upgrade_Configuration` (
 
 LOCK TABLES `Upgrade_Configuration` WRITE;
 /*!40000 ALTER TABLE `Upgrade_Configuration` DISABLE KEYS */;
-INSERT INTO `Upgrade_Configuration` VALUES (1,7,1,'{\"data\":{\"count\":2}}'),(2,7,2,'{\"data\":{\"time\":0}}'),(3,7,3,'{\"data\":{\"size\":1024}}'),(4,7,4,'{\"data\":{\"begin\":5,\"end\":9}}'),(5,7,5,'{\"data\":{\"check\":\"False\"}}'),(6,7,6,'{\"data\":{\"Download\":\"False\"}}'),(7,7,7,'{\"data\":{\"type\":\"Optional\",\"type_data\":{\"download\":\"Manual\",\"install\":\"Manual\"}}}'),(8,7,8,'{\"data\":{\"reminder\":24}}'),(9,2,1,'{\"data\":{\"count\":2}}'),(10,2,2,'{\"data\":{\"time\":18}}'),(11,2,3,'{\"data\":{\"size\":102}}'),(12,2,4,'{\"data\":{\"begin\":0,\"end\":24}}'),(13,2,5,'{\"data\":{\"check\":\"True\"}}'),(14,2,6,'{\"data\":{\"Download\":\"True\"}}'),(15,2,7,'{\"data\":{\"type\":\"Mandatory\",\"type_data\":{\"download\":\"Auto\",\"install\":\"Auto\"}}}'),(16,2,8,'{\"data\":{\"reminder\":2}}');
 /*!40000 ALTER TABLE `Upgrade_Configuration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -477,7 +544,7 @@ CREATE TABLE `User_Info` (
   KEY `company_id` (`company_id`),
   CONSTRAINT `User_Info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `User_Info_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `Company` (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -486,7 +553,7 @@ CREATE TABLE `User_Info` (
 
 LOCK TABLES `User_Info` WRITE;
 /*!40000 ALTER TABLE `User_Info` DISABLE KEYS */;
-INSERT INTO `User_Info` VALUES (1,1,1,'Y'),(2,2,1,'Y');
+INSERT INTO `User_Info` VALUES (2,2,3,'Y'),(3,1,1,'Y');
 /*!40000 ALTER TABLE `User_Info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -545,7 +612,7 @@ CREATE TABLE `auth_item` (
 
 LOCK TABLES `auth_item` WRITE;
 /*!40000 ALTER TABLE `auth_item` DISABLE KEYS */;
-INSERT INTO `auth_item` VALUES ('/*',2,NULL,NULL,NULL,1536571251,1536571251),('/admin/*',2,NULL,NULL,NULL,1536546763,1536546763),('/admin/assignment/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/revoke',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/default/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/default/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/refresh',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/activate',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/change-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/index',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/login',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/request-password-reset',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/reset-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/signup',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/view',2,NULL,NULL,NULL,1536571250,1536571250),('/category/*',2,NULL,NULL,NULL,1538041101,1538041101),('/category/create',2,NULL,NULL,NULL,1538041101,1538041101),('/category/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/category/index',2,NULL,NULL,NULL,1538041101,1538041101),('/category/next',2,NULL,NULL,NULL,1538041101,1538041101),('/category/update',2,NULL,NULL,NULL,1538041101,1538041101),('/category/view',2,NULL,NULL,NULL,1538041101,1538041101),('/company/*',2,NULL,NULL,NULL,1538041101,1538041101),('/company/create',2,NULL,NULL,NULL,1538030019,1538030019),('/company/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/company/index',2,NULL,NULL,NULL,1538041101,1538041101),('/company/next',2,NULL,NULL,NULL,1538041101,1538041101),('/company/update',2,NULL,NULL,NULL,1538041101,1538041101),('/company/view',2,NULL,NULL,NULL,1538041101,1538041101),('/debug/*',2,NULL,NULL,NULL,1536565279,1536565279),('/debug/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/db-explain',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/download-mail',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/toolbar',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/reset-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/set-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/fota/*',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/create',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/index',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/update',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/view',2,NULL,NULL,NULL,1538041101,1538041101),('/gii/*',2,NULL,NULL,NULL,1536565285,1536565285),('/gii/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/action',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/diff',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/preview',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/product-info/*',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/create',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/index',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/next',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/update',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/view',2,NULL,NULL,NULL,1538041101,1538041101),('/project/*',2,NULL,NULL,NULL,1538041101,1538041101),('/project/create',2,NULL,NULL,NULL,1538041101,1538041101),('/project/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/project/index',2,NULL,NULL,NULL,1538041101,1538041101),('/project/next',2,NULL,NULL,NULL,1538041101,1538041101),('/project/update',2,NULL,NULL,NULL,1538041101,1538041101),('/project/view',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/*',2,NULL,NULL,NULL,1538041102,1538041102),('/publish/create',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/index',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/update',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/view',2,NULL,NULL,NULL,1538041101,1538041101),('/site/*',2,NULL,NULL,NULL,1536571250,1536571250),('/site/about',2,NULL,NULL,NULL,1538041102,1538041102),('/site/captcha',2,NULL,NULL,NULL,1538041102,1538041102),('/site/contact',2,NULL,NULL,NULL,1538041102,1538041102),('/site/error',2,NULL,NULL,NULL,1536571250,1536571250),('/site/index',2,NULL,NULL,NULL,1536571250,1536571250),('/site/login',2,NULL,NULL,NULL,1536571250,1536571250),('/site/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/site/request-password-reset',2,NULL,NULL,NULL,1538041102,1538041102),('/site/reset-password',2,NULL,NULL,NULL,1538041102,1538041102),('/site/signup',2,NULL,NULL,NULL,1538041102,1538041102),('/software/*',2,NULL,NULL,NULL,1538041102,1538041102),('/software/create',2,NULL,NULL,NULL,1538041102,1538041102),('/software/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/software/index',2,NULL,NULL,NULL,1538041102,1538041102),('/software/update',2,NULL,NULL,NULL,1538041102,1538041102),('/software/view',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/*',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/create',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/index',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/update',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/upload',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/view',2,NULL,NULL,NULL,1538041102,1538041102),('admin',1,'check if admin',NULL,NULL,1536560642,1538098659),('User',1,'check if login',NULL,NULL,1538042585,1538098707);
+INSERT INTO `auth_item` VALUES ('/*',2,NULL,NULL,NULL,1536571251,1536571251),('/admin/*',2,NULL,NULL,NULL,1536546763,1536546763),('/admin/assignment/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/revoke',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/assignment/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/company/*',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/create',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/delete',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/index',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/next',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/update',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/company/view',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/default/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/default/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/info/*',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/info/create',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/info/delete',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/info/index',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/info/update',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/info/view',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/menu/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/menu/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/operation-record/*',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/operation-record/index',2,NULL,NULL,NULL,1545298256,1545298256),('/admin/permission/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/permission/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/delete',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/role/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/*',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/assign',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/refresh',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/route/remove',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/create',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/rule/index',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/update',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/rule/view',2,NULL,NULL,NULL,1536571249,1536571249),('/admin/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/activate',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/change-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/delete',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/index',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/login',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/request-password-reset',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/reset-password',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/signup',2,NULL,NULL,NULL,1536571250,1536571250),('/admin/user/view',2,NULL,NULL,NULL,1536571250,1536571250),('/category/*',2,NULL,NULL,NULL,1538041101,1538041101),('/category/create',2,NULL,NULL,NULL,1538041101,1538041101),('/category/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/category/index',2,NULL,NULL,NULL,1538041101,1538041101),('/category/next',2,NULL,NULL,NULL,1538041101,1538041101),('/category/update',2,NULL,NULL,NULL,1538041101,1538041101),('/category/view',2,NULL,NULL,NULL,1538041101,1538041101),('/company/*',2,NULL,NULL,NULL,1538041101,1538041101),('/company/create',2,NULL,NULL,NULL,1538030019,1538030019),('/company/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/company/index',2,NULL,NULL,NULL,1538041101,1538041101),('/company/next',2,NULL,NULL,NULL,1538041101,1538041101),('/company/update',2,NULL,NULL,NULL,1538041101,1538041101),('/company/view',2,NULL,NULL,NULL,1538041101,1538041101),('/debug/*',2,NULL,NULL,NULL,1536565279,1536565279),('/debug/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/db-explain',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/download-mail',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/toolbar',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/*',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/reset-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/debug/user/set-identity',2,NULL,NULL,NULL,1536571250,1536571250),('/device-group/*',2,NULL,NULL,NULL,1545299117,1545299117),('/device/*',2,NULL,NULL,NULL,1545298360,1545298360),('/force-upgrade/*',2,NULL,NULL,NULL,1545298389,1545298389),('/fota/*',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/create',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/index',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/update',2,NULL,NULL,NULL,1538041101,1538041101),('/fota/view',2,NULL,NULL,NULL,1538041101,1538041101),('/gii/*',2,NULL,NULL,NULL,1536565285,1536565285),('/gii/default/*',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/action',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/diff',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/index',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/preview',2,NULL,NULL,NULL,1536571250,1536571250),('/gii/default/view',2,NULL,NULL,NULL,1536571250,1536571250),('/product-info/*',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/create',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/index',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/next',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/update',2,NULL,NULL,NULL,1538041101,1538041101),('/product-info/view',2,NULL,NULL,NULL,1538041101,1538041101),('/project/*',2,NULL,NULL,NULL,1538041101,1538041101),('/project/create',2,NULL,NULL,NULL,1538041101,1538041101),('/project/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/project/index',2,NULL,NULL,NULL,1538041101,1538041101),('/project/next',2,NULL,NULL,NULL,1538041101,1538041101),('/project/update',2,NULL,NULL,NULL,1538041101,1538041101),('/project/view',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/*',2,NULL,NULL,NULL,1538041102,1538041102),('/publish/create',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/delete',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/index',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/update',2,NULL,NULL,NULL,1538041101,1538041101),('/publish/view',2,NULL,NULL,NULL,1538041101,1538041101),('/site/*',2,NULL,NULL,NULL,1536571250,1536571250),('/site/about',2,NULL,NULL,NULL,1538041102,1538041102),('/site/captcha',2,NULL,NULL,NULL,1538041102,1538041102),('/site/contact',2,NULL,NULL,NULL,1538041102,1538041102),('/site/error',2,NULL,NULL,NULL,1536571250,1536571250),('/site/index',2,NULL,NULL,NULL,1536571250,1536571250),('/site/login',2,NULL,NULL,NULL,1536571250,1536571250),('/site/logout',2,NULL,NULL,NULL,1536571250,1536571250),('/site/request-password-reset',2,NULL,NULL,NULL,1538041102,1538041102),('/site/reset-password',2,NULL,NULL,NULL,1538041102,1538041102),('/site/signup',2,NULL,NULL,NULL,1538041102,1538041102),('/software/*',2,NULL,NULL,NULL,1538041102,1538041102),('/software/create',2,NULL,NULL,NULL,1538041102,1538041102),('/software/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/software/index',2,NULL,NULL,NULL,1538041102,1538041102),('/software/update',2,NULL,NULL,NULL,1538041102,1538041102),('/software/view',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/*',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/create',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/delete',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/index',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/update',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/upload',2,NULL,NULL,NULL,1538041102,1538041102),('/upload/view',2,NULL,NULL,NULL,1538041102,1538041102),('admin',1,'check if admin',NULL,NULL,1536560642,1538098659),('User',1,'check if login',NULL,NULL,1538042585,1545299126);
 /*!40000 ALTER TABLE `auth_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -572,7 +639,7 @@ CREATE TABLE `auth_item_child` (
 
 LOCK TABLES `auth_item_child` WRITE;
 /*!40000 ALTER TABLE `auth_item_child` DISABLE KEYS */;
-INSERT INTO `auth_item_child` VALUES ('admin','/*'),('User','/category/*'),('User','/category/create'),('User','/category/delete'),('User','/category/index'),('User','/category/next'),('User','/category/update'),('User','/category/view'),('User','/company/index'),('User','/company/next'),('User','/company/view'),('User','/debug/*'),('User','/debug/default/*'),('User','/debug/default/db-explain'),('User','/debug/default/download-mail'),('User','/debug/default/index'),('User','/debug/default/toolbar'),('User','/debug/default/view'),('User','/debug/user/*'),('User','/debug/user/reset-identity'),('User','/debug/user/set-identity'),('User','/fota/*'),('User','/fota/create'),('User','/fota/delete'),('User','/fota/index'),('User','/fota/update'),('User','/fota/view'),('User','/gii/*'),('User','/gii/default/*'),('User','/gii/default/action'),('User','/gii/default/diff'),('User','/gii/default/index'),('User','/gii/default/preview'),('User','/gii/default/view'),('User','/product-info/*'),('User','/product-info/create'),('User','/product-info/delete'),('User','/product-info/index'),('User','/product-info/next'),('User','/product-info/update'),('User','/product-info/view'),('User','/project/*'),('User','/project/create'),('User','/project/delete'),('User','/project/index'),('User','/project/next'),('User','/project/update'),('User','/project/view'),('User','/publish/*'),('User','/publish/create'),('User','/publish/delete'),('User','/publish/index'),('User','/publish/update'),('User','/publish/view'),('User','/site/*'),('User','/site/about'),('User','/site/captcha'),('User','/site/contact'),('User','/site/error'),('User','/site/index'),('User','/site/login'),('User','/site/logout'),('User','/site/request-password-reset'),('User','/site/reset-password'),('User','/site/signup'),('User','/software/*'),('User','/software/create'),('User','/software/delete'),('User','/software/index'),('User','/software/update'),('User','/software/view'),('User','/upload/*'),('User','/upload/create'),('User','/upload/delete'),('User','/upload/index'),('User','/upload/update'),('User','/upload/upload'),('User','/upload/view');
+INSERT INTO `auth_item_child` VALUES ('admin','/*'),('User','/category/*'),('User','/category/create'),('User','/category/delete'),('User','/category/index'),('User','/category/next'),('User','/category/update'),('User','/category/view'),('User','/company/index'),('User','/company/next'),('User','/company/view'),('User','/debug/*'),('User','/debug/default/*'),('User','/debug/default/db-explain'),('User','/debug/default/download-mail'),('User','/debug/default/index'),('User','/debug/default/toolbar'),('User','/debug/default/view'),('User','/debug/user/*'),('User','/debug/user/reset-identity'),('User','/debug/user/set-identity'),('User','/device-group/*'),('User','/device/*'),('User','/force-upgrade/*'),('User','/fota/*'),('User','/fota/create'),('User','/fota/delete'),('User','/fota/index'),('User','/fota/update'),('User','/fota/view'),('User','/gii/*'),('User','/gii/default/*'),('User','/gii/default/action'),('User','/gii/default/diff'),('User','/gii/default/index'),('User','/gii/default/preview'),('User','/gii/default/view'),('User','/product-info/*'),('User','/product-info/create'),('User','/product-info/delete'),('User','/product-info/index'),('User','/product-info/next'),('User','/product-info/update'),('User','/product-info/view'),('User','/project/*'),('User','/project/create'),('User','/project/delete'),('User','/project/index'),('User','/project/next'),('User','/project/update'),('User','/project/view'),('User','/publish/*'),('User','/publish/create'),('User','/publish/delete'),('User','/publish/index'),('User','/publish/update'),('User','/publish/view'),('User','/site/*'),('User','/site/about'),('User','/site/captcha'),('User','/site/contact'),('User','/site/error'),('User','/site/index'),('User','/site/login'),('User','/site/logout'),('User','/site/request-password-reset'),('User','/site/reset-password'),('User','/site/signup'),('User','/software/*'),('User','/software/create'),('User','/software/delete'),('User','/software/index'),('User','/software/update'),('User','/software/view'),('User','/upload/*'),('User','/upload/create'),('User','/upload/delete'),('User','/upload/index'),('User','/upload/update'),('User','/upload/upload'),('User','/upload/view');
 /*!40000 ALTER TABLE `auth_item_child` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -674,7 +741,7 @@ CREATE TABLE `test_table` (
 
 LOCK TABLES `test_table` WRITE;
 /*!40000 ALTER TABLE `test_table` DISABLE KEYS */;
-INSERT INTO `test_table` VALUES (0,2),(0,2);
+INSERT INTO `test_table` VALUES (1,10),(2,20);
 /*!40000 ALTER TABLE `test_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -708,9 +775,152 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'test','abOZrRhuCF8SqGiE64gb_sprj9zo0BgV','e10adc3949ba59abbe56e057f20f883e','3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462','suyibang@hipad.com',10,1536396682,1536397462),(2,'admin','hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl','d0cda743418255f70c9e29bfc4d7322f',NULL,'hipad@hipad.com',10,1536548558,1536548558),(3,'test2','99eaMiXPyECmg8ILEzmUNjLFo4llpFlO','e10adc3949ba59abbe56e057f20f883e',NULL,'test2@hipad.com',10,1536631292,1536631292);
+INSERT INTO `user` VALUES (1,'test','abOZrRhuCF8SqGiE64gb_sprj9zo0BgV','e10adc3949ba59abbe56e057f20f883e','3gZ3z1Tys6ZN0KgnD0nr1pWRVwo3JQ1H_1536397462','suyibang@hipad.com',10,1536396682,1536397462),(2,'admin','hAoe8EWF1HrBMYxe9_rFfI2fonPSsUGl','008c5926ca861023c1d2a36653fd88e2',NULL,'hipad@hipad.com',10,1536548558,1536548558),(3,'test2','99eaMiXPyECmg8ILEzmUNjLFo4llpFlO','e10adc3949ba59abbe56e057f20f883e',NULL,'test2@hipad.com',10,1536631292,1536631292);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `view_file_extend`
+--
+
+DROP TABLE IF EXISTS `view_file_extend`;
+/*!50001 DROP VIEW IF EXISTS `view_file_extend`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_file_extend` (
+  `fe_puid` tinyint NOT NULL,
+  `fe_to_ver` tinyint NOT NULL,
+  `fe_release_note` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `view_software_file_Extend`
+--
+
+DROP TABLE IF EXISTS `view_software_file_Extend`;
+/*!50001 DROP VIEW IF EXISTS `view_software_file_Extend`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_software_file_Extend` (
+  `from_ver` tinyint NOT NULL,
+  `fe_fb_id` tinyint NOT NULL,
+  `fe_puid` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `view_software_file_base`
+--
+
+DROP TABLE IF EXISTS `view_software_file_base`;
+/*!50001 DROP VIEW IF EXISTS `view_software_file_base`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_software_file_base` (
+  `to_ver` tinyint NOT NULL,
+  `fe_fb_id` tinyint NOT NULL,
+  `fe_checksum` tinyint NOT NULL,
+  `fb_name` tinyint NOT NULL,
+  `fb_path` tinyint NOT NULL,
+  `fb_size` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `File_Info`
+--
+
+/*!50001 DROP TABLE IF EXISTS `File_Info`*/;
+/*!50001 DROP VIEW IF EXISTS `File_Info`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `File_Info` AS select `ff`.`fe_fb_id` AS `fe_fb_id`,`ff`.`from_ver` AS `from_ver`,`tt`.`to_ver` AS `to_ver`,`tt`.`fb_name` AS `fb_name`,`tt`.`fb_path` AS `fb_path`,`tt`.`fb_size` AS `fb_size`,`tt`.`fe_checksum` AS `fe_checksum`,`ff`.`fe_puid` AS `fe_puid` from (`view_software_file_base` `tt` left join `view_software_file_Extend` `ff` on((`ff`.`fe_fb_id` = `tt`.`fe_fb_id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `PUID_Publish`
+--
+
+/*!50001 DROP TABLE IF EXISTS `PUID_Publish`*/;
+/*!50001 DROP VIEW IF EXISTS `PUID_Publish`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `PUID_Publish` AS select `Product_Info`.`pi_id` AS `pi_id`,`Product_Info`.`PUID` AS `puid`,`Software`.`sw_ver` AS `sw_ver`,`Software`.`sw_id` AS `sw_id`,`tt`.`fe_release_note` AS `fe_release_note` from ((`Software_Publish` left join (`Software` left join `Product_Info` on((`Product_Info`.`pi_id` = `Software`.`sw_puid`))) on((`Software`.`sw_id` = `Software_Publish`.`sp_sw_id`))) left join `view_file_extend` `tt` on(((`tt`.`fe_puid` = `Software_Publish`.`sp_puid`) and (`tt`.`fe_to_ver` = `Software_Publish`.`sp_sw_id`)))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_file_extend`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_file_extend`*/;
+/*!50001 DROP VIEW IF EXISTS `view_file_extend`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_file_extend` AS select `File_Extend`.`fe_puid` AS `fe_puid`,`File_Extend`.`fe_to_ver` AS `fe_to_ver`,`File_Extend`.`fe_release_note` AS `fe_release_note` from `File_Extend` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_software_file_Extend`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_software_file_Extend`*/;
+/*!50001 DROP VIEW IF EXISTS `view_software_file_Extend`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_software_file_Extend` AS select `c`.`sw_ver` AS `from_ver`,`a`.`fe_fb_id` AS `fe_fb_id`,`a`.`fe_puid` AS `fe_puid` from (`File_Extend` `a` left join `Software` `c` on((`c`.`sw_id` = `a`.`fe_from_ver`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_software_file_base`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_software_file_base`*/;
+/*!50001 DROP VIEW IF EXISTS `view_software_file_base`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_software_file_base` AS select `d`.`sw_ver` AS `to_ver`,`b`.`fe_fb_id` AS `fe_fb_id`,`b`.`fe_checksum` AS `fe_checksum`,`File_Base`.`fb_name` AS `fb_name`,`File_Base`.`fb_path` AS `fb_path`,`File_Base`.`fb_size` AS `fb_size` from (`File_Base` left join (`File_Extend` `b` left join `Software` `d` on((`d`.`sw_id` = `b`.`fe_to_ver`))) on((`File_Base`.`fb_id` = `b`.`fe_fb_id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -721,4 +931,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-30 17:54:42
+-- Dump completed on 2018-12-21 10:13:02
