@@ -8,8 +8,10 @@ use Yii;
  * This is the model class for table "File_Base".
  *
  * @property int $fb_id
- * @property string $fb_name
+ * @property string $fb_type
+ * @property string $fb_server
  * @property string $fb_path
+ * @property string $fb_name
  * @property int $fb_status
  * @property string $fb_date
  * @property int $fb_size
@@ -32,7 +34,7 @@ class FileBase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fb_name', 'fb_path', 'fb_status', 'fb_date', 'fb_size'], 'required'],
+            [['fb_name', 'fb_path', 'fb_server', 'fb_status', 'fb_date', 'fb_size'], 'required'],
             [['fb_status', 'fb_size'], 'integer'],
             [['fb_date'], 'safe'],
             [['fb_name'], 'string', 'max' => 64],
@@ -47,8 +49,10 @@ class FileBase extends \yii\db\ActiveRecord
     {
         return [
             'fb_id' => Yii::t('app', 'ID'),
-            'fb_name' => Yii::t('app', 'Name'),
+            'fb_type' => Yii::t('app', 'Type'),
+            'fb_server' => Yii::t('app', 'Server'),
             'fb_path' => Yii::t('app', 'Path'),
+            'fb_name' => Yii::t('app', 'Name'),
             'fb_status' => Yii::t('app', 'Status'),
             'fb_date' => Yii::t('app', 'Date'),
             'fb_size' => Yii::t('app', 'Size'),
@@ -69,8 +73,8 @@ class FileBase extends \yii\db\ActiveRecord
         if (!$projectName || !$categoryName || !$puidName) {
             return false;
         }
-        $this->fb_path = Yii::$app->params['s3BucketRoot'] 
-                         . $companyName . '/'
+        $this->fb_server = Yii::$app->params['s3BucketRoot'];
+        $this->fb_path =   $companyName . '/'
                          . $projectName . '/'
                          . $categoryName . '/'
                          . $puidName . '/';
@@ -119,10 +123,10 @@ class FileBase extends \yii\db\ActiveRecord
      */
     public function getEc2Path()
     {
-        if ($this->fb_path) {
-            $ec2Root = Yii::$app->params['s2MountRoot'];
-            $s3Root = Yii::$app->params['s3BucketRoot'];
-            return strtr($this->fb_path, [$s3Root => $ec2Root]);
+        if ($this->fb_server === Yii::$app->params['s3BucketRoot']) {
+            return Yii::$app->params['s2MountRoot'] . $this->fb_path;
+        } else if ($this->fb_server === Yii::$app->params['s3FreezedBucketRoot']) {
+            return Yii::$app->params['s2MountFreezedRoot'] . $this->fb_path;
         }
 
         return null;

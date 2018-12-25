@@ -138,6 +138,7 @@ class FotaPackageUpload extends Model
         $datas = FileBase::find()->where(['fb_name' => $fileBase->fb_name, 'fb_path' => $fileBase->fb_path])->all();
         if (count($datas) > 0) {
             foreach ($datas as $data) {
+                $data->fb_server = $fileBase->fb_server;
                 $data->fb_date = date("Y-m-d h:i:s", filectime($data->getEc2Path() . $data->fb_name));
                 $data->fb_size = filesize($data->getEc2Path() . $data->fb_name);
                 $data->fb_status = $fileBase->fb_status;

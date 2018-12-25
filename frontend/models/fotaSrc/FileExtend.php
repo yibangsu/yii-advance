@@ -130,18 +130,13 @@ class FileExtend extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function beforeDelete()
+    public function afterDelete()
     {
-        if (!parent::beforeDelete()) {
-            return false;
-        }
-
         $filebase = FileBase::find()->where(['fb_id' => $this->fe_fb_id])->one();
         if ($filebase) {
-            unlink($filebase->getEc2Path() . $filebase->fb_name);
             $filebase->delete();
         }
 
-        return true;
+        return parent::afterDelete();
     }
 }

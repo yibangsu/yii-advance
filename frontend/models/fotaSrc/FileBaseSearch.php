@@ -19,7 +19,7 @@ class FileBaseSearch extends FileBase
     {
         return [
             [['fb_id', 'fb_status', 'fb_size'], 'integer'],
-            [['fb_name', 'fb_path', 'fb_date'], 'safe'],
+            [['fb_name', 'fb_path', 'fb_date', 'fb_server', 'fb_type'], 'safe'],
         ];
     }
 
@@ -59,6 +59,7 @@ class FileBaseSearch extends FileBase
 
         // static filtering conditions
         $query->andFilterWhere(['like', 'fb_path', $this->fb_path]);
+        $query->andFilterWhere(['like', 'fb_server', $this->fb_server]);
 
         // grid filtering conditions
         $query->andFilterWhere([
@@ -71,5 +72,14 @@ class FileBaseSearch extends FileBase
         $query->andFilterWhere(['like', 'fb_name', $this->fb_name]);
 
         return $dataProvider;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function load($data, $formName = null)
+    {
+        parent::load($data, $formName);
+        unset($this->fb_server);
     }
 }
